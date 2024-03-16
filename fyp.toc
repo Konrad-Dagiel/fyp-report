@@ -7,4 +7,6 @@
 \contentsline {subsection}{\numberline {1.1.5}Complexity Analysis of the Brute Force Approach to the Coin Change Problem}{7}{}%
 \contentsline {subsection}{\numberline {1.1.6}Memoization Approach to the Coin Change Problem}{7}{}%
 \contentsline {subsection}{\numberline {1.1.7}Complexity Analysis of the Memoization Approach to the Coin Change Problem}{8}{}%
-\contentsline {section}{\numberline {1.2}Longest Increasing Subsequence}{11}{}%
+\contentsline {subsection}{\numberline {1.1.8}Tabulation Approach to the Coin Change Problem}{8}{}%
+\contentsline {subsection}{\numberline {1.1.9}Complexity Analysis of the Tabulation Approach to the Coin Change Problem}{10}{}%
+\contentsline {section}{\numberline {1.2}Longest Increasing Subsequence}{10}{}%
