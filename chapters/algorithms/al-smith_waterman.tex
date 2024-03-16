@@ -1,0 +1,68 @@
+\begin{description}
+    \item[Problem Statement:]
+        Given a list of denominations of coins $D$ and an integer amount $a$, compute the minimum amount of coins (where each coin's denomination $\in D$) needed to sum exactly to the given amount $a$.
+        
+    \item[Input:] 
+        An integer array $D$ of possible coin denominations, and an integer amount $a$.
+        
+    \item[Output:] 
+        An integer $r$, which represents the minimum amount of coins with denominations $\in D$ needed in order to sum exactly to $a$. If this cannot be done, return $-1$.
+        
+    \item[Example:]
+        For: 
+
+        $D = [1, 5, 10, 20]$
+
+        $a = 115$
+
+        $r = 7$
+
+    \item[Explanation:]
+        The minimum amount of coins with denominations in $D$ needed to sum to $a$ is 7.
+
+        These coins are: $[20,20,20,20,20,10,5]$
+
+
+\end{description}
+
+A sample python implementation is shown in figure \ref{fig:coin-change-memo}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+
+    \end{lstlisting}
+    \caption{Coin Change Brute Force Python implementation}
+    \label{fig:coin-change-bf}
+\end{figure}
+
+
+\begin{algorithm}
+    \caption{Euclid's algorithm}
+    \label{algo:euclid}
+    \KwIn{Two non-negative integers $a$ and $b$ where $a \geq b$}
+    \KwOut{The greatest common divisor of $a$ and $b$}
+    \While{$b \neq 0$}{
+        $r \leftarrow a \mod b$\;
+        $a \leftarrow b$\;
+        $b \leftarrow r$\;
+    }
+    \KwRet{$a$}
+\end{algorithm}
+
+Algorithm~\ref{algo:euclid} shows Euclid's algorithm for computing the greatest common divisor of two non-negative integers.
+
+
+\begin{description}
+    \item[Time Complexity:]
+        
+        
+    \item[Space Complexity:] 
+        
+        
+    \item[Overall:] total\\
+        Time Complexity:
+        Space Complexity:
+        
+
+\end{description}

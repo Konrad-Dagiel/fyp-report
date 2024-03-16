@@ -1,0 +1,226 @@
+\begin{verbatim}
+
+# Longest Increasing Subsequence
+
+Given an array nums, return the length of the longest strictly increasing subsequence. A subsequence does not have to be contiguous.
+
+Example: nums = [2,5,3,7,101,18]
+
+Output: 4
+
+Explanation: The subsequence [2,5,7,101] is the longest increasing subsequence, with length 4.
+
+Much like coin change, this problem appears trivial at first glance. One may attempt to be greedy as follows:
+
+## Longest Increasing Subsequence Greedy Approach
+
+Input: nums
+
+r := 0
+
+index := 0
+
+cur := nums[0]
+
+While index < |nums|:
+
+    if nums[index] > cur:
+
+        r += 1
+
+        cur := nums[index]
+
+    index +=1
+
+Return r
+
+In this greedy algorithm we iterate through nums keeping track of the current max value enountered, incrementing our result each time a new larger value is encountered.
+
+### Optimality of the Greedy approach
+
+This algorithm is not optimal however, and we can prove this by counter-example.
+
+A counter example is nums = [10,9,2,5,3,7,101,18]
+
+Given these inputs, the greedy result is: r1 = 2  ([10,101])
+
+An optimal solution for these inputs is: r2 = 4 ([2,3,7,101,18])
+
+We see that r1 > r2, meaning the greedy approach does not find the maximised solution.
+
+We therefore need a more sophisticated approach.
+
+## Longest Increasing Subsequence Brute Force
+
+We can try a brute force approach, where we start at index 0, and for each index choose wether we should exclude it from the subsequence or include it in the subsequence. We keep track of the prev_index, which represents the last index we included in the result, and the current_index, which is the index for which we are making the choice.
+
+This will generate all possible increasing subsequenes.
+
+We keep track of the longest increasing subsequence length, and return it.
+
+Below is an implementation of this algorithm.
+
+def length_of_lis_bf(nums):
+    def dfs(prev_index, current_index):
+        # Base case: reached the end of the sequence
+        if current_index == len(nums):
+            return 0
+
+        # Case 1: Exclude the current element
+        exclude_current = dfs(prev_index, current_index + 1)
+
+        # Case 2: Include the current element if it is greater than the previous one
+        include_current = 0
+        if prev_index < 0 or nums[current_index] > nums[prev_index]:
+            include_current = 1 + dfs(current_index, current_index + 1)
+
+        # Return the maximum length of the two cases
+        return max(exclude_current, include_current)
+
+    # Start the recursion with initial indices (-1 represents no previous index)
+    return dfs(-1, 0)
+
+print(length_of_lis_bf([10,9,2,5,3,7,101,18]))
+
+## Longest Increasing Subsequence Brute Force Complexity Analysis
+
+Let n be the length of nums.
+
+Time Complexity:
+
+For the worst case scenario, There are n indices to consider. There are two subtrees at each decision, one where we include the current index, and one where we do not.
+
+This brings the time complexity to O(2^n)
+
+Space Complexity:
+
+The space complexity is determined by the recursion depth.
+
+Therefore the space complexity is O(n)
+
+Overall:
+
+Time Complexity: O(2^n)
+
+Space Complexity: O(n)
+
+## Longest Increasing Subsequence Memoization
+
+We can use memoization to avoid repeating subproblems, such as when we are deciding wether the next element should be added or not for multiple subsequences ending in the same element.
+
+Before proceeding with the recursive calls, the function checks if the result for the current combination of prev_index and current_index is already computed and stored in the memo dictionary. If it is, the stored result is returned immediately. This optimization allows the algorithm to avoid repeating work, speeding up the runtime.
+
+def length_of_lis_memo(nums):
+    if not nums:
+        return 0
+
+    memo = {}  # Memoization dictionary to store computed results
+
+    def dfs(prev_index, current_index):
+        if current_index == len(nums):
+            return 0
+
+        if (prev_index, current_index) in memo:
+            return memo[(prev_index, current_index)]
+        
+        exclude_current = dfs(prev_index, current_index + 1)
+
+        include_current = 0
+        if prev_index < 0 or nums[current_index] > nums[prev_index]:
+            include_current = 1 + dfs(current_index, current_index + 1)
+
+        
+        # Save the result in the memoization dictionary
+        memo[(prev_index, current_index)] = max(include_current, exclude_current)
+
+        return memo[(prev_index, current_index)]
+
+    return dfs(-1, 0)
+
+print(length_of_lis_memo([10,9,2,5,3,7,101,18]))
+
+## Longest Increasing Subsequence Memoization Complexity Analysis
+
+Let n be the length of nums.
+
+Time Complexity:
+
+For each unique combination of (prev_index, current_index), the algorithm either calculates the result or looks it up in the memoization table. Since there are at most n choices for each index, the time complexity for a single subproblem is O(n).
+
+The algorithm explores all combinations of prev_index and current_index. There are at most n choices for current_index and, in the worst case, n choices for prev_index for each current_index. Therefore, the total number of unique subproblems is O(n^2).
+
+Space Complexity: 
+
+The space complexity is increased to O(n^2), as the memo table needs to store all n^2 combinations in the worst case.
+
+Overall:
+
+Time Complexity: O(n^2)
+
+Space Complexity: O(n^2)
+
+## Longest Increasing Subsequence Tabulation
+
+We can use tabulation to build a table from which we can deduce the result, similar to the coin change problem.
+
+We know that starting at the last index will result in an increasing subsequence of length 1. We can work backwards, for the second last, third last ect.. deciding if including that element will result in a longer increasing subsequence or not, and storing the longest possible increasing subsequence starting at each index until we reach index zero.
+
+We create a table called dp of size len(nums), where dp[i] represents the longest increasing subsequence starting at index i in nums.
+
+Lets take the example nums = [1,2,4,3]
+
+We initialize dp[3] to 1, as the longest increasing subsequence starting at index 3 is 1.
+
+Consider nums[2] = 4
+
+We can either take nums[2] by itself, or include nums[2] in any subsequence at any index that comes after it (if it maintains the property of an increasing subsequence). Including it would make dp[2] = 1+dp[3], Excluding it would make dp[2] = 1.
+
+Since including it would not result in an increasing subsequence, we must exclude it, so dp[2] = 1
+
+Now Conisder nums[1] = 2
+
+We can either take it by itself or include it in any subsequence at any index that comes after it. Including it would make dp[1] = max(1+dp[2], 1+dp[3]), taking it by itself would make dp[1] = 1
+
+We choose the option which maximizes the value of dp[1], which is 1+dp[2] (or equally 1+dp[3]) = 2
+
+So for dp[i], by the same logic, we simply put max(1,1+dp[j1],1+dp[j2],1+dp[j3]...) (only include 1+dp[jx] in the max function if nums[i] < nums[jx], to maintain increasing subsequence property)
+
+def length_of_lis_dp(nums, printTable = False):
+    dp = [1] * len(nums)
+
+    for i in range(len(nums)-1,-1,-1):
+        for j in range(i+1,len(nums)):
+            if nums[i] < nums[j]:
+                dp[i] = max(dp[i], 1+dp[j])
+
+    if printTable:
+        print(dp)
+
+    return max(dp)
+
+print(length_of_lis_dp([10,9,2,5,3,7,101,18], printTable=True))
+
+## Longest Increasing Subsequence Tabulation Complexity Analysis
+
+Let n be the length of nums.
+
+Time Complexity:
+
+For the worst case scenario, we need to perform a double nested iteration over nums.
+
+All other operations within the loops are constant time lookups and max(a,b), so the time complexity is O(n^2)
+
+Space Complexity:
+
+The space complexity is determined by the size of the dp array. This array is always of size n.
+
+Therefore the space complexity is O(n)
+
+Overall:
+
+Time Complexity: O(n^2)
+
+Space Complexity: O(n)
+
+
+\end{verbatim}

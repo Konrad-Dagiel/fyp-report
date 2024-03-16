@@ -1,0 +1,309 @@
+\begin{description}
+    \item[Problem Statement:]
+        Given a list of denominations of coins $D$ and an integer amount $a$, compute the minimum amount of coins (where each coin's denomination $\in D$) needed to sum exactly to the given amount $a$.
+        
+    \item[Input:] 
+        An integer array $D$ of possible coin denominations, and an integer amount $a$.
+        
+    \item[Output:] 
+        An integer $r$, which represents the minimum amount of coins with denominations $\in D$ needed in order to sum exactly to $a$. If this cannot be done, return $-1$.
+        
+    \item[Example:]
+        For: 
+
+        $D = [1, 5, 10, 20]$
+
+        $a = 115$
+
+        $r = 7$
+
+    \item[Explanation:]
+        The minimum amount of coins with denominations in $D$ needed to sum to $a$ is 7.
+
+        These coins are: $[20,20,20,20,20,10,5]$
+
+
+\end{description}
+
+The problem appears trivial at first glance. One may be tempted to use a greedy method as follows:
+
+\subsection{Greedy Approach to the Coin Change Problem}
+
+Algorithm~\ref{algo:coin-change-greedy} shows a greedy approach to the coin change problem.
+
+\begin{algorithm}[H]
+    \caption{Greedy Approach to the Coin Change Problem}
+    \label{algo:coin-change-greedy}
+    \KwIn{List of denominations of coins $D$ and an amount $a$}
+    \KwOut{Minimum number of coins required to make change for $a$}
+    Sort $D$ in ascending order\;
+    $r \leftarrow 0$\;
+    $total \leftarrow 0$\;
+    \While{$\text{total} < a$}{
+        \If{$|D| = 0$}{
+            \KwRet{-1}\;
+        }
+        \If{$\text{total} + D[-1] > a$}{
+            $D.\text{pop()}$\;
+        }
+        \Else{
+            $\text{total} \leftarrow \text{total} + D[-1]$\;
+            $r \leftarrow r + 1$\;
+        }
+    }
+    \KwRet{$r$}
+\end{algorithm}
+
+In Algorithm~\ref{algo:coin-change-greedy}, we always choose the coin with the largest value which will not make the total exceed a.
+
+\subsection{Optimality of the Greedy Approach to the Coin Change Problem}
+
+This algorithm is not optimal, and we can prove this by counter-example.\\
+A counter example is $D = [5,4,3,2,1]$, $a = 7$.\\
+Given these inputs, the greedy result is: $r1 = 3$  ([5,1,1]).\\
+The optimal solution for these inputs is: $r2 = 2$ ([4,3]).\\
+We see that $r1 > r2$, meaning the greedy approach does not find the miminized solution.\\
+
+\subsection{Correctness of the Greedy Approach to the Coin Change Problem}
+
+The greedy algorithm is also not correct, and we can prove this by another counter-example.\\
+A counter example is $D = [4,3]$, $a = 6$.\\
+Given these inputs, the greedy result is: $r1 = -1$  ([4]).\\
+The optimal solution for these inputs is: $r2 = 2$ ([3,3]).\\
+We see that the greedy approach fails when a solution is indeed possible, as shown by $r2$.\\
+Since we have shown that the greedy approach is neither correct nor optimal, we move on to the brute force solution.\\
+
+
+\subsection{Brute Force Approach to the Coin Change Problem}
+
+The brute force approach to the coin change problem involves generating all possible coin combinations, and checking if any of them sum exactly to $a$.
+Of the ones that do, we return the minimum length.\\
+To try all possible coin combinations, we can subtract each coin denomination $c \in D$ from $a$, as long as $a - c >= 0$.\\
+We can repeat this step for each result obtained from this calculation (replacing $a$ with the intermediate result), until all possible coin combinations are explored.\\
+We can keep track of the shortest path through the resulting tree which has a leaf value of 0, to avoid storing the entire tree in memory.\\
+We return the length of the shortest path as $r$.\\
+
+
+% TODO NOTE: PLOT OF ALGORITHM HERE
+
+A sample python implementation is shown in figure \ref{fig:coin-change-bf}.
+
+\begin{figure}[h]
+    \centering
+    \begin{lstlisting}
+    def coin_change_bf(D, a):
+        def dfs(a):
+            if a == 0:
+                return 0
+            if a<0:
+                return float('inf')
+            return min([1+dfs(a-c) for c in D])
+        minimum = dfs(a)
+        return minimum if minimum < float("inf") else -1
+    \end{lstlisting}
+    \caption{Coin Change Brute Force Python Implementation}
+    \label{fig:coin-change-bf}
+\end{figure}
+
+\subsection{Complexity Analysis of the Brute Force Approach to the Coin Change Problem}
+
+\begin{description}
+    \item[Time Complexity:]
+    For the worst case scenario, let's assume each coin denomination $c \in D < a$ such that each node which is not a leaf node has $|D|$ children. This means we have $|D|$ recursive calls at the first level, $|D|^{2}$ at the second level, $|D|^{n}$ at the $n$'th level.\\
+
+    The total number of recursive calls in this scenario is $|D| + |D|^{2} + ... + |D|^{a}$ which is $O(|D|^a)$.
+    
+    Therefore the time complexity is $O(|D|^{a})$. This is because at each step, there are $|D|$ choices (coin denominations) to consider, and the recursion depth is at most $a$ (target amount).
+    
+        
+    \item[Space Complexity:] 
+        We do not store the entire tree in memory, only the current path.
+
+        The space complexity is determined by the maximum depth of the recursion stack. In the worst case, the recursion depth is equal to the target amount $a$. Therefore, the space complexity is $O(a)$.
+        
+        
+    \item[Overall:] total\\
+        Time Complexity: $O(|D|^a)$
+
+        Space Complexity: $O(a)$
+        
+\end{description}
+
+\subsection{Memoization Approach to the Coin Change Problem}
+
+In the brute force algorithm, we have a chance to arrive at a value multiple times. For every path in the search tree, we can store intermediate results in a table, so that the next time we arrive at a value, eg. 3, we don't have to repeat the work in finding the minimum amount of extra coins needed to sum to $a$. Instead we can simply look in the table with a constant time lookup.
+
+This optimization reduces search time greatly, as seen in subsection \ref{subsec:ca-coin-change-memo}.
+
+A sample python implementation is shown in figure \ref{fig:coin-change-memo}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def coin_change_memo(D, a):
+    memo = {}
+    def dfs(a):
+        if a == 0:
+            return 0
+        if a < 0:
+            return float('inf')
+        if a in memo:
+            return memo[a]
+        
+        memo[a] = min([1+dfs(a-c) for c in D])
+        return memo[a]
+            
+    res = dfs(a)
+    return res if res < float("inf") else -1
+    \end{lstlisting}
+    \caption{Coin Change Memoization Python Implementation}
+    \label{fig:coin-change-memo}
+\end{figure}
+
+\subsection{Complexity Analysis of the Memoization Approach to the Coin Change Problem}\label{subsec:ca-coin-change-memo}
+
+\begin{description}
+    \item[Time Complexity:]
+    %   CITATION HERE TO THE PYTHON MANUAL
+        Each unique subproblem is evaluated once, and the next time it is encountered it is retrieved from the memoization table with a constant time lookup\footnote{Python dictionary lookups have an expected $O(1)*$ time complexity.}.
+        As there are $|D| * a$ unique subproblems in the worst case\footnote{$|D|$ constant time subtractions from any intermediate value $v$ where $0 \leq v \leq a$.}, the time complexity to solve all of them is $O(|D| * a)$.
+    
+        
+    \item[Space Complexity:] 
+        We need to store the memoization table in memory.
+        The memoization table is represented by a lookup data structure where the keys range from 0 to a,
+        representing the solution to each unique subproblem.
+        Hence, the memory required to store the table is of order $O(a)$.
+        
+    \item[Overall:] total\\
+        Time Complexity: $O(|D| * a)$
+
+        Space Complexity: $O(a)$
+        
+\end{description}
+
+\begin{verbatim}
+
+## Tabulation for Coin Change
+
+Instead of doing a dfs to fill in the memo table, which requires a traversal of the exponential search tree, we can calculate the values in the memo table directly, and extract the answer from there.
+
+We will call the memo table dp, as we are no longer doing memoization, but tabulation.
+
+dp[i] represents the minimum amount of coins needed to get the amount i.
+
+For the example D=[5,4,3,1] a=7
+
+We initialize each dp[i] to contain infinity.
+
+We know that dp[0] = 0 as it takes 0 coins to add up to an amount of 0. We can initialize this in our table.
+
+Now we can deduce dp[1], dp[2] ... until we reach dp[a].
+
+To get dp[i], we will look at each c element of D in sequence.
+
+For each c in D, we take i - c to get t, and look for dp[t] if it exists.
+
+Our result is 1+dp[t]
+
+If this result is less than the current dp[i] and is not negative, we update dp[i] = 1+dp[t]
+
+The logic is demonstrated with the examples:
+
+Example 1: Calculating dp[1]
+
+dp[0]=0
+dp[1]=inf
+dp[2]=inf
+dp[3]=inf
+dp[4]=inf
+dp[5]=inf
+dp[6]=inf
+
+to calculate dp[1]:
+
+for c in D=[5,4,3,1]
+
+t = i-c = 1-5 = -4 -> ignore because negative
+
+t = i-c = 1-4 = -3 -> ignore because negative
+
+t = i-c = 1-3 = -2 -> ignore because negative
+
+t = i-c = 1-1 = 0
+
+dp[0] = 0 (lookup of dp[t])
+
+1+dp[0] = 1 (add the current coin to the previous solution 1+dp[t])
+
+This means a possible solution to dp[1] is 1
+
+Since all other coin values would make dp[1] negative, and 1 < inf, we can update dp[1] to 1.
+
+Example 2: Calculating dp[7]
+
+dp[0]=0
+dp[1]=1
+dp[2]=2
+dp[3]=1
+dp[4]=1
+dp[5]=1
+dp[6]=2
+
+To calculate dp[7]:
+
+For c in D = [5,4,3,1]:
+
+t = i-c = 7-5 = 2 -> dp[2] = 2, 1+dp[2] = 3, 3 < inf, update dp[7] to 3
+
+t = i-c = 7-4 = 3 -> dp[3] = 1, 1+dp[3] = 2, 2 < 3, update dp[7] to 2
+
+t = i-c = 7-3 = 4 -> dp[4] = 1, 1+dp[4] = 2, 2 = 2, ignore
+
+t = i-c = 7-1 = 6 -> dp[6] = 2, 1+dp[6] = 3, 3 > 2, ignore
+
+We conclude that the minimum solution to dp[7] is 2, achieved by adding a 4 coin to dp[3], which is achieved by adding a 3 coin to dp[0]
+
+4 + 3 = 7
+
+def coin_change_dp(D,a, printTable=False):
+    dp=[float('inf')] * (a + 1) # initialize all fields in dp to infinity 
+    dp[0] = 0
+
+    for i in range(1, a+1):
+        for c in D:
+            t = i - c
+            if t >= 0:
+                dp[i] = min(dp[i], 1+dp[t])
+
+    if printTable:
+        print(dp)
+
+    return dp[a] if dp[a] != float('inf') else -1
+
+print(coin_change_dp([5,4,3,1], 7, printTable=True))
+
+## Coin Change Tabulation Complexity Analysis
+
+Time Complexity:
+
+For the worst case scenario, we need to iterate for all (i = 0; i <= a; i++)
+
+And for each i, we need to iterate over each coin in D
+
+All other operations within the loops are constant time lookups and subtractions, so the time complexity is O(a * |D|)
+
+Space Complexity:
+
+The space complexity is determined by the size of the dp array. This array is always of size a+1.
+
+Therefore the space complexity is O(a)
+
+Overall:
+
+Time Complexity: O(a * |D|)
+
+Space Complexity: O(a)
+
+
+\end{verbatim}

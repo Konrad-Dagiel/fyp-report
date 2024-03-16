@@ -7,6 +7,11 @@
 \usepackage{geometry} % For setting page margins
 \usepackage{lipsum} % For generating placeholder text
 \usepackage{natbib} % For bibliography
+\usepackage{listings} % For code
+\usepackage{xcolor}
+\usepackage[ruled,vlined]{algorithm2e} % For pseudocode
+\usepackage{amsmath} % For \text command
+\usepackage{float} % For H option
 
 % Page margins
 \geometry{
@@ -16,6 +21,23 @@
     top=1in,
     bottom=1in,
 }
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue},
+    stringstyle=\color{orange},
+    commentstyle=\color{green!70!black},
+    showstringspaces=false,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    numbers=left,
+    numberstyle=\small\ttfamily\color{gray},
+    frame=single,
+}
+
+\SetAlgoNlRelativeSize{-1}
 
 \onehalfspacing
 
@@ -36,5 +58,7 @@ A section on what this thesis is about
 \chapter*{Acknowledgements}
 
 \tableofcontents
+
+\include{chapters/ch-design.tex}
 
 \end{document}
