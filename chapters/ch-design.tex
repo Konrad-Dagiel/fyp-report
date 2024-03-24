@@ -19,11 +19,64 @@ We can then look for any patterns in the cache table which, given an initializat
 This is known as "tabulation", or "bottom-up dynamic programming".
 In order to demonstrate this, we will use a simple problem called The Fibonacci Problem.
 
-\section*{The Fibonacci Problem}
+\subsection{Demonstration of Dynamic Programming Principles using the Fibonacci Problem}
 \input{chapters/algorithms/al-fibonacci.tex}
 
+\section{Dynamic Programming Summary}
+
+In summary, the "dynamic programming way of thinking" involves:
+\begin{enumerate}
+    \item Creating a brute force solution.
+    \item Figuring out if the optimal substructure property holds.
+    \item Identifying the repeating and overlapping subproblems.
+    \item Introducing memoization to the brute force solution to eliminate repeated work.
+    \item Using tabulation to try to deduce the memoization table bottom-up rather than top-down.
+    \item Looking for ways to optimize space in the tabulation approach by reducing the size of the table.
+\end{enumerate}
+
+Using the Fibonacci example, we have demonstrated the way of thinking about a problem which is dynamic programming.
+We have went from an $O(2^n)$ time and $O(n)$ space complexity recursive solution to an $O(n)$ time and $O(1)$ space complexity solution using dynamic programming principles.
+The Project Notebook contains an in depth analysis of 8 well known dynamic programming problems, followed by my own original dynamic programming problems and solutions.
+Where applicable, the problems analyzed contain:
+
+\begin{enumerate}
+    \item The problem statement, and a deep explanation of the problem with examples. This may contain example greedy algorithms and proofs of why they do not actually work for the given problem.
+    \item A comprehensive brute force algorithm, with an implementation and complexity analysis.
+    \item A short informal proof of why the optimal substructure and overlapping subproblems attributes hold.
+    \item An explanation of how memoization is used in the problem, with an implementation and complexity analysis.
+    \item An explanation of how tabulation is used in the problem, with an implementation and complexity analysis.
+    \item An explanation of how we can space optimize the tabulation solution, with an implementation and complexity analysis.
+
+\end{enumerate}
+
+In the Project Notebook, the tabulation approach of each of the problems comes with a $printTable$ flag which, when set to $True$, displays the table which has been calculated for the specific problem.
+
 \section{The Coin Change Problem}
-\input{chapters/algorithms/al-coin_change}
+\input{chapters/algorithms/al-coin_change.tex}
 
 \section{Longest Increasing Subsequence}
-\input{chapters/algorithms/al-lis}
+\input{chapters/algorithms/al-lis.tex}
+
+\section{Max Subarray Sum}
+\input{chapters/algorithms/al-max_subarray_sum.tex}
+
+\section{Longest Alternating Subsequence}
+\input{chapters/algorithms/al-las.tex}
+
+\section{Binomial Coefficients}
+\input{chapters/algorithms/al-binomial_coefficients.tex}
+
+\section{Longest Common Subsequence}
+\input{chapters/algorithms/al-lcs.tex}
+
+\section{Longest Palindromic Subsequence}
+\input{chapters/algorithms/al-lps.tex}
+
+\section{Longest Contiguous Palindromic Substring}
+\input{chapters/algorithms/al-lcps.tex}
+
+\section{The Needleman-Wunsch Algorithm}
+\input{chapters/algorithms/al-needleman_wunsch.tex}
+
+\section{The Smith-Waterman Algorithm}
+

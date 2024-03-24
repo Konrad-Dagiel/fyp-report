@@ -1,0 +1,191 @@
+\begin{description}
+    \item[Problem Statement:]
+        Compute the n'th number in the Fibonacci sequence.\footnote{Where $fib(1) = 1$, $fib(2) = 1$ and $fib(n) = fib(n-1) + fib(n-2)$}
+        
+    \item[Input:] 
+        A positive integer $n$.
+        
+    \item[Output:] 
+        An positive integer $fib(n)$.
+        
+    \item[Example:]
+        For: 
+
+        $n = 7$
+        
+        $fib(n) = 13$
+
+    \item[Explanation:]
+        The Fibonacci sequence is as follows: 1,1,2,3,5,8,13,...\\
+        We can see that the 7th number in the sequence is 13.
+
+\end{description}
+
+
+\subsection{Brute Force Approach to The Fibonacci Problem}
+
+We start with a brute force approach which will use recursion. 
+The base cases are $fib(1) = 1$ and $fib(2) = 1$.
+By definition, the recursive case is $fib(n) = fib(n-1) + fib(n-2)$.
+An implementation of the brute force solution is given below.
+A sample python implementation is shown in Figure \ref{fig:fibonacci-bf}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def fib_bf(n):
+        if n <=2: return 1
+        return fib_bf(n-1) + fib_bf(n-2)
+    \end{lstlisting}
+    \caption{Fibonacci Brute Force Python Implementation}
+    \label{fig:fibonacci-bf}
+\end{figure}
+
+In order to understand just how inefficent this approach is, consider the calculation of fib(20).
+The brute force approach will split this calculation into the calculation of fib(19) + fib(18).
+Now, to calculate fib(19), we split it into fib(18) + fib(17), and to calculate fib(18) we split it into fib(17) + fib(16).
+Since the original problem was to calculate fib(19) + fib(18), and we need fib(18) to calculate fib(19), the calculation of fib(18) is repeated. 
+
+
+\subsection{Complexity Analysis of the Brute Force Approach to the Fibonacci Problem}
+
+\begin{description}
+    \item[Time Complexity:]
+    At each step in the calculation of $fib(n)$, we make two 'branches', where one calculates $fib(n-1)$ and the other calculates $fib(n-2)$.
+    This branching factor leads to an exponential growth in the number of function calls.
+    The number of function calls grows exponentially with $n$, as each level of the tree doubles the number of function calls.
+    Therefore the time complexity of this approach is $2 + 2^2 + 2^3 + ... + 2^n$ which is $O(2^n)$.
+        
+    \item[Space Complexity:] 
+        In the brute force approach to compute Fibonacci numbers, the space complexity is influenced by the recursive calls, each of which adds a frame to the call stack. However, as the recursion progresses, some of these frames can be discarded once their corresponding Fibonacci values have been computed.
+        Specifically, at any point during the recursion, we only need to keep track of the previous two Fibonacci numbers. Therefore, the maximum depth of the call stack at any point is at most $n$ due to the recursion.
+        This means that the space complexity of the brute force approach to compute Fibonacci numbers is $O(n)$.
+        
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(2^n)$\\
+        Space Complexity: $O(n)$
+        
+\end{description}
+
+\subsection{Memoization Approach to The Fibonacci Problem}
+Because we have optimal substructure\footnote{The optimal solution to fib(n-1) + the optimal solution to fib(n-2) will always be the optimal solution to fib(n).}
+and overlapping subproblems\footnote{The calculation of fib(n-1) contains the calculation of fib(n-2).}, we can make this calculation more efficient through the use of memoization.
+This simple adjustment involves storing a $(key, value)$ table called $memo$, where the key is an intermediate subproblem and the value is the intermediate result of that subproblem.
+Now, for any subproblem, we first check if the result is in memo and if it is, we return the result of that calculation in constant time.
+If the subproblem is not in $memo$, we calculate the intermediate result and cache it in $memo$.
+A sample python implementation is shown in Figure \ref{fig:fibonacci-memo}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def fib_memo(n, memo={}):
+        if n <= 2:
+            return 1
+        if n in memo:
+            return memo[n]
+        memo[n] = fib_memo(n-1, memo) + fib_memo(n-2, memo)
+        return memo[n]
+    \end{lstlisting}
+    \caption{Fibonacci Memoization Python Implementation}
+    \label{fig:fibonacci-memo}
+\end{figure}
+
+\subsection{Complexity Analysis of the Memoization Approach to The Fibonacci Problem}
+
+\begin{description}
+    \item[Time Complexity:]
+        Since each subproblem is only ever computed once, and any repeated subproblems are handled with a constant time table lookup,
+        the time complexity depends only on the amount of subproblems.
+        Since there are $n$ possible subproblems for any given input $n$,
+        the time complexity is reduced to $O(n)$
+
+    \item[Space Complexity:] 
+        The space complexity remains determined by the recursion call stack, at $O(n)$.
+        We also have to store the memo table, which contains an integer solution to each of the $n$ subproblems.
+        This is also $O(n)$, giving us a total $O(2n)$ space complexity.
+        This can be simplified to $O(n)$.
+
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n)$\\
+        Space Complexity: $O(n)$
+        
+\end{description}
+
+\subsection{Tabulation Approach to the Fibonacci Problem}
+    
+With the memoization approach, we saw how to compute the solution top-down, starting at $fib(n-1) + fib(n-2)$,
+arriving at the base cases, and working up from there.
+Notice that this step is unnecessary.
+If we can deduce $fib(3)$ from $fib(2) + fib(1)$ (both of which are given in the base case),
+and $fib(4)$ from $fib(3)$ and $fib(2)$,
+we can work bottom-up until we arrive at $fib(n)$.
+This reduces the space complexity from $O(2n)$ to $O(n)$,
+as all we need to do is store the table.
+It is common practice to refer to the table as $dp$ in tabulation approaches.
+
+A sample python implementation is shown in Figure \ref{fig:fibonacci-dp}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def fib_dp(n):
+        if n <= 2:
+            return 1
+    
+        dp = [0] * (n + 1)
+        dp[1] = 1
+    
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+    
+        return dp[n]
+    \end{lstlisting}
+    \caption{Fibonacci Tabulation Python Implementation}
+    \label{fig:fibonacci-dp}
+\end{figure}
+
+
+\section*{Space Optimized Approach to the Fibonacci Problem}
+We can often save space with the tabulation approach by releasing parts of the dp table which are not in use from memory.
+In this case, notice that we only need $fib(n-1) and fib(n-2)$ to deduce the result of $fib(n)$.
+The rest of the table does not need to be stored. 
+We can achieve this by storing just two variables, $prev$ and $curr$.
+For an arbitrary value $k$, $curr$ represents the value of $fib(k)$, $prev$ represents the value of $fib(k-1)$.
+We can calculate the result of $fib(n+1)$ from $prev$ and $curr$, then update $curr$ to the result, and $prev$ to what $curr$ was.
+Starting at $curr=1$ and $prev=0$ and repeating this $n-1$ times will make $curr = fib(n)$.
+
+A sample python implementation is shown in Figure \ref{fig:fibonacci-optimized}.
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def fib_optimized(n):
+        if n <= 1:
+            return n
+        
+        prev, curr = 0, 1
+        for _ in range(n-1):
+            prev, curr = curr, prev + curr
+            
+        return curr
+    \end{lstlisting}
+    \caption{Fibonacci Optimized Python Implementation}
+    \label{fig:fibonacci-optimized}
+\end{figure}
+
+\subsection{Complexity Analysis of the Tabulation Approach to the Fibonacci Problem}
+
+\begin{description}
+    \item[Time Complexity:]
+        The time complexity remains unchanged at $O(n)$.
+
+    \item[Space Complexity:] 
+        Since we are only storing two variables of constant size at a time,
+        and there is no recursion, the space complexity of this optimized version is $O(1)$.
+
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n)$\\
+        Space Complexity: $O(1)$
+        
+\end{description}
+
