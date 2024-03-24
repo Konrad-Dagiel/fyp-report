@@ -12,6 +12,11 @@
 \usepackage[ruled,vlined]{algorithm2e} % For pseudocode
 \usepackage{amsmath} % For \text command
 \usepackage{float} % For H option
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]  % Define a new theorem environment called "definition"
+
 
 % Page margins
 \geometry{
@@ -54,10 +59,33 @@
 A section on what this thesis is about
 
 \chapter*{Declaration}
+Declaration of Originality.\\
+In signing this declaration, you are conforming, in writing, that the submitted work is entirely your own original work, except where clearly attributed otherwise, and that it has not been submitted partly or wholly for
+any other educational award.\\
+I hereby declare that:\\
+• this is all my own work, unless clearly indicated otherwise, with full
+and proper accreditation;\\
+• with respect to my own work: none of it has been submitted at any educational institution contributing in any way to an educational award;\\
+• with respect to another’s work: all text, diagrams, code, or ideas,\\
+whether verbatim, paraphrased or otherwise modified or adapted, have\\
+been duly attributed to the source in a scholarly manner, whether\\
+from books, papers, lecture notes or any other student’s work, whether\\
+published or unpublished, electronically or in print.\\
+Signed: Konrad Dagiel\\
+Date: 17/04/2024
 
 \chapter*{Acknowledgements}
+Dynamic Programming was originally proposed by Richard Bellman in the 1950s.
+In Bellman's dynamic programming, problems are typically represented using states, actions, and transitions between states.
+Each state represents a specific configuration or situation in the problem domain, and actions define the possible decisions or choices that can be made from each state.
+This representation allows for a more structured approach to problem-solving and optimization.
+Throughout this notebook when we refer to Dynamic Programming, we refer to a more general, modernized version of Dynamic Programming.
 
 \tableofcontents
+
+\include{chapters/ch-introduction.tex}
+
+\include{chapters/ch-analysis.tex}
 
 \include{chapters/ch-design.tex}
 

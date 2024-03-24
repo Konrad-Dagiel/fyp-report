@@ -25,8 +25,6 @@
 
 \end{description}
 
-The problem appears trivial at first glance. One may be tempted to use a greedy method as follows:
-
 \subsection{Greedy Approach to the Coin Change Problem}
 
 Algorithm~\ref{algo:coin-change-greedy} shows a greedy approach to the coin change problem.
@@ -54,21 +52,19 @@ Algorithm~\ref{algo:coin-change-greedy} shows a greedy approach to the coin chan
     \KwRet{$r$}
 \end{algorithm}
 
-In Algorithm~\ref{algo:coin-change-greedy}, we always choose the coin with the largest value which will not make the total exceed a.
+In Algorithm~\ref{algo:coin-change-greedy}, we choose the coin with the largest value which will not make the total exceed a.
 
 \subsection{Optimality of the Greedy Approach to the Coin Change Problem}
 
-This algorithm is not optimal, and we can prove this by counter-example.\\
-A counter example is $D = [5,4,3,2,1]$, $a = 7$.\\
-Given these inputs, the greedy result is: $r1 = 3$  ([5,1,1]).\\
+This algorithm is not optimal, and we can prove this by counter-example.
+Take:$$D = [5,4,3,2,1], a = 7$$Given these inputs, the greedy result is: $r1 = 3$  ([5,1,1]).\\
 The optimal solution for these inputs is: $r2 = 2$ ([4,3]).\\
-We see that $r1 > r2$, meaning the greedy approach does not find the miminized solution.\\
+We see that $r1 > r2$, meaning the greedy approach does not find the miminized solution.
 
 \subsection{Correctness of the Greedy Approach to the Coin Change Problem}
 
-The greedy algorithm is also not correct, and we can prove this by another counter-example.\\
-A counter example is $D = [4,3]$, $a = 6$.\\
-Given these inputs, the greedy result is: $r1 = -1$  ([4]).\\
+The algorithm is also not correct, and we can prove this by another counter-example.
+Take:$$D = [4,3],a = 6$$Given these inputs, the greedy result is: $r1 = -1$  ([4]).\\
 The optimal solution for these inputs is: $r2 = 2$ ([3,3]).\\
 We see that the greedy approach fails when a solution is indeed possible, as shown by $r2$.\\
 Since we have shown that the greedy approach is neither correct nor optimal, we move on to the brute force solution.\\
@@ -77,16 +73,16 @@ Since we have shown that the greedy approach is neither correct nor optimal, we 
 \subsection{Brute Force Approach to the Coin Change Problem}
 
 The brute force approach to the coin change problem involves generating all possible coin combinations, and checking if any of them sum exactly to $a$.
-Of the ones that do, we return the minimum length.\\
-To try all possible coin combinations, we can subtract each coin denomination $c \in D$ from $a$, as long as $a - c >= 0$.\\
-We can repeat this step for each result obtained from this calculation (replacing $a$ with the intermediate result), until all possible coin combinations are explored.\\
-We can keep track of the shortest path through the resulting tree which has a leaf value of 0, to avoid storing the entire tree in memory.\\
+Of the ones that do, we return the minimum length.
+To try all possible coin combinations, we can subtract each coin denomination $c \in D$ from $a$, as long as $a - c >= 0$.
+We can repeat this step for each result obtained from this calculation (replacing $a$ with the intermediate result), until all possible coin combinations are explored.
+We can keep track of the shortest path through the resulting tree which has a leaf value of 0, to avoid storing the entire tree in memory.
 We return the length of the shortest path as $r$.\\
 
 
 % TODO NOTE: PLOT OF ALGORITHM HERE
 
-A sample python implementation is shown in figure \ref{fig:coin-change-bf}.
+A sample python implementation is shown in Figure \ref{fig:coin-change-bf}.
 
 \begin{figure}[h]
     \centering
@@ -109,7 +105,7 @@ A sample python implementation is shown in figure \ref{fig:coin-change-bf}.
 
 \begin{description}
     \item[Time Complexity:]
-    For the worst case scenario, let's assume each coin denomination $c \in D < a$ such that each node which is not a leaf node has $|D|$ children. This means we have $|D|$ recursive calls at the first level, $|D|^{2}$ at the second level, $|D|^{n}$ at the $n$'th level.\\
+    For the worst case scenario, let's assume each coin denomination $c \in D < a$ such that each node which is not a leaf node has $|D|$ children. This means we have $|D|$ recursive calls at the first level, $|D|^{2}$ at the second level, $|D|^{n}$ at the $n$'th level.
 
     The total number of recursive calls in this scenario is $|D| + |D|^{2} + ... + |D|^{a}$ which is $O(|D|^a)$.
     
@@ -122,7 +118,7 @@ A sample python implementation is shown in figure \ref{fig:coin-change-bf}.
         The space complexity is determined by the maximum depth of the recursion stack. In the worst case, the recursion depth is equal to the target amount $a$. Therefore, the space complexity is $O(a)$.
         
         
-    \item[Overall:] total\\
+    \item[Overall:] Total:\\
         Time Complexity: $O(|D|^a)$
 
         Space Complexity: $O(a)$
@@ -131,10 +127,13 @@ A sample python implementation is shown in figure \ref{fig:coin-change-bf}.
 
 \subsection{Memoization Approach to the Coin Change Problem}
 
-In the brute force algorithm, we have a chance to arrive at a value multiple times. For every path in the search tree,
-we can store intermediate results in a table which we will call $memo$ (for memoization) 
-so that the next time we arrive at a value, eg. 3, we don't have to repeat the work in finding the minimum amount of extra coins needed to sum to $a$.
-Instead we can simply look in the table with a constant time lookup.\\
+We can trivially see that the problem has the optimal substructure property.
+In the brute force algorithm, we have a chance to arrive at a value multiple times.
+This is because an intermediate value can be made up of different combinations of coins (eg, 3 can be made up of (2,1) or (1,1,1)).
+This demonstrates the overlapping subproblems property.
+Therefore, we can use memoization to prevent repeated calculations of the optimal number of coins needed to make up a given sub-amount.\\
+For every path in the search tree, we can store intermediate results in a table, so that the next time we arrive at a value, eg. 3, we don't have to repeat the work in finding the minimum amount of extra coins needed to sum to a.
+Instead we can simply look in the table with a constant time lookup.
 This optimization reduces search time greatly, as seen in subsection \ref{subsec:ca-coin-change-memo}.\\
 A sample python implementation is shown in figure \ref{fig:coin-change-memo}.
 
@@ -176,7 +175,7 @@ A sample python implementation is shown in figure \ref{fig:coin-change-memo}.
         representing the solution to each unique subproblem.
         Hence, the memory required to store the table is of order $O(a)$.
         
-    \item[Overall:] total\\
+    \item[Overall:] Total:\\
         Time Complexity: $O(|D| * a)$
 
         Space Complexity: $O(a)$
@@ -185,54 +184,57 @@ A sample python implementation is shown in figure \ref{fig:coin-change-memo}.
 
 \subsection{Tabulation Approach to the Coin Change Problem}
 
-Instead of doing a dfs to fill in the memo table, which requires a traversal of the exponential search tree, we can calculate the values in the memo table directly, and extract the answer from there.\\
-We will call the $memo$ table $dp$, as we are no longer doing memoization, but tabulation.\\
-$dp[i]$ represents the minimum amount of coins needed to get the amount $i$.\\
-For the example $D = [5,4,3,1]$, $a = 7$\\
-We initialize each $dp[i]$ to contain infinity.\\
-We know that $dp[0] = 0$ as it takes $0$ coins to add up to an amount of $0$. We can initialize this in our table.\\
-Now we can deduce $dp[1], dp[2], ... dp[a]$. $dp[a]$ will contain $r$.\\
-To get $dp[i]$, we will look at each coin $c \in D$ in sequence.\\
-For each $c \in D$, we take $i - c$ to get $t$, and look for $dp[t]$ if it exists.\\
-Our intermediate result is $1 + dp[t]$\\
+Instead of doing a dfs to fill in the memo table, we can calculate the values in the memo table directly, and extract the answer from there.
+We will call the $memo$ table $dp$, as we are no longer doing memoization, but tabulation.
+$dp[i]$ represents the minimum amount of coins needed to get the amount $i$.
+Consider the example:$$D = [5,4,3,1], a = 7$$
+We initialize each $dp[i]$ to contain infinity.
+We know that $dp[0] = 0$ as it takes $0$ coins to add up to an amount of $0$. We can initialize this in our table.
+Now we can deduce $dp[1], dp[2], ... dp[a]$. $dp[a]$ will contain $r$.
+To get $dp[i]$, we will look at each coin $c \in D$ in sequence.
+For each $c \in D$, we take $i - c$ to get $t$, and look for $dp[t]$ if it exists.
+Our intermediate result is $1 + dp[t]$.
 If this result is less than the current $dp[i]$ and is not negative, we update $dp[i] \leftarrow 1 + dp[t]$.\\
-The logic of this is that the amount of coins it takes to make the amount $dp[i]$ is the amount of coins it takes to make the amount $dp[t]$ plus one.\\
-The logic is demonstrated with the examples:\\
-Example 1: Calculating $dp[1]$\\
-$dp[0]=0$\\
-$dp[1]=\infty$\\
-$dp[2]=\infty$\\
-$dp[3]=\infty$\\
-$dp[4]=\infty$\\
-$dp[5]=\infty$\\
-$dp[6]=\infty$\\
-To calculate $dp[1]$:\\
+The logic of this is that the amount of coins it takes to make the amount $dp[i]$ is the amount of coins it takes to make the amount $dp[t]$ plus one.
+The logic is demonstrated with the examples:
+
+Example 1: Calculating $dp[1]$
+$$dp[0]=0$$
+$$dp[1]=\infty$$
+$$dp[2]=\infty$$
+$$dp[3]=\infty$$
+$$dp[4]=\infty$$
+$$dp[5]=\infty$$
+$$dp[6]=\infty$$
+$$dp[7]=\infty$$
+To calculate $dp[1] (i=1)$:\\
 For $c \in D = [5,4,3,1]$\\
-$t = i-c = 1-5 = -4$, ignore because negative\\
-$t = i-c = 1-4 = -3$, ignore because negative\\
-$t = i-c = 1-3 = -2$, ignore because negative\\
-$t = i-c = 1-1 = 0$\\
+$t = i-c = -4$, ignore because negative.\\
+$t = i-c = -3$, ignore because negative.\\
+$t = i-c = -2$, ignore because negative.\\
+$t = i-c = 0$\\
 Look up the value of $dp[t] = 0$.\\
 Now we take $1 + dp[0] = 1$.\\
 This means a possible solution to $dp[1]$ is 1.\\
-Since $1 < \infty$, we update $dp[1] \rightarrow 1$\\
-Example 2: Calculating $dp[7]$\\
-$dp[0]=0$\\
-$dp[1]=1$\\
-$dp[2]=2$\\
-$dp[3]=1$\\
-$dp[4]=1$\\
-$dp[5]=1$\\
-$dp[6]=2$\\
-$dp[7]=\infty$\\
-To calculate $dp[7]$:\\
+Since $1 < \infty$, we update $dp[1] \leftarrow 1$
+
+Example 2: Calculating $dp[7]$
+$$dp[0]=0$$
+$$dp[1]=1$$
+$$dp[2]=2$$
+$$dp[3]=1$$
+$$dp[4]=1$$
+$$dp[5]=1$$
+$$dp[6]=2$$
+$$dp[7]=\infty$$
+To calculate $dp[7] (i=7)$:\\
 For each $c \in D = [5,4,3,1]$:\\
-$t = i-c = 7-5 = 2$, $dp[2] = 2$, $1 + dp[2] = 3$, $3 < \infty$, update $dp[7] \rightarrow 3$\\
-$t = i-c = 7-4 = 3$, $dp[3] = 1$, $1+dp[3] = 2$, $2 < 3$, update $dp[7] \rightarrow 2$\\
-$t = i-c = 7-3 = 4$, $dp[4] = 1$, $1+dp[4] = 2$, $2 = 2$, ignore\\
-$t = i-c = 7-1 = 6$, $dp[6] = 2$, $1+dp[6] = 3$, $3 > 2$, ignore\\
-We conclude that the minimum solution to $dp[7] is 2$, achieved by adding a 4 coin to $dp[3]$, which is achieved by adding a 3 coin to $dp[0]$\\
-A sample python implementation is shown in figure \ref{fig:coin-change-dp}.\\
+$t = i-c = 2$, $1 + dp[2] = 3$, $3 < \infty$, update $dp[7] \leftarrow 3$\\
+$t = i-c = 3$, $1+dp[3] = 2$, $2 < 3$, update $dp[7] \leftarrow 2$\\
+$t = i-c = 4$, $1+dp[4] = 2$, $2 = 2$, ignore.\\
+$t = i-c = 6$, $1+dp[6] = 3$, $3 > 2$, ignore.\\
+We conclude that the minimum solution to $dp[7]$ is 2, achieved by adding a 4 coin to $dp[3]$, which is achieved by adding a 3 coin to $dp[0]$\\
+A sample python implementation is shown in Figure \ref{fig:coin-change-dp}.\\
 
 \begin{figure}[H]
     \centering
@@ -258,7 +260,7 @@ A sample python implementation is shown in figure \ref{fig:coin-change-dp}.\\
 \begin{description}
     \item[Time Complexity:]
         % REFERENCE TO PYTHON MANUAL
-        For the worst case scenario, we need to iterate for all $i = 0; i <= a; i++$.
+        For the worst case scenario, we need to iterate for all $0 \leq i \leq a$.
         And for each $i$, we need to iterate over each coin $c \in D$.
         All other operations within the loops are constant time lookups and subtractions, so the time complexity is $O(|D| * a)$
             

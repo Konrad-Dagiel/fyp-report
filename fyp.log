@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  16 MAR 2024 23:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  24 MAR 2024 17:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -247,38 +247,51 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box64
 \@float@everytoks=\toks28
 \@floatcapt=\box65
-) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks29
+\thm@bodyfont=\toks30
+\thm@headfont=\toks31
+\thm@notefont=\toks32
+\thm@headpunct=\toks33
+\thm@preskip=\skip74
+\thm@postskip=\skip75
+\thm@headsep=\skip76
+\dth@everypar=\toks34
+)
+\c@definition=\count297
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
-) (fyp.aux (chapters/ch-design.aux))
+) (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux))
 \openout1 = `fyp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
  (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
+\scratchcounter=\count298
 \scratchdimen=\dimen170
 \scratchbox=\box66
-\nofMPsegments=\count298
-\nofMParguments=\count299
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count300
+\nofMPsegments=\count299
+\nofMParguments=\count300
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count301
 \MPscratchDim=\dimen171
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
-\everyMPtoPDFconversion=\toks30
+\MPnumerator=\count302
+\makeMPintoPDFobject=\count303
+\everyMPtoPDFconversion=\toks36
 ) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -319,7 +332,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count303
+\c@lstlisting=\count304
 [1
 
 {C:/Users/kdawg/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [1
@@ -335,44 +348,54 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
  [4
 
 ]
-\openout2 = `chapters/ch-design.aux'.
+\openout2 = `chapters/ch-introduction.aux'.
 
- (chapters/ch-design.tex
+ (chapters/ch-introduction.tex
 Chapter 1.
-(chapters/algorithms/al-coin_change.tex [5
+) [5
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 61--66
+\openout2 = `chapters/ch-analysis.aux'.
+
+ (chapters/ch-analysis.tex
+Chapter 2.
+) [6
+
+
+
+
+]
+\openout2 = `chapters/ch-design.aux'.
+
+ (chapters/ch-design.tex
+Chapter 3.
+(chapters/algorithms/al-fibonacci.tex) (chapters/algorithms/al-coin_change.tex [7
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 67--71
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--85
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 75--81
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
+[9] [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 229--238
 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 188--236
-
- []
-
-[8] [9]) (chapters/algorithms/al-lis.tex
+) (chapters/algorithms/al-lis.tex
 Overfull \hbox (240.02606pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 Given an array nums, return the length of the longest strictly increasing subsequence. A subsequence does not have to be contiguous.[] 
  []
 
-
+[12]
 Overfull \hbox (40.5278pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 Explanation: The subsequence [2,5,7,101] is the longest increasing subsequence, with length 4.[] 
  []
@@ -382,22 +405,22 @@ Overfull \hbox (119.27711pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 Much like coin change, this problem appears trivial at first glance. One may attempt to be greedy as follows:[] 
  []
 
-[10]
+
 Overfull \hbox (429.02441pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 In this greedy algorithm we iterate through nums keeping track of the current max value enountered, incrementing our result each time a new larger value is encountered.[] 
  []
 
-
+[13]
 Overfull \hbox (1332.01654pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 We can try a brute force approach, where we start at index 0, and for each index choose wether we should exclude it from the subsequence or include it in the subsequence. We keep track of the prev_index, which represents the last index we included in the result, and the current_index, which is the index for which we are making the choice.[] 
  []
 
-[11]
+
 Overfull \hbox (423.77446pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 For the worst case scenario, There are n indices to consider. There are two subtrees at each decision, one where we include the current index, and one where we do not.[] 
  []
 
-
+[14]
 Overfull \hbox (513.02368pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 We can use memoization to avoid repeating subproblems, such as when we are deciding wether the next element should be added or not for multiple subsequences ending in the same element.[] 
  []
@@ -407,7 +430,7 @@ Overfull \hbox (1300.51682pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 Before proceeding with the recursive calls, the function checks if the result for the current combination of prev_index and current_index is already computed and stored in the memo dictionary. If it is, the stored result is returned immediately. This optimization allows the algorithm to avoid repeating work, speeding up the runtime.[] 
  []
 
-[12]
+[15]
 Overfull \hbox (838.52084pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 For each unique combination of (prev_index, current_index), the algorithm either calculates the result or looks it up in the memoization table. Since there are at most n choices for each index, the time complexity for a single subproblem is O(n).[] 
  []
@@ -422,7 +445,7 @@ Overfull \hbox (161.27675pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 The space complexity is increased to O(n^2), as the memo table needs to store all n^2 combinations in the worst case.[] 
  []
 
-[13]
+
 Overfull \hbox (129.77702pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 We can use tabulation to build a table from which we can deduce the result, similar to the coin change problem.[] 
  []
@@ -467,7 +490,7 @@ Overfull \hbox (565.52322pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 So for dp[i], by the same logic, we simply put max(1,1+dp[j1],1+dp[j2],1+dp[j3]...) (only include 1+dp[jx] in the max function if nums[i] < nums[jx], to maintain increasing subsequence property)[] 
  []
 
-[14]
+[16]
 Overfull \hbox (124.52707pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 All other operations within the loops are constant time lookups and max(a,b), so the time complexity is O(n^2)[] 
  []
@@ -477,24 +500,24 @@ Overfull \hbox (45.77776pt too wide) in paragraph at lines 226--226
 []\OT1/cmtt/m/n/10 The space complexity is determined by the size of the dp array. This array is always of size n.[] 
  []
 
-)) [15] (fyp.aux (chapters/ch-design.aux))
+)) [17] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6950 strings out of 474435
- 108820 string characters out of 5741933
- 1977190 words of memory out of 5000000
- 29195 multiletter control sequences out of 15000+600000
- 566649 words of font info for 66 fonts, out of 8000000 for 9000
+ 7099 strings out of 474435
+ 112370 string characters out of 5741933
+ 1970190 words of memory out of 5000000
+ 29322 multiletter control sequences out of 15000+600000
+ 566984 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,16n,93p,447b,1375s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on fyp.pdf (16 pages, 218331 bytes).
+ 79i,16n,93p,466b,1375s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on fyp.pdf (18 pages, 226543 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
