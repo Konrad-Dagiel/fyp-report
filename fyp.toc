@@ -30,10 +30,14 @@
 \contentsline {subsection}{\numberline {3.4.7}Tabulation Approach to Longest Increasing Subsequence}{21}{}%
 \contentsline {subsection}{\numberline {3.4.8}Complexity Analysis of the Tabulation Approach to Longest Increasing Subsequence}{22}{}%
 \contentsline {section}{\numberline {3.5}Max Subarray Sum}{22}{}%
-\contentsline {section}{\numberline {3.6}Longest Alternating Subsequence}{22}{}%
-\contentsline {section}{\numberline {3.7}Binomial Coefficients}{22}{}%
-\contentsline {section}{\numberline {3.8}Longest Common Subsequence}{22}{}%
-\contentsline {section}{\numberline {3.9}Longest Palindromic Subsequence}{22}{}%
-\contentsline {section}{\numberline {3.10}Longest Contiguous Palindromic Substring}{22}{}%
-\contentsline {section}{\numberline {3.11}The Needleman-Wunsch Algorithm}{22}{}%
-\contentsline {section}{\numberline {3.12}The Smith-Waterman Algorithm}{22}{}%
+\contentsline {subsection}{\numberline {3.5.1}Brute Force Approach to Max Subarray Sum}{22}{}%
+\contentsline {subsection}{\numberline {3.5.2}Complexity Analysis of the Brute Force Approach to Max Subarray Sum}{23}{}%
+\contentsline {subsection}{\numberline {3.5.3}Kadanes Algorithm for Max Subarray Sum}{23}{}%
+\contentsline {subsection}{\numberline {3.5.4}Complexity Analysis of Kadane's Algorithm}{25}{}%
+\contentsline {section}{\numberline {3.6}Longest Alternating Subsequence}{25}{}%
+\contentsline {section}{\numberline {3.7}Binomial Coefficients}{25}{}%
+\contentsline {section}{\numberline {3.8}Longest Common Subsequence}{25}{}%
+\contentsline {section}{\numberline {3.9}Longest Palindromic Subsequence}{25}{}%
+\contentsline {section}{\numberline {3.10}Longest Contiguous Palindromic Substring}{25}{}%
+\contentsline {section}{\numberline {3.11}The Needleman-Wunsch Algorithm}{25}{}%
+\contentsline {section}{\numberline {3.12}The Smith-Waterman Algorithm}{25}{}%

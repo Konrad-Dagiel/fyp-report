@@ -29,15 +29,15 @@ Much like coin change, this problem appears trivial at first glance. One may att
     \label{algo:lis-greedy}
     \KwIn{An integer array $nums$.}
     \KwOut{An integer $lis$, the longest increasing subsequence in $nums$.}
-    $lis := 0$\\
-    $index := 0$\\
-    $cur := nums[0]$\\
+    $lis := 0$\;
+    $index := 0$\;
+    $cur := nums[0]$\;
     \While{$index \leq |nums|$}{
         \If{$nums[index] > cur$}{
-            $lis += 1$\\
-            $cur := nums[index]$
+            $lis += 1$\;
+            $cur := nums[index]$\;
         }
-        $index +=1$
+        $index +=1$\;
     }
     \KwRet{$lis$}
 \end{algorithm}
