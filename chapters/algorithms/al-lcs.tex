@@ -1,0 +1,168 @@
+\begin{description}
+    \item[Problem Statement:]
+        Given two strings, return the length of their longest common subsequence\footnote{Subsequences do not have to be contiguous.}.
+
+    \item[Input:] 
+        Two strings $text1$ and $text2$.
+    \item[Output:] 
+        An integer $lcs$, the longest common subsequence of $text1$ and $text2$.
+        
+    \item[Example:] For:\\
+        $text1 = "abcde"$\\
+        $text2 = "ace"$\\
+        $lcs = 3$
+
+    \item[Explanation:]
+        The longest common subsequence of $"abcde"$ and $"ace"$ is $"ace"$, which is of length $3$.
+   
+\end{description}
+
+\subsection{Longest Common Subsequence Brute Force}
+The naiive way to find the longest common subsequence of two strings is to generate all possible subsequences of both strings.
+We initialize a $lcs$ variable to store the length of the longest common subsequence.
+We then iterate over each list of subsequences and report any common subsequences we find, updating $lcs$ accordingly.
+Finally we return $lcs$.
+
+\subsection{Complexity Analysis of the Brute Force Approach to Longest Common Subsequence}
+For the calculation of worst case time and space complexity, we assume that both strings are equal in length, and that length is denoted by $n$.
+
+\begin{description}
+    \item[Time Complexity:]
+        The time complexity of generating every subsequence of a string of length $n$ is $O(2^n)$,
+        and doing this for both strings is $O(2 * (2^n))$ which is $O(2^n+1)$,
+        as for each character we decide if we include it in or exclude it from the substring.
+        The time complexity of iterating over two lists of substrings both of size $O(2^n)$ and looking for matches is $O((2^n)^2)$ which is equal to $O(2^{2n})$.
+        This is still of order $O(2^n)$.
+
+        
+    \item[Space Complexity:]
+        The space complexity of storing every subsequence of a string of length $n$ is $O(2^n)$.
+        As we must do this for two strings, the total space complexity required is $O(2 * 2^n)$ which is of order $O(2^n)$.
+
+    \item[Overall:] Total:\\
+        Time Complexity: $O(2^n)$\\
+        Space Complexity: $O(2^n)$
+    
+\end{description}
+
+Notice that:
+
+OBSERVATION 1: If we have a common character at the current position, such as position 1 in:
+
+$$text1=abcde, text2=ace$$
+
+The solution will be $1 + lcs(bcde,ce)$\footnote{Remove the common character from both texts, add 1 and recurse. The reason we add 1 is because each common character contributes 1 length to our final output.}.
+This shows the problem has the optimal substructure property.
+
+OBSERVATION 2: If there is no common character at the current position such as in:
+
+$$text1=bcde, text2=ce$$
+
+The solution will be $max(lcs(cde,ce), lcs(bcde,e))$\footnote{Remove the first character from either the first or second text, recurse on both cases.}.
+As we have the chance to recurse on the same two substrings multiple times, the problem has the overlapping subproblems property.
+\subsection{Tabulation Approach to Longest Common Subsequence}
+We can use these two cases to solve this problem by tabulation.
+We create a table called $dp$ with $i+1$ rows and $j+1$ columns, where $i$ and $j$ are the lengths of $text1$ and $text2$ respectively.
+Each row and column of $dp$ represents a character in $text1$ and $text2$.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+          & \textbf{a} & \textbf{c} & \textbf{e} \\
+        \hline
+        \textbf{a} &   &   &   \\
+        \hline
+        \textbf{b} &   &   &    \\
+        \hline
+        \textbf{c} &   &   &    \\
+        \hline
+        \textbf{d} &   &   &   \\
+        \hline
+        \textbf{e} &   &   &    \\
+        \hline
+    \end{tabular}
+\end{table}
+
+In this table, for example,
+$dp[0][0]$ will represent $lcs(abcde,ace) \rightarrow$  the solution.
+$dp[3][1]$ will represent $lcs(de,ce)$ ect..
+i.e. $dp[i][j]$ represents the longest common subseqence of $text1[i:]$ and $text2[j:]$.
+
+We fill the table starting from the bottom right as follows:
+
+\begin{enumerate}
+    \item If the row and column have the same label, we have found a common character.
+
+    As per OBSERVATION 1, we fill the space with $1 + dp[i+1][j+1]$.
+    
+    \item If the row and col do not have the same label, we must use OBSERVATION 2:
+
+    Fill the space with $max(dp[i][j+1], dp[i+1][j])$.
+    
+    \item If we go out of bounds, we simply take zero\footnote{For ease of code, the grid is ($i+1$) x ($j+1$) and initialized to all zeros, so we don't have to check for going out of bounds.}.
+\end{enumerate}
+
+Our solution will be located at $dp[0][0]$, which represents $lcs(text1,text2)$.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+          & \textbf{a} & \textbf{c} & \textbf{e} \\
+        \hline
+        \textbf{a} & 3 & 2 & 1 \\
+        \hline
+        \textbf{b} & 2 & 2 & 1  \\
+        \hline
+        \textbf{c} & 2 & 2 & 1  \\
+        \hline
+        \textbf{d} & 1 & 1 & 1 \\
+        \hline
+        \textbf{e} & 1 & 1 & 1  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
+A sample python implementation is shown in Figure \ref{fig:lcs-dp}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def lcs(text1, text2):
+        dp=[[0 for j in range(len(text2)+1)] for i in range(len(text1)+1)]
+    
+        for i in range(len(text1)-1,-1,-1):
+            for j in range(len(text2)-1,-1,-1):
+                if text1[i] == text2[j]:
+                    dp[i][j] = 1 + dp[i+1][j+1]
+                else:
+                    dp[i][j] = max(dp[i][j+1], dp[i+1][j])
+    
+        return dp[0][0]
+    \end{lstlisting}
+    \caption{Longest Common Subsequence Tabulation Python Implementation}
+    \label{fig:lcs-dp}
+\end{figure}
+
+\subsection{Complexity Analysis of the Tabulation Approach to Longest Common Subsequence}
+
+Let $i$ be the length of $text1$, and $j$ be the length of $text2$.
+
+\begin{description}
+    \item[Time Complexity:]
+        The time complexity of filling an $i * j$ table with values, where each value is derived from a constant time lookup and a constant time addition or max function is $O(i * j)$.
+
+    \item[Space Complexity:] 
+        The space complexity of storing an $i * j$ table is $O(i * j)$.
+
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(i * j)$\\
+        Space Complexity: $O(i * j)$
+    
+\end{description}
+
+NOTE THAT SINCE EACH ROW OF THIS TABLE CAN BE COMPUTED USING THE PREVIOUS ROW ONLY, THE SAME TWO-ROW METHOD CAN BE USED AS IN BINOMIAL COEFFICIENTS

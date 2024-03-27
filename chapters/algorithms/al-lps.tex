@@ -1,0 +1,35 @@
+\begin{description}
+    \item[Problem Statement:]
+        Given a string, return the length of the longest subsequence\footnote{Subsequences do not have to be continuous.} of the string which is a palindrome\footnote{A palindrome is a string which is identical to itself when reversed (Example: "racecar").}.
+    
+    \item[Input:]
+        A string $s$.
+        
+    \item[Output:]
+        An integer $lps$ which represents the longest palondromic subsequence of $s$.
+        
+    \item[Example:] For:\\
+        $s = "babbb"$\\
+        $lps = 4$
+        
+    \item[Explanation:]
+        $"bbbb"$ is the longest palindromic subsequence of $s$. It has length $4$.
+\end{description}
+
+\subsection{Tabulation Approach to Longest Palindromic Subsequence}
+This problem is simply a special case of Longest Common Subsequence.
+The longest palindromic subsequence of $s$ is simply the longest common subsequence of $s$ and $reverse(s)$.
+Therefore the same logic applies. See Section \ref{section:lcs}.
+
+A sample python implementation is shown in Figure \ref{fig:lps-dp}.
+For the implementation of the lcs subroutine, see Figure \ref{fig:lcs-dp}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def lps(s):
+        return lcs(s,s[::-1])
+    \end{lstlisting}
+    \caption{Longest Palindromic Subsequence Python Implementation}
+    \label{fig:lps-dp}
+\end{figure}

@@ -222,7 +222,7 @@ A sample python implementation is shown in Figure \ref{fig:binomial-optimized}.
 \begin{figure}[H]
     \centering
     \begin{lstlisting}
-    def C_optimized(n,k,printTable=False):
+    def C_optimized(n,k):
         if k > n-k and n-k >= 0:
             k = n-k
         oldRow = [0] * (k+1)
