@@ -22,9 +22,9 @@
 The naiive way to solve this problem is to generate every possible subarray of $nums$
 starting with the subarray containing only $nums[0]$, and ending with the entirety of $nums$.
 Then sum each subarray and get the maximum of these sums.
-Instead of generating every subarray, we can instead iterate over each subarray in place by iterating over $nums$ with a $start$ pointer marking the start of the subarray,
+Instead of generating every subarray, we can iterate over each subarray in place by iterating over $nums$ with a $start$ pointer marking the start of the subarray,
 and iterate over the rest of the array with an $end$ pointer marking the end of the subarray. This reduces the space complexity from O(n) to O(1) (see section \ref{subsec:ca-max-subarray-sum-bf}).
-We can improve this by keeping track of a $current\_sum$ and $max\_sum$ and updating them dynamically as we execute the $end$ loop rather than summing each subarray after it is generated,
+We can improve this further by keeping track of a $current\_sum$ and $max\_sum$ and updating them dynamically as we execute the $end$ loop rather than summing each subarray after it is generated,
 reducing the time complexity from $O(n^3)$ to $O(n^2)$ (see section \ref{subsec:ca-max-subarray-sum-bf}).
 
 A sample python implementation is shown in Figure \ref{fig:max-subarray-sum-bf}.

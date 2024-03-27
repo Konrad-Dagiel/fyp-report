@@ -35,9 +35,22 @@
 \contentsline {subsection}{\numberline {3.5.3}Kadanes Algorithm for Max Subarray Sum}{23}{}%
 \contentsline {subsection}{\numberline {3.5.4}Complexity Analysis of Kadane's Algorithm}{25}{}%
 \contentsline {section}{\numberline {3.6}Longest Alternating Subsequence}{25}{}%
-\contentsline {section}{\numberline {3.7}Binomial Coefficients}{25}{}%
-\contentsline {section}{\numberline {3.8}Longest Common Subsequence}{25}{}%
-\contentsline {section}{\numberline {3.9}Longest Palindromic Subsequence}{25}{}%
-\contentsline {section}{\numberline {3.10}Longest Contiguous Palindromic Substring}{25}{}%
-\contentsline {section}{\numberline {3.11}The Needleman-Wunsch Algorithm}{25}{}%
-\contentsline {section}{\numberline {3.12}The Smith-Waterman Algorithm}{25}{}%
+\contentsline {subsection}{\numberline {3.6.1}Brute Force Approach to Longest Alternating Subsequence}{25}{}%
+\contentsline {subsection}{\numberline {3.6.2}Complexity Analysis of the Brute Force Approach to Longest Alternating Subsequence}{26}{}%
+\contentsline {subsection}{\numberline {3.6.3}Auxiliary Arrays Solution for Longest Alternating Subsequence}{27}{}%
+\contentsline {subsection}{\numberline {3.6.4}Complexity Analysis of the Auxiliary Arrays Approach to Longest Alternating Subsequence}{28}{}%
+\contentsline {subsection}{\numberline {3.6.5}Optimized Soluiton to Longest Alternating Subsequence}{28}{}%
+\contentsline {subsection}{\numberline {3.6.6}Complexity Analysis of the Optimized Approach to Longest Alternating Subsequence}{29}{}%
+\contentsline {section}{\numberline {3.7}Binomial Coefficients}{29}{}%
+\contentsline {subsection}{\numberline {3.7.1}Brute Force Approach to Binomial Coefficients}{29}{}%
+\contentsline {subsection}{\numberline {3.7.2}Complexity Analysis of the Brute Force Approach to Binomial Coefficients}{30}{}%
+\contentsline {subsection}{\numberline {3.7.3}Memoization Approach to Binomial Coefficients}{30}{}%
+\contentsline {subsection}{\numberline {3.7.4}Complexity Analysis of the Memoization Approach to Binomial Coefficients}{30}{}%
+\contentsline {subsection}{\numberline {3.7.5}Tabulation Approach to Binomial Coefficients}{31}{}%
+\contentsline {subsection}{\numberline {3.7.6}Complexity Analysis of the Tabulation Approach to Binomial Coefficients}{32}{}%
+\contentsline {subsection}{\numberline {3.7.7}Optimzied Tabulation Approach to Binomial Coefficeints}{32}{}%
+\contentsline {section}{\numberline {3.8}Longest Common Subsequence}{33}{}%
+\contentsline {section}{\numberline {3.9}Longest Palindromic Subsequence}{33}{}%
+\contentsline {section}{\numberline {3.10}Longest Contiguous Palindromic Substring}{33}{}%
+\contentsline {section}{\numberline {3.11}The Needleman-Wunsch Algorithm}{33}{}%
+\contentsline {section}{\numberline {3.12}The Smith-Waterman Algorithm}{33}{}%

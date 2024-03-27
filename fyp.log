@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  26 MAR 2024 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  27 MAR 2024 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -395,24 +395,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--238
 
  []
 
-[16]) (chapters/algorithms/al-lis.tex [17] [18] [19] [20] [21]) (chapters/algorithms/al-max_subarray_sum.tex [22] [23] [24]) (chapters/algorithms/al-las.tex) (chapters/algorithms/al-binomial_coefficients.tex) (chapters/algorithms/al-lcs.tex) (chapters/algorithms/al-lps.tex) (chapters/algorithms/al-lcps.tex) (chapters/algorithms/al-needleman_wunsch.tex)) [25] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux))
+[16]) (chapters/algorithms/al-lis.tex [17] [18] [19] [20] [21]) (chapters/algorithms/al-max_subarray_sum.tex [22] [23] [24]) (chapters/algorithms/al-las.tex [25] [26] [27] [28]) (chapters/algorithms/al-binomial_coefficients.tex [29] [30] [31] [32]) (chapters/algorithms/al-lcs.tex) (chapters/algorithms/al-lps.tex) (chapters/algorithms/al-lcps.tex) (chapters/algorithms/al-needleman_wunsch.tex)) [33] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7178 strings out of 474435
- 114515 string characters out of 5741933
+ 7207 strings out of 474435
+ 114940 string characters out of 5741933
  2005190 words of memory out of 5000000
- 29380 multiletter control sequences out of 15000+600000
+ 29409 multiletter control sequences out of 15000+600000
  566984 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,17n,93p,466b,1371s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on fyp.pdf (26 pages, 269969 bytes).
+Output written on fyp.pdf (34 pages, 298213 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
+ 191 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

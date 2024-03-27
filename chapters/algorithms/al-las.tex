@@ -1,0 +1,227 @@
+\begin{description}
+    \item[Problem Statement:]
+        Given an array, find the length of the longest alternating subsequence in the array\footnote{Subsequences do not have to be continuous.}.
+        A sequence ${x1,x2,x3,x4...xn}$ is alternating if its elements satisfy one of the following:
+
+        $x1>x2<x3>x4<...$
+        
+        $x1<x2>x3<x4>...$
+        
+    \item[Input:]
+        An integer array $nums$.
+        
+    \item[Output:] 
+        An integer $max\_length$.
+        
+    \item[Example:] For:\\
+        $nums = [1,17,5,10,13,15,10,5,16,8]$\\
+        $max_length = 7$
+
+    \item[Explanation:]
+        The longest alternating subsequence in $nums$ is $[1,17,5,15,5,16,8]$ which has length $7$.
+
+\end{description}
+
+    
+
+\subsection{Brute Force Approach to Longest Alternating Subsequence}
+
+The naiive way to approach this problem is to generate every possible subsequence of nums. 
+For each subsequence, we can check if it is alternating iteratively, and if it is, calculate its length.
+We keep track of the maximum length of all of the alternating subsequences.
+
+An implementation of the brute force algorithm is given in Figure \ref{fig:las-bf}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def is_alternating(sequence):
+        if len(sequence) < 3:
+            return True
+    
+        for i in range(1, len(sequence) - 1):
+            if not ((sequence[i - 1] > sequence[i] < sequence[i + 1]) or
+                    (sequence[i - 1] < sequence[i] > sequence[i + 1])):
+                return False
+        return True
+    
+    def las_bf(nums):
+        if not nums:
+            return 0
+    
+        n = len(nums)
+        max_length = 1
+    
+        for i in range(1 << n):
+            subsequence = [nums[j] for j in range(n) if (i & (1 << j)) > 0]
+            if is_alternating(subsequence):
+                max_length = max(max_length, len(subsequence))
+    
+        return max_length
+    \end{lstlisting}
+    \caption{Longest Alternating Subsequence Brute Force Python Implementation}
+    \label{fig:las-bf}
+\end{figure}
+
+
+In line 18 in Figure \ref{fig:las-bf}, The expression $1 << n$ represents a bitwise left shift operation.
+In Python, $<<$ is the left shift operator, and it shifts the binary representation of the number to the left by $n$ positions.
+In the context of generating all possible subsequences, $1 << n$ is used to create a bitmask with the rightmost $n$ bits set to $1$.
+Each bit in the bitmask corresponds to whether the corresponding element in the array is included or excluded in the current subsequence.
+The line "for $i$ in range$(1 << n)$" generates all possible subsequences by iterating through all bitmasks from 0 to $2^n-1$.
+
+\subsection{Complexity Analysis of the Brute Force Approach to Longest Alternating Subsequence}
+Let n be the length of nums.
+\begin{description}
+    \item[Time Complexity:]
+        The complexity of generating every possible subsequence is $O(2^n)$.
+        Checking if a sequence is alternating is $O(|sequence|)$,
+        and getting the length of a subsequence, as well as comparing it to the $max\_length$ are $O(1)$.
+        This is overall of order $O(2^n)$.
+        
+    \item[Space Complexity:] 
+        The space complexity is $O(n)$, as we must store a single subarray at a time,
+        which in the worst case is of length $n$.
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(2^n)$\\
+        Space Complexity: $O(n)$
+    
+\end{description}
+
+Notice that for an aribitrary longest alternating subsequence of length $k$ ending at index $i$,
+if there exists exactly one number which can extend the sequence,
+the length of the total longest alternating subsequence is guaranteed to be $k+1$.
+This shows the optimal substructure property.
+Also, when looking for subsequences at index $i$,
+we must re-compute all of the subsequences at index $i-1$.
+This shows the overlapping subproblems property.
+
+As using memoization on subsequence problems is not space efficient,
+we can use tabulation and only store the necessary information rather than an intermediate result for every subsequence.
+The following is known as the Auxiliary Arrays solution.
+
+\subsection{Auxiliary Arrays Solution for Longest Alternating Subsequence}
+Two auxiliary arrays $inc$ and $dec$, of length $|nums|$ are initialized.
+$inc[i]$ contains the length of the longest alternating subsequence of $nums[0:i]$,
+where the last element of the subsequence is greater than the previous element.
+$dec[i]$ contains the length of the longest alternating subarray of $nums[0:i]$,
+where the last element of the subsequence is less than the previous element.
+
+The algorithm iterates through $nums$, considering each element $nums[i]$ and updating the inc and dec arrays based on the following conditions:
+
+\begin{enumerate}
+    \item If $nums[i]$ is greater than $nums[j]$ for some previous index $j$, it means the sequence can be extended in an increasing manner.
+    In this case, $inc[i]$ is updated to be the maximum of its current value and the length of the longest decreasing subsequence ending at index $j+1$, found in $dec[j+1]$.
+
+    \item If $nums[i]$ is smaller than $nums[j]$ for some previous index $j$, it means the sequence can be extended in a decreasing manner.
+    In this case, $dec[i]$ is updated to be the maximum of its current value and the length of the longest increasing subsequence ending at index $j+1$, found in $inc[j+1]$.
+
+    \item The length of the longest alternating subsequence is the maximum value in the $inc$ and $dec$ arrays.
+\end{enumerate}
+
+
+A sample python implementation is shown in Figure \ref{fig:las-auxiliary}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def las_auxiliary(nums):
+        n = len(nums)
+        
+        inc = [1] * n
+        dec = [1] * n
+    
+        for i in range(1, n):
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    inc[i] = max(inc[i], dec[j] + 1)
+                elif nums[i] < nums[j]:
+                    dec[i] = max(dec[i], inc[j] + 1)
+
+        return max(max(inc), max(dec))
+    \end{lstlisting}
+    \caption{Longest Alternating Subsequence Auxiliary Arrays Python Implementation}
+    \label{fig:las-auxiliary}
+\end{figure}
+
+\subsection{Complexity Analysis of the Auxiliary Arrays Approach to Longest Alternating Subsequence}
+Let n be the length of nums.
+\begin{description}
+    \item[Time Complexity:]
+        We use a double nested for loop to iterate over $nums$.
+        This gives a complexity of $O(n^2)$.
+        All other operations are either constant time lookups, updates or $max(a,b)$,
+        all of which are $O(1)$.
+        
+    \item[Space Complexity:] 
+        The space complexity is $O(2n)$, which is of order $O(n)$.
+        This is because we must store the $inc$ array and the $dec$ array,
+        each of which have the same length as $nums$.
+        All other variables are stored with constant space complexity.
+
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n^2)$\\
+        Space Complexity: $O(n)$
+    
+\end{description}
+
+
+\subsection{Optimized Soluiton to Longest Alternating Subsequence}
+Observe that at each step, the max of $inc$ and $dec$ can be found at the current index of the arrays,
+so we do not need to store the entire $inc$ and $dec$ arrays.
+Instead, we can use an $inc$ and $dec$ variable which will hold the value stored at $inc[i]$ and $dec[i]$ respectively.
+This is because a maximum alternating subsqeuence of $nums[0:a]$ will never be of lower length than a maximum alternating subsequence of $nums[0:b]$ if $a > b$.
+
+We can do a single iteration over nums where:
+
+\begin{enumerate}
+    \item $inc$ should be set to $dec + 1$, if and only if the last element in the alternating sequence was less than its previous element.
+    
+    \item $dec$ should be set to $inc + 1$, if and only if the last element in the alternating sequence was greater than its previous element.
+
+\end{enumerate}
+
+A sample python implementation is shown in Figure \ref{fig:las-optimized}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def las_optimized(nums):
+        n = len(nums)
+    
+        inc = 1
+        dec = 1
+    
+        for i in range(1, n):
+            if nums[i] > nums[i - 1]:
+                inc = dec + 1
+            elif nums[i] < nums[i - 1]:
+                dec = inc + 1
+    
+        result = max(inc, dec)
+        return result
+    \end{lstlisting}
+    \caption{Longest Alternating Subsequence Optimzied Python Implementation}
+    \label{fig:las-optimized}
+\end{figure}
+
+\subsection{Complexity Analysis of the Optimized Approach to Longest Alternating Subsequence}
+Let n be the length of nums.
+
+\begin{description}
+    \item[Time Complexity:]
+        We use a single for loop to iterate over $nums$.
+        This gives a complexity of $O(n)$.
+        All other operations are either constant time lookups,
+        updates or $max(a,b)$, all of which are $O(1)$.
+        
+    \item[Space Complexity:] 
+        The space complexity is $O(1)$ as we only need to store a single value for $inc$ and $dec$.
+
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n)$\\
+        Space Complexity: $O(1)$
+    
+\end{description}

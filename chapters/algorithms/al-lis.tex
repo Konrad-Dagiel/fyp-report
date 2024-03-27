@@ -158,7 +158,6 @@ A sample python implementation is shown in Figure \ref{fig:lis-memo}.
             if prev_index < 0 or nums[current_index] > nums[prev_index]:
                 include_current = 1 + dfs(current_index, current_index + 1)
     
-            # Save the result in the memoization dictionary
             memo[(prev_index, current_index)] = max(include_current, exclude_current)
     
             return memo[(prev_index, current_index)]

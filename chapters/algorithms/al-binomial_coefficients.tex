@@ -1,0 +1,244 @@
+\begin{description}
+    \item[Problem Statement:]
+        Given as input positive integers $n$ and $k$ where $n \geq k$, calculate how many different ways you can select $k$ unique examples from a set of size $n$.
+        In other words, calculate $C(n,k)$ where: $$C(n,k) = n! / k! ((n-k)!)$$
+
+    \item[Input:] 
+        Two positive integers $C(n,k)$
+        
+    \item[Output:]
+        A single positive integer $C(n,k)$
+        
+    \item[Example:] For:\\
+        $n = 4$\\
+        $k = 2$\\
+        $C(n,k) = 6$
+
+    \item[Explanation:]
+        There are 6 unique ways you can choose 2 different examples from a set of size 4.
+        
+\end{description}
+
+We know that by definition:
+
+$$C(n,k) = C(n-1,k-1) + C(n-1,k)$$
+
+$$C(n,0) = 1$$
+
+$$C(n,n) = 1$$
+
+We can use this as a recursive case and base cases in a brute force solution.
+
+\subsection{Brute Force Approach to Binomial Coefficients}
+We can use recursion to arrive at our answer, using the definition as our recursive case and our base cases.
+
+A sample python implementation is shown in Figure \ref{fig:binomial-bf}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def C_bf(n,k):
+        if k == 0 or k == n: return 1
+        return C_bf(n-1,k-1) + C_bf(n-1,k)
+    \end{lstlisting}
+    \caption{Binomial Coefficients Brute Force Python Implementation}
+    \label{fig:binomial-bf}
+\end{figure}
+
+\subsection{Complexity Analysis of the Brute Force Approach to Binomial Coefficients}
+\begin{description}
+    \item[Time Complexity:]
+        For our analysis, in the worst case $k$ is equal to $n/2$.
+        This means that at each recursion,
+        we create two subproblems.
+        We do this $n$ times, giving a total time complexity of $O(2^n)$.
+
+    \item[Space Complexity:] 
+        The space complexity is determined by the depth of recursion, which is $O(n)$.
+
+    \item[Overall:] Total:\\
+        Time Complexity: $O(2^n)$\\
+        Space Complexity: $O(n)$
+    
+\end{description}
+
+\subsection{Memoization Approach to Binomial Coefficients}
+If we look at the trace of calculating $C(4,2)$ in our recursive algorithm, we can see that it is guaranteed to be the sum of $C(3,1)$ and $C(3,2)$, as by definition $C(n,k) = C(n-1,k-1) + C(n-1, k)$.
+This shows the problem has the optimal substructure property.
+To calculate $C(3,1)$ we must know $C(2,1)$.
+This is also true when calculating $C(3,2)$.
+This means there is repeated calculations of $C(2,1)$,
+showing the overlapping subproblems property.
+In larger problems, the number of repeated calculations is vast.
+We can use memoization to store each calculation we do in a table called $memo$ to avoid repeating subproblems.
+At each step, before continuing with recursion, we check $memo$ to see if the calculation has been done already, and if so, we take the value from the $memo$ table instead of making a recursive call.
+
+A sample python implementation is shown in Figure \ref{fig:binomial-memo}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def C_memo(n,k,memo={}):
+        if k == 0 or k == n: return 1
+    
+        if (n,k) in memo:
+            return memo[(n,k)]
+        
+        result = C_memo(n-1,k-1,memo) + C_memo(n-1,k,memo)
+        memo[(n,k)] = result
+        return result
+    \end{lstlisting}
+    \caption{Binomial Coefficeints Memoization Python Implementation}
+    \label{fig:binomial-memo}
+\end{figure}
+
+\subsection{Complexity Analysis of the Memoization Approach to Binomial Coefficients}
+\begin{description}
+    \item[Time Complexity:]
+        The memoization table ensures that each unique subproblem is solved only once.
+        In the case of "$n$ choose $k$," there are $O(n * k)$ unique subproblems because the parameters $n$ and $k$ can take values from $0$ to $n$.
+        The rest of the table lookups are expected constant time as we are using a dictionary for the $memo$ table.
+
+    \item[Space Complexity:] 
+        We must store the $memo$ table, which is a dictionary of size $O(n * k)$ as $n$ and $k$ can take values from $0$ to $n$.
+
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n * k)$\\
+        Space Complexity: $O(n * k)$
+    
+\end{description}
+
+\subsection{Tabulation Approach to Binomial Coefficients}
+Instead of recursively creating the table by searching the entire tree of possible $n$ and $k$ values, we can use tabulation to fill in a table from which we can extract our answer.
+Consider a table $dp$ with dimensions ($n+1$) x ($k+1$), where $dp[i][j]$ in the table contains the result of $C(i,j)$
+We could build this table up starting from our base cases:
+$$C(n,0) = 1$$
+
+$$C(n,n) = 1$$
+
+, until we have a solution to $C(n,k)$.
+
+So for the calculation of $C(4,2)$ for example, we would initialize the following table:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+          & \textbf{0} & \textbf{1} & \textbf{2} \\
+        \hline
+        \textbf{0} & 1 & 0 & 0 \\
+        \hline
+        \textbf{1} & 1 & 1 & 0 \\
+        \hline
+        \textbf{2} & 1 &   & 1 \\
+        \hline
+        \textbf{3} & 1 &   &  \\
+        \hline
+        \textbf{4} & 1 &   &   \\
+        \hline
+    \end{tabular}
+\end{table}
+Now, we can use $C(n,k) = C(n-1,k-1) + C(n-1,k)$ to fill the table.
+
+For example, to get $dp[2][1]$ $(C(2,1))$, we take $dp[1][0] + dp[1][1] = 2$.
+
+Do this for the entire table as follows:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+          & \textbf{0} & \textbf{1} & \textbf{2} \\
+        \hline
+        \textbf{0} & 1 & 0 & 0 \\
+        \hline
+        \textbf{1} & 1 & 1 & 0 \\
+        \hline
+        \textbf{2} & 1 & 2 & 1 \\
+        \hline
+        \textbf{3} & 1 & 3 & 3 \\
+        \hline
+        \textbf{4} & 1 & 4 & 6 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Until we arrive at $dp[n][k]$ which will give the answer of $C(n,k)$.
+
+A sample python implementation is shown in Figure \ref{fig:binomial-dp}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def C_dp(n,k):
+        dp = [[0] * (k+1) for _ in range(n+1)]
+    
+        #Fill in the base cases
+        for i in range(n+1):
+            dp[i][0] = 1
+            dp[i][min(i,k)]=1
+    
+        #Fill in the rest of the table using the definition of C(n,k)
+        for i in range(1,n+1):
+            for j in range(1,min(i,k)+1):
+                dp[i][j] = dp[i-1][j-1] + dp[i-1][j]
+                
+        return dp[n][k]
+    \end{lstlisting}
+    \caption{Binomial Coefficients Tabulation Python Implementation}
+    \label{fig:binomial-dp}
+\end{figure}
+
+We do not fill the table where $k > n$.
+This because it is impossible to choose $k$ unique examples from a set of size $n$.
+This is done by only iterating to $min(i,k)$ in the inner loop.
+
+\subsection{Complexity Analysis of the Tabulation Approach to Binomial Coefficients}
+
+\begin{description}
+    \item[Time Complexity:]
+        We have to fill in a table of size $O(n * k)$ with values, and each value is obtained through a constant time lookup and addition.
+
+    \item[Space Complexity:] 
+        We must store the $dp$ table, which is a 2D array of size $O(n * k)$ as $n$ and $k$ can take values from $0$ to $n$.
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n * k)$\\
+        Space Complexity: $O(n * k)$
+    
+\end{description}
+
+\subsection{Optimzied Tabulation Approach to Binomial Coefficeints}
+Notice that we can calculate the values in any row $r$ using the values in row $r-1$.
+Hence, we do not need to store the entire $dp$ table in memory, only two rows at a time.
+The current row $r$, and the previous row $r-1$.
+This reduces space complexity from $O(n * k)$ to $O(k)$.
+Notice also that $C(n,k) = C(n,n-k)$.
+We can therefore set $k = n-k$ if $k > n-k$ and $n-k$ is positive before we start our algorithm, and our result will be the same.
+This reduces the time complexity from $O(n * k)$ to $O(n * min(k,n-k))$.
+
+A sample python implementation is shown in Figure \ref{fig:binomial-optimized}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def C_optimized(n,k,printTable=False):
+        if k > n-k and n-k >= 0:
+            k = n-k
+        oldRow = [0] * (k+1)
+        oldRow[0] = 1
+    
+        for i in range(1,n+1):
+            newRow = [0] * (k+1)
+            newRow[0] = 1
+            for j in range(1,min(i,k)+1):
+                newRow[j] = oldRow[j-1] + oldRow[j]
+    
+            oldRow = newRow
+              
+        return newRow[k]
+    \end{lstlisting}
+    \caption{Binomial Coefficients Optimized Python Implementation}
+    \label{fig:binomial-optimized}
+\end{figure}
+
