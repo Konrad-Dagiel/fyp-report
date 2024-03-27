@@ -57,5 +57,9 @@
 \contentsline {section}{\numberline {3.9}Longest Palindromic Subsequence}{35}{}%
 \contentsline {subsection}{\numberline {3.9.1}Tabulation Approach to Longest Palindromic Subsequence}{36}{}%
 \contentsline {section}{\numberline {3.10}Longest Contiguous Palindromic Substring}{36}{}%
-\contentsline {section}{\numberline {3.11}The Needleman-Wunsch Algorithm}{36}{}%
-\contentsline {section}{\numberline {3.12}The Smith-Waterman Algorithm}{36}{}%
+\contentsline {subsection}{\numberline {3.10.1}Brute Force Approach to Longest Contiguous Palindromic Substring}{36}{}%
+\contentsline {subsection}{\numberline {3.10.2}Complexity Analysis of the Brute Force Approach to Longest Contiguous Palindromic Substring}{36}{}%
+\contentsline {subsection}{\numberline {3.10.3}Tabulation Approach to Longest Contiguous Palindromic Substring.}{37}{}%
+\contentsline {subsection}{\numberline {3.10.4}Complexity Analysis of the Tabulation Approach to Longest Contiguous Palindromic Subsequence}{40}{}%
+\contentsline {section}{\numberline {3.11}The Needleman-Wunsch Algorithm}{40}{}%
+\contentsline {section}{\numberline {3.12}The Smith-Waterman Algorithm}{40}{}%

@@ -1,0 +1,251 @@
+\begin{description}
+    \item[Problem Statement:]
+        Given a string, return the longest palindromic substring\footnote{Substrings must be contiguous.} of the string.
+
+    \item[Input:] 
+        A string $s$.
+        
+    \item[Output:] 
+        A string $lpcs(s)$, which is the longest palindromic substring of $s$.
+        
+    \item[Example:] For:\\
+        $s = "aaaabbaa"$\\
+        $lpcs(s) = "aabbaa"$
+
+    \item[Explanation:]
+        The longest palindromic substring of $"aaaabbaa"$ is $"aabbaa"$.
+        Note that here we are asked for the substring itself, rather than the length of the substring.
+   
+\end{description}
+
+\subsection{Brute Force Approach to Longest Contiguous Palindromic Substring}
+If we were to tackle this problem the brute force way, we would have to iterate over all substrings of s, filtering out non palindromes along the way,
+and keeping track of the longest palindromic substring found so far. 
+We would then return the longest palindromic substring of s.
+
+\subsection{Complexity Analysis of the Brute Force Approach to Longest Contiguous Palindromic Substring}
+Let n be the length of s.
+
+\begin{description}
+    \item[Time Complexity:]
+        Iterating over all substrings of a string of length $n$ has a time complexity of $O(n^2)$.
+        Checking if a substring is a palindrome has a time complexity of $O(n)$.
+        This gives the brute force approach an overall time complexity of $O(n^3)$.
+        
+    \item[Space Complexity:] 
+        The space complexity of generating all substrings and storing them in a list is also $O(n^3)$
+        because we have $O(n^2)$ substrings, each of which has a maximum length of $O(n)$.
+        However, in our algorithm it is possible to iterate over the subsrtings of $s$ in place using a double for loop
+        \footnote{See Figure \ref{fig:max-subarray-sum-bf} for an example of how to do this.}, we can store one substring at a time,
+        which has a maximum length of $n$. This brings the space complexity down to $O(n)$.
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n^3)$\\
+        Space Complexity: $O(n)$
+    
+\end{description}
+Notice that if a string $p$ is a palindrome, and $x$ is a character, the string $xpx$ is guaranteed to be a palindrome.
+This is proof of optimal substructure.
+The problem of determining whether a substring is a palindrome or not can be reduced to smaller subproblems.
+For example, when checking if $s[i:j]$ is a palindrome, we often need to check if $s[i+1:j-1]$ is a palindrome,
+which overlaps with other similar subproblems.
+Therefore, we can use dynamic programming principles to optimize the solution to this problem.
+\subsection{Tabulation Approach to Longest Contiguous Palindromic Substring.}
+We can create a table $dp$ where $dp[i][j]$ is 1 if $s[i:j+1]$ is a palindrome, else 0. (eg: if $dp[1][3] = 1$, $s[1:4] (\text{"aaa" in our example string})$ is a palindrome.)
+We start with a table $dp$ which is a 2D matrix of size $|s| * |s|$.
+We can initialize all fields where $i == j$ to 1, as single letters are palindromes.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+          & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{b} & \textbf{b} & \textbf{a} & \textbf{a} \\
+        \hline
+        \textbf{a} & 1 &  &  &  &  &  &  &  \\
+        \hline
+        \textbf{a} &  & 1 &  &  &  &  &  &  \\
+        \hline
+        \textbf{a} &  &  & 1 &  &  &  &  &  \\
+        \hline
+        \textbf{a} &  &  &  & 1 &  &  &  &  \\
+        \hline
+        \textbf{b} &  &  &  &  & 1 &  &  &  \\
+        \hline
+        \textbf{b} &  &  &  &  &  & 1 &  &  \\
+        \hline
+        \textbf{a} &  &  &  &  &  &  & 1 &  \\
+        \hline
+        \textbf{a} &  &  &  &  &  &  &  & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+We can initialize all fields where $j = i+1$ and $s[i] = s[j]$ to 1 as all pairs of the same letter are palindromes.
+This handles the case where the palindrome has an even amount of characters (meaning the center of the palindrome is a character pair).
+
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+          & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{b} & \textbf{b} & \textbf{a} & \textbf{a} \\
+        \hline
+        \textbf{a} & 1 & 1 &  &  &  &  &  &  \\
+        \hline
+        \textbf{a} &  & 1 & 1 &  &  &  &  &  \\
+        \hline
+        \textbf{a} &  &  & 1 & 1 &  &  &  &  \\
+        \hline
+        \textbf{a} &  &  &  & 1 & 0 &  &  &  \\
+        \hline
+        \textbf{b} &  &  &  &  & 1 & 1 &  &  \\
+        \hline
+        \textbf{b} &  &  &  &  &  & 1 & 0 &  \\
+        \hline
+        \textbf{a} &  &  &  &  &  &  & 1 & 1 \\
+        \hline
+        \textbf{a} &  &  &  &  &  &  &  & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Now, notice that if a string $p$ is a palindrome, and $x$ is a character, the string $xpx$ is guaranteed to be a palindrome.
+Using this, for all substrings $s'$ of length 3, we check if the start and end are the same letter, and the middle is a palindrome (we know from the existing entries in the table).
+If so, we know that $s'$ is a palindrome, so we can set $dp[i][j]$ to 1.
+We can put a 1 in $dp[i][j]$ the table if and only if:
+
+\begin{enumerate}
+    \item If $s[i] == s[j]$ (the starting character is equal to the ending character).
+
+    AND
+
+    \item If $dp[i+1][j-1]$ == 1 (the string $p$ in between $i$ and $j$ is already known to be a palindrome).
+
+\end{enumerate}
+
+We will end up with a table as follows:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+          & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{b} & \textbf{b} & \textbf{a} & \textbf{a} \\
+        \hline
+        \textbf{a} & 1 & 1 & 1 &  &  &  &  &  \\
+        \hline
+        \textbf{a} &  & 1 & 1 & 1 &  &  &  &  \\
+        \hline
+        \textbf{a} &  &  & 1 & 1 & 0 &  &  &  \\
+        \hline
+        \textbf{a} &  &  &  & 1 & 0 & 0 &  &  \\
+        \hline
+        \textbf{b} &  &  &  &  & 1 & 1 & 0 &  \\
+        \hline
+        \textbf{b} &  &  &  &  &  & 1 & 0 & 0 \\
+        \hline
+        \textbf{a} &  &  &  &  &  &  & 1 & 1 \\
+        \hline
+        \textbf{a} &  &  &  &  &  &  &  & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Do this for all lengths from $3 \rightarrow len(s) - 1$.
+We will end up with the following table.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+          & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{a} & \textbf{b} & \textbf{b} & \textbf{a} & \textbf{a} \\
+        \hline
+        \textbf{a} & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        \hline
+        \textbf{a} &  & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        \hline
+        \textbf{a} &  &  & 1 & 1 & 0 & 0 & 0 & 1 \\
+        \hline
+        \textbf{a} &  &  &  & 1 & 0 & 0 & 1 & 0 \\
+        \hline
+        \textbf{b} &  &  &  &  & 1 & 1 & 0 & 0 \\
+        \hline
+        \textbf{b} &  &  &  &  &  & 1 & 0 & 0 \\
+        \hline
+        \textbf{a} &  &  &  &  &  &  & 1 & 1 \\
+        \hline
+        \textbf{a} &  &  &  &  &  &  &  & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+From the table we can deduce all palindromic substrings, including the longest palindromic substring.
+To get the longest palindromic substring from the table, we track $start$ and $max\_length$, which get updated every time a new palindrome is found.
+This works because palindromes are found from shortest to longest, so every new palindrome found is the maximum length palindrome.
+We can then simply return a slice of the input string as follows: $s[start,start+max_length]$.
+This will yield the maximum length palindromic substring.
+
+A sample python implementation is shown in Figure \ref{fig:lpcs-dp}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def lpcs(s):
+        n = len(s)
+        # Single character strings are palindromes, so we can return s
+        if n <=1: return s
+    
+        # Create a n*n table of zeros
+        dp = [[0] * n for _ in range(n)]
+    
+        # Initialize all single character substrings to 1
+
+        # Single character substrings start and end at the same index, so we locate them with dp[i][i]
+        for i in range(n):
+            dp[i][i] = 1
+    
+        # Since we are looking for the longest palindromic substring itself and not the length,
+        # we can track the starting position and max_length for convenience
+        start = 0
+        max_length = 1
+    
+        # Initialize all pairs of identical characters to 1
+        for i in range(n-1):
+            if s[i] == s[i+1]:
+                dp[i][i+1] = 1
+                start, max_length = i,2
+    
+        # For all substrings with length >=3, starting at length 3, 
+        # set dp[i][j] to 1 if start and end are the same letter
+        # and the middle is a palindrome
+                
+        for length in range(3, n+1):
+            for i in range(n - length + 1):
+                j = i + length - 1
+                if dp[i+1][j-1] and s[i] == s[j]:
+                    dp[i][j] = 1
+                    start, max_length = i, length
+    
+        return s[start:start+max_length]
+    \end{lstlisting}
+    \caption{Longest Contiguous Palindromic Substring Tabulation Python Implementation}
+    \label{fig:lpcs-dp}
+\end{figure}
+
+\subsection{Complexity Analysis of the Tabulation Approach to Longest Contiguous Palindromic Subsequence}
+Let $n$ be the length of $s$.
+
+\begin{description}
+    \item[Time Complexity:]
+        The time complexity to build an $n * n$ table,
+        where the values are deduced from a constant time check and a constant time lookup is $O(n^2)$. 
+
+    \item[Space Complexity:] 
+        The space complexity to store an $n * n$ table is $O(n^2)$.
+
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n^2)$\\
+        Space Complexity: $O(n^2)$
+    
+\end{description}
