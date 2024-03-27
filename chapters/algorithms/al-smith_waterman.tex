@@ -1,74 +1,193 @@
+This famous dynamic programming algorithm is used for local alignment of DNA and protein sequences.
+
 \begin{description}
+    
     \item[Problem Statement:]
+        Given two character sequences $seq1$ and $seq2$,
+        remove characters from the beginning or end of $seq1$ and/or $seq2$ such that the maximum number of characters in $seq1$ and $seq2$ are 'aligned'.
+        Characters $X$ and $Y$ are 'aligned' when $X == Y$ and the index of $X$ in $seq1$ is exactly equal to the index of $Y$ in $seq2$.
         
     \item[Input:] 
+        Two strings $seq1$ and $seq2$.
         
-    \item[Output:] 
+    \item[Output:]
+        Two strings $align1$ and $align2$.
         
-    \item[Example:]
-        
+    \item[Example:] For:\\
+        $seq1 = "ATGCT"$\\
+        $seq2 = "AGCT"$\\
+        $align1 = "GCT"$\\
+        $align2 = "GCT"$
 
     \item[Explanation:]
-        
+        Locally Aligned sequences:\\
+        G C T\\
+        G C T
 \end{description}
 
-A sample python implementation is shown in Figure \ref{fig:coin-change-memo}.
+The trick is to find an efficient way to trim the sequences, such that the number of aligned letters is maximised. In this case it is 3.
+
+This is very similar to Needleman-Wunsch. The algorithm is the same as above, however all negative values become zero as follows:
+
+Create a matrix of size: $(len(seq1) + 1)$ x $(len(seq2) + 1)$ as follows:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+        \hline
+         &  &  &  &  &  &  \\
+        \hline
+        \textbf{A} &  &  &  &  &  &  \\
+        \hline
+        \textbf{G} &  &  &  &  &  &  \\
+        \hline
+        \textbf{C} &  &  &  &  &  &  \\
+        \hline
+        \textbf{T} &  &  &  &  &  &  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+Now use the following scheme to fill in the table:
+
+$Match: 1$
+
+$Mismatch: -1$
+
+$GAP: -2$
+
+\subsection{Initialization of the Smith-Waterman Table}
+
+Starting with 0 at $(0,0)$, fill the extra row and column with progressive GAP penalties as follows [In the Smith-Waterman Algorithm, all negative numbers become 0]:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+        \hline
+        & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \textbf{A} & 0 &  &  &  &  &  \\
+        \hline
+        \textbf{G} & 0 &  &  &  &  &  \\
+        \hline
+        \textbf{C} & 0 &  &  &  &  &  \\
+        \hline
+        \textbf{T} & 0 &  &  &  &  &  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Filling the Smith-Waterman Table}
+
+Now starting at $(1,1)$, and going row-wise, fill each cell with the max of the following, converting any negative values to 0:
+
+\begin{enumerate}
+    \item Value from left + $GAP$
+    
+    \item Value from above + $GAP$
+    
+    \item Value from diagonal + ($Match$ or $Mismatch$) [depending on wether the row and column label are the same letter]
+
+\end{enumerate}
+
+So, for the $(1,1)$ cell, we fill it with $max(-4,-4,1) = 1$.
+
+And for the $(1,2)$ cell, we fill it with $max(-1,-6,-3) = -1 \rightarrow 0$.
+
+And so on...
+
+Until we get:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+        \hline
+        & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \textbf{A} & 0 & 1 & 0 & 0 & 0 & 0 \\
+        \hline
+        \textbf{G} & 0 & 0 & 0 & 1 & 0 & 0 \\
+        \hline
+        \textbf{C} & 0 & 0 & 0 & 0 & 2 & 0 \\
+        \hline
+        \textbf{T} & 0 & 0 & 1 & 0 & 0 & 3 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Traceback in the Smith-Waterman Table}
+
+Starting from the highest value in the matrix, move diagonally backwards until any 0 is reached.
+
+For each diagonal movement, align the coresponding characters.
+
+Note, the characters are aligned in reverse.
+
+A sample python implementation is given in Figure \ref{fig:smith-waterman}
 
 \begin{figure}[H]
     \centering
     \begin{lstlisting}
-
+    def smith_waterman(seq1, seq2, match=1, mismatch=-1, gap=-2):
+        m, n = len(seq2), len(seq1)
+        score = [[0] * (n + 1) for _ in range(m + 1)]
+    
+        # Initialize the first row and column
+        for i in range(m + 1):
+            score[i][0] = 0
+        for j in range(n + 1):
+            score[0][j] = 0
+    
+        # Fill in the scoring matrix
+        max_score = 0
+        max_position = (0, 0)
+    
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                match_mismatch = match if seq2[i - 1] == seq1[j - 1] else mismatch
+                diagonal = score[i - 1][j - 1] + match_mismatch
+                horizontal = score[i][j - 1] + gap
+                vertical = score[i - 1][j] + gap
+    
+                score[i][j] = max(0, diagonal, horizontal, vertical)
+    
+                if score[i][j] > max_score:
+                    max_score = score[i][j]
+                    max_position = (i, j)
+    
+        # Traceback to find the alignment
+        align1, align2 = "", ""
+        i, j = max_position
+    
+        while i > 0 and j > 0 and score[i][j] > 0:
+            if score[i][j] == score[i - 1][j - 1] + (match if seq2[i - 1] == seq1[j - 1] else mismatch):
+                align2 = seq2[i - 1] + align2
+                align1 = seq1[j - 1] + align1
+                i -= 1
+                j -= 1
+            elif score[i][j] == score[i][j - 1] + gap:
+                align2 = seq2[i - 1] + align2
+                align1 = "-" + align1
+                j -= 1
+            else:
+                align2 = "-" + align2
+                align1 = seq1[j - 1] + align1
+                i -= 1
+    
+        return align1, align2
+    
+    sequence1 = "ATGCT"
+    sequence2 = "AGCT"
+    alignment1, alignment2 = smith_waterman(sequence1, sequence2)
     \end{lstlisting}
-    \caption{Coin Change Brute Force Python Implementation}
-    \label{fig:coin-change-bf}
+    \caption{The Needleman Wunsch Algorithm Python Implementation}
+    \label{fig:smith-waterman}
 \end{figure}
 
-
-\begin{algorithm}
-    \caption{Euclid's algorithm}
-    \label{algo:euclid}
-    \KwIn{Two non-negative integers $a$ and $b$ where $a \geq b$}
-    \KwOut{The greatest common divisor of $a$ and $b$}
-    \While{$b \neq 0$}{
-        $r \leftarrow a \mod b$\;
-        $a \leftarrow b$\;
-        $b \leftarrow r$\;
-    }
-    \KwRet{$a$}
-\end{algorithm}
-
-Algorithm~\ref{algo:euclid} shows Euclid's algorithm for computing the greatest common divisor of two non-negative integers.
-
-
-\begin{description}
-    \item[Time Complexity:]
-        
-        
-    \item[Space Complexity:] 
-        
-        
-    \item[Overall:] Total:\\
-        Time Complexity:\\
-        Space Complexity:
-    
-\end{description}
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-          & \textbf{0} & \textbf{1} & \textbf{2} \\
-        \hline
-        \textbf{0} & 1 & 0 & 0 \\
-        \hline
-        \textbf{1} & 1 & 1 & 0 \\
-        \hline
-        \textbf{2} & 1 &   & 1 \\
-        \hline
-        \textbf{3} & 1 &   &  \\
-        \hline
-        \textbf{4} & 1 &   &   \\
-        \hline
-    \end{tabular}
-    \label{tab:grid}
-\end{table}

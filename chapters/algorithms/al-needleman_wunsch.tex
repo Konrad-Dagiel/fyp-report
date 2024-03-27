@@ -1,0 +1,196 @@
+This famous dynamic programming algorithm is used for global alignment of DNA and protein sequences.
+
+\begin{description}
+    
+    \item[Problem Statement:]
+        Given two character sequences $seq1$ and $seq2$,
+        place zero or more 'gap's in $seq1$ and/or $seq2$ such that the maximum number of characters in $seq1$ and $seq2$ are 'aligned'.
+        Characters $X$ and $Y$ are 'aligned' when $X == Y$ and the index of $X$ in $seq1$ is exactly equal to the index of $Y$ in $seq2$.
+        
+    \item[Input:] 
+        Two strings $seq1$ and $seq2$.
+        
+    \item[Output:]
+        Two strings $align1$ and $align2$.
+        
+    \item[Example:] For:\\
+        $seq1 = "ATGCT"$\\
+        $seq2 = "AGCT"$\\
+        $align1 = "ATGCT"$\\
+        $align2 = "A-GCT"$
+
+    \item[Explanation:]
+        Globally Aligned sequences:\\
+        A T G C T\\
+        A - \ G C T
+\end{description}
+
+The trick is to find an efficient way to place gaps in the sequences to maximise the amount of globally aligned letters.
+We can do this with tabulation:
+
+Create a matrix of size: $(len(seq1) + 1)$ x $(len(seq2) + 1)$ as follows:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+        \hline
+         &  &  &  &  &  &  \\
+        \hline
+        \textbf{A} &  &  &  &  &  &  \\
+        \hline
+        \textbf{G} &  &  &  &  &  &  \\
+        \hline
+        \textbf{C} &  &  &  &  &  &  \\
+        \hline
+        \textbf{T} &  &  &  &  &  &  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+Now use the following scheme to fill in the table:
+
+$Match: 1$
+
+$Mismatch: -1$
+
+$GAP: -2$
+
+\subsection{Initialization of the Needleman-Wunsch Table}
+
+Starting with 0 at $(0,0)$, fill the extra row and column with progressive GAP penalties as follows:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+        \hline
+        & 0 & -2 & -4 & -6 & -8 & -10 \\
+        \hline
+        \textbf{A} & -2 &  &  &  &  &  \\
+        \hline
+        \textbf{G} & -4 &  &  &  &  &  \\
+        \hline
+        \textbf{C} & -6 &  &  &  &  &  \\
+        \hline
+        \textbf{T} & -8 &  &  &  &  &  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Filling the Needleman-Wunsch Table}
+
+Now starting at $(1,1)$, and going row-wise, fill each cell with the max of the following:
+
+\begin{enumerate}
+    \item Value from left + $GAP$
+    
+    \item Value from above + $GAP$
+    
+    \item Value from diagonal + ($Match$ or $Mismatch$) [depending on wether the row and column label are the same letter]
+
+\end{enumerate}
+
+So, for the $(1,1)$ cell, we fill it with $max(-4,-4,1) = 1$.
+
+And for the $(1,2)$ cell, we fill it with $max(-1,-6,-3) = -1$.
+
+And so on...
+
+Until we get:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+        \hline
+        & 0 & -2 & -4 & -6 & -8 & -10 \\
+        \hline
+        \textbf{A} & -2 & 1 & -1 & -3 & -5 & -7 \\
+        \hline
+        \textbf{G} & -4 & -1 & 0 & 0 & -2 & -4 \\
+        \hline
+        \textbf{C} & -6 & -3 & -2 & -1 & 1 & -1 \\
+        \hline
+        \textbf{T} & -8 & -5 & -2 & -3 & -1 & 2 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Traceback in the Needleman-Wunsch Table}
+
+Starting from the bottom-right (which will always be the highest value in the matrix),
+continue the following until $(0,0)$ is reached:
+
+\begin{itemize}
+    \item If $row$ and $col$ labels match, go diagonally top-left.
+
+    \item Else, go to $max(left,above,diagonal)$.
+    
+    \item Each time we go diagonally, we can align the $row$ and $col$ labels.
+
+    \item Each time we go left, we put a gap in $seq2$ at that index.
+
+    \item Each time we go up, we put a gap in $seq1$ at that index.
+
+\end{itemize}
+
+Note that the aligned sequences will be written from right to left.
+
+A sample python implementation is given in Figure \ref{fig:needleman-wunsch}
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def needleman_wunsch(seq1, seq2, match=1, mismatch=-1, gap=-2):
+        # Initialize the scoring matrix
+        m, n = len(seq2), len(seq1)
+        score = [[0] * (n + 1) for _ in range(m + 1)]
+    
+        # Initialize the first row and column
+        for i in range(m + 1):
+            score[i][0] = i * gap
+        for j in range(n + 1):
+            score[0][j] = j * gap
+    
+        # Fill in the scoring matrix
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                match_mismatch = match if seq2[i - 1] == seq1[j - 1] else mismatch
+                diagonal = score[i - 1][j - 1] + match_mismatch
+                horizontal = score[i][j - 1] + gap
+                vertical = score[i - 1][j] + gap
+                score[i][j] = max(diagonal, horizontal, vertical)
+    
+        # Traceback to find the alignment
+        align2, align1 = "", ""
+        i, j = m, n
+        while i > 0 or j > 0:
+            if i > 0 and j > 0 and score[i][j] == score[i - 1][j - 1] + (match if seq2[i - 1] == seq1[j - 1] else mismatch):
+                align2 = seq2[i - 1] + align2
+                align1 = seq1[j - 1] + align1
+                i -= 1
+                j -= 1
+            elif i > 0 and score[i][j] == score[i - 1][j] + gap:
+                align2 = seq2[i - 1] + align2
+                align1 = "-" + align1
+                i -= 1
+            else:
+                align2 = "-" + align2
+                align1 = seq1[j - 1] + align1
+                j -= 1
+    
+        return align1, align2
+    
+    sequence1 = "ATGCT"
+    sequence2 = "AGCT"
+    align1, align2 = needleman_wunsch(sequence1, sequence2)
+    \end{lstlisting}
+    \caption{The Needleman Wunsch Algorithm Python Implementation}
+    \label{fig:needleman-wunsch}
+\end{figure}
+

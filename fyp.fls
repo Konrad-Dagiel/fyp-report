@@ -195,6 +195,9 @@ INPUT chapters\algorithms\al-lcps.tex
 INPUT .\chapters\algorithms\al-needleman_wunsch.tex
 INPUT .\chapters\algorithms\al-needleman_wunsch.tex
 INPUT chapters\algorithms\al-needleman_wunsch.tex
+INPUT .\chapters\algorithms\al-smith_waterman.tex
+INPUT .\chapters\algorithms\al-smith_waterman.tex
+INPUT chapters\algorithms\al-smith_waterman.tex
 INPUT fyp.aux
 INPUT .\chapters\ch-introduction.aux
 INPUT .\chapters\ch-introduction.aux

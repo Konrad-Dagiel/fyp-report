@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1711564869.72248 "c:/CODE/FYP_report/fyp.tex" "fyp.pdf" "fyp" 1711564870.95107 0
+["pdflatex"] 1711572160.36275 "c:/CODE/FYP_report/fyp.tex" "fyp.pdf" "fyp" 1711572161.62931 0
   "C:/Users/kdawg/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1711300255 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/kdawg/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1711299210 11548 15690bda6c49a68097d1ca0bf9351c71 ""
   "C:/Users/kdawg/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710601181 24233144 b56a3cb206edcc79176aa1ee2d0dd11e ""
@@ -93,16 +93,17 @@
   "chapters/algorithms/al-lis.tex" 1711551515 11814 a1c72d4c0d2a391b6832d19d420da8ce ""
   "chapters/algorithms/al-lps.tex" 1711560598 1397 05d47bd9524a70881525244fbfad6edb ""
   "chapters/algorithms/al-max_subarray_sum.tex" 1711476657 6882 d86ef0449fbb9c03cefe288bd0456b2c ""
-  "chapters/algorithms/al-needleman_wunsch.tex" 1710591529 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "chapters/ch-analysis.aux" 1711564870 933 2e9bb0ffb419c1201bed751d59d94216 "pdflatex"
+  "chapters/algorithms/al-needleman_wunsch.tex" 1711571221 6164 46e74707cbc6eceb3e86b954326336b5 ""
+  "chapters/algorithms/al-smith_waterman.tex" 1711572158 6133 cfa0e67c088c07e74c8d0c086aed135d ""
+  "chapters/ch-analysis.aux" 1711572161 933 2e9bb0ffb419c1201bed751d59d94216 "pdflatex"
   "chapters/ch-analysis.tex" 1711299824 18 4d05f7a5974b0f253c05a9d55f09b878 ""
-  "chapters/ch-design.aux" 1711564870 15473 d1ca5e9923e4b284d7d9be5a089e3d0b "pdflatex"
-  "chapters/ch-design.tex" 1711560455 5335 4b123e04591a8a2f129f624ea8345fa2 ""
-  "chapters/ch-introduction.aux" 1711564870 941 2113c84a08b8d417526087a6646a92dc "pdflatex"
-  "chapters/ch-introduction.tex" 1711299691 22 5d62e65bafe1b4ec405376d6c8131047 ""
-  "fyp.aux" 1711564870 174 e35b77b61a8a2f028787e4af7a14a774 "pdflatex"
+  "chapters/ch-design.aux" 1711572161 16699 44890b54a2a828a275a37a3b6be5a023 "pdflatex"
+  "chapters/ch-design.tex" 1711572067 5386 71b61c3fbc7b8979816dccf84317d4a9 ""
+  "chapters/ch-introduction.aux" 1711572160 941 2113c84a08b8d417526087a6646a92dc "pdflatex"
+  "chapters/ch-introduction.tex" 1711571296 22 5d62e65bafe1b4ec405376d6c8131047 ""
+  "fyp.aux" 1711572161 174 a5d9681a37c48213b9c2550871098d18 "pdflatex"
   "fyp.tex" 1711307749 3166 ffc81f2844f87c34c69c2cdc106660d8 ""
-  "fyp.toc" 1711564870 6937 7cf2db87a706ae99460cd8926721b58f "pdflatex"
+  "fyp.toc" 1711572161 7501 d84beeeb08258f4285bb4e7973c9fa79 "pdflatex"
   (generated)
   "chapters/ch-analysis.aux"
   "chapters/ch-design.aux"

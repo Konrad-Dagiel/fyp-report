@@ -62,4 +62,10 @@
 \contentsline {subsection}{\numberline {3.10.3}Tabulation Approach to Longest Contiguous Palindromic Substring.}{37}{}%
 \contentsline {subsection}{\numberline {3.10.4}Complexity Analysis of the Tabulation Approach to Longest Contiguous Palindromic Subsequence}{40}{}%
 \contentsline {section}{\numberline {3.11}The Needleman-Wunsch Algorithm}{40}{}%
-\contentsline {section}{\numberline {3.12}The Smith-Waterman Algorithm}{40}{}%
+\contentsline {subsection}{\numberline {3.11.1}Initialization of the Needleman-Wunsch Table}{41}{}%
+\contentsline {subsection}{\numberline {3.11.2}Filling the Needleman-Wunsch Table}{41}{}%
+\contentsline {subsection}{\numberline {3.11.3}Traceback in the Needleman-Wunsch Table}{41}{}%
+\contentsline {section}{\numberline {3.12}The Smith-Waterman Algorithm}{43}{}%
+\contentsline {subsection}{\numberline {3.12.1}Initialization of the Smith-Waterman Table}{43}{}%
+\contentsline {subsection}{\numberline {3.12.2}Filling the Smith-Waterman Table}{44}{}%
+\contentsline {subsection}{\numberline {3.12.3}Traceback in the Smith-Waterman Table}{44}{}%
