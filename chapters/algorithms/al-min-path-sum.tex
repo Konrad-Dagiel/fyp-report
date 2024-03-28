@@ -1,0 +1,185 @@
+\begin{description}
+    \item[Problem Statement:]
+        Given a 2D array filled with non-negative numbers representing the 'cost' at that field in the matrix,
+        find the cost of the path from the top-left corner (denoted $R$) to the bottom-right corner (denoted $F$) which minimizes the sum of numbers along the path.
+        (minimizes path cost).
+        You can only move down or to the right at any point in time (no path can make negative progress).
+
+    \item[Input:]
+        A 2D array, called $matrix$.
+        
+    \item[Output:]
+        An integer $min_path_sum(matrix)$, which represents the cost of the minimum path from $R$ to $F$.
+        
+    \item[Example:] For:\\
+    $matrix = $
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            1 & 3 & 1 \\
+            \hline
+            1 & 5 & 1 \\
+            \hline
+            4 & 2 & 1 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    $min_path_sum(matrix) = 7$
+
+    \item[Explanation:]
+        Explanation: $1 + 3 + 1 + 1 + 1 = 7$ is the minimum path sum.
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|}
+                \hline
+                R & $>$ & V \\
+                \hline
+                 &  & V \\
+                \hline
+                 &  & F \\
+                \hline
+            \end{tabular}
+        \end{table}
+        
+\end{description}
+
+\subsection{Tabulation Approach to Minimum Path Sum}
+We can solve this problem in a very similar manner to Unique Paths.
+We start by creating a table $dp$ with the same dimensions as the input matrix, where $dp[i][j]$ represents the minimum path cost from $matrix[i][j]$ to $F$.
+We can initialize $F$ to be it's own cost in the matrix (the cost of moving from $F$ to $F$ is $matrix[F]$).
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+         &  &  \\
+        \hline
+         &  &  \\
+        \hline
+         &  & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+Now we can iterate through the matrix backwards using the same logic as in Unique Paths, but this time:
+
+
+\begin{enumerate}
+    \item If we are on the last column: $dp[i][j] = dp[i][j+1] + matrix[i][j]$.
+    [This is because there is no more squares to go right, so we must go down and incur that cost]
+
+    \item If we are on the last row: $dp[i][j] = dp[i+1][j] + matrix[i][j]$.
+    [This is because there is no more squares to go down, so we must go right and incur that cost]
+
+    \item Otherwise, $dp[i][j] = matrix[i][j] +$ the minimum cost of going down, or going right.
+
+\end{enumerate}
+
+The top left of the grid will give us the minimum cost of reaching the bottom right position.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        7 & 6 & 3 \\
+        \hline
+        8 & 7 & 2 \\
+        \hline
+        7 & 3 & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+A sample Python Implementation of this is given in Figure \ref{fig:min-path-sum}
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def min_path_sum(matrix):
+        rows, cols = len(matrix), len(matrix[0])
+        
+        # Initialize a table to store minimum path sums
+        dp = [[0] * cols for _ in range(rows)]
+    
+        # Fill in the table in a bottom-up manner
+        for i in range(rows-1,-1,-1):
+            for j in range(cols-1,-1,-1):
+                # Initialize the bottom right square to its own cost
+                if i == rows-1 and j == cols-1:
+                    dp[i][j] = matrix[i][j]
+    
+                # When we are on the last row or col
+                elif i == rows-1:
+                    dp[i][j] = dp[i][j+1] + matrix[i][j]
+                elif j == cols-1:
+                    dp[i][j] = dp[i+1][j] + matrix[i][j]
+    
+                # Otherwise, choose the minimum cost path and add its cost
+                # to the cost of this square.
+                else:
+                    dp[i][j] = matrix[i][j] + min(dp[i+1][j], dp[i][j+1])
+    
+        return dp[0][0]
+    \end{lstlisting}
+    \caption{Min Path Sum Python Implementation}
+    \label{fig:min-path-sum}
+\end{figure}
+
+\subsection{Complexity Analysis of Min Path Sum}
+Let $m$ be the number of rows in $matrix$, and $n$ be the number of columns in $matrix$.
+
+\begin{description}
+    \item[Time Complexity:]
+        The time complexity of filling an $m$ x $n$ table with values,
+        where each value is calculated by two constant time lookups and a constant time addition, is $O(m * n)$.
+        
+    \item[Space Complexity:] 
+        The space complexity of storing an $m$ x $n$ table where each field in the table contains a single integer is $O(m * n)$.
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(m * n)$\\
+        Space Complexity: $O(m * n)$
+    
+\end{description}
+
+\subsection{Optimization of Minimum Path Sum}
+We can use the exact same optimization as we did with Unique Paths, as each value in row $r$ can be calculated from just the values in row $r$ and row $r-1$.
+Storing only two rows at a given time will reduce the Space complexity to $O(m)$.
+
+A sample Python implementation is given in Figure \ref{fig:min-path-sum-optimized}
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def min_path_sum_optimized(matrix):
+        rows, cols = len(matrix), len(matrix[0])
+        
+        # Initialize the bottom row of 0s
+        oldRow = [0] * cols
+    
+        # For each subsequent row in the grid
+        for i in range(rows-1, -1, -1):
+            # Create a new row which is initialized to all 0s
+            newRow = [0] * cols
+            # Traverse the new row in reverse, same logic as before.
+            for j in range(cols - 1, -1, -1):
+                if i == rows-1 and j == cols-1:
+                    newRow[j] = matrix[i][j]
+                elif i == rows-1:
+                    newRow[j] = newRow[j+1] + matrix[i][j]
+                elif j == cols-1:
+                    newRow[j] = oldRow[j] + matrix[i][j]
+                else:
+                    newRow[j] = matrix[i][j] + min(oldRow[j], newRow[j+1])
+            oldRow = newRow
+    
+        return oldRow[0]
+    \end{lstlisting}
+    \caption{Min Path Sum Optimized Python Implementation}
+    \label{fig:min-path-sum-optimized}
+\end{figure}
+\subsection{Note on Optimization}
+This two-row framework can be used to solve any pathing problem which is constrained such that negative progress is not possible.
+This optimization can be taken even further. We have solved both problems rowwise starting from the bottom. This problem can equally be solved columnwise,
+using the same optimization except this time storing two columns instead of two rows.
+If we solve these problems rowwise in the case of $m \leq n$, and columnwise if $m > n$, we actually reduce the space complexity even further to $O(min(m,n))$.

@@ -1,0 +1,146 @@
+\begin{description}
+    \item[Problem Statement:]
+        A robot who's location on a grid is denoted $R$ is located at the top-left corner of a $m$ x $n$ grid.
+        The robot is trying to reach the finish square at the bottom right corner of the grid donoted as $F$.
+        How many possible unique paths to $F$ exist starting at $R$, given the constraint that the robot can only move right one square, or down one square at any given point in time?
+        
+    \item[Input:]
+        Two integers $m$ and $n$, which are the dimensions of the grid.
+        
+    \item[Output:] 
+        An integer $unique\_paths(m,n)$.
+        
+    \item[Example:] For:\\
+        $m = 3$, $n = 7$\\
+        $unique\_paths(m,n) = 28$
+        
+    \item[Explanation:]
+        There are 28 unique ways the robot can reach $F$ from $R$.
+        Example Path:
+
+        \begin{table}[htbp]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|}
+                \hline
+                \textbf{R} & $>$ & V &  &  &  &  \\
+                \hline
+                 &  & $>$ & $>$ & $>$ & $>$ & V \\
+                \hline
+                 &  &  &  &  &  & \textbf{F} \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+        
+\end{description}
+
+\subsection{Tabulation Approach to Unique Paths}
+Notice that wherever the robot lands on the grid, it is possible to reach the finish square,
+so we do not have to worry about cases where the robot cannot reach the finish square (backtracking).
+Notice also that the number of paths from any square is the sum of the number paths to the right, and the number of paths if you go down.
+We can use tabulation to solve the problem, by creating an $m$ x $n$ table called $dp$ where the value at $dp[i][j]$ represents the number of unique paths from that square to $F$.
+The value at $dp[0][0]$ will hence contain the solution to the problem.
+We can then initialize $dp[F]$ to 1, as there is one path from F to itself (the path contains zero moves).
+The square directly above and to the left of $dp[F]$ can also be initialized to 1, as there is one path from them to $F$, going down or right respectively. This logic follows for all of the bottom row of the grid, and the last column of the grid.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+         &  &  &  &  &  & 1 \\
+        \hline
+         &  &  &  &  &  & 1 \\
+        \hline
+         & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Now we simply fill the grid from the bottom right to the top left,
+where the value of each square is the sum of the value below it and to its right.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        28 & 21 & 15 & 10 & 6 & 3 & 1 \\
+        \hline
+        7 & 6 & 5 & 4 & 3 & 2 & 1 \\
+        \hline
+        1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The top left square is where the robot was, so that is the number of paths from the robot to the finish square.
+
+A sample Python implementation is given in \ref{fig:unique-paths}
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def unique_paths(m,n):
+    
+        # Initialize a m x n table of 1s
+        dp = [[1] * n for _ in range(m)]
+    
+        # Fill in the table in a bottom-up manner
+        for i in range(m-1,-1,-1):
+            for j in range(n-1,-1,-1):
+                # Leave last row and column as 1s
+                if i == m-1 or j == n-1:
+                    continue
+                # Fill all other squares with the sum of the square below and to the right
+                else:
+                    dp[i][j] = dp[i+1][j] + dp[i][j+1]
+
+        return dp[0][0]
+    \end{lstlisting}
+    \caption{Unique Paths Python Implementation}
+    \label{fig:unique-paths}
+\end{figure}
+
+\subsection{Complexity Analysis of Unique Paths}
+
+\begin{description}
+    \item[Time Complexity:]
+        The time complexity of filling an $m$ x $n$ table with values,
+        where each value is calculated by two constant time lookups and a constant time addition, is $O(m * n)$.
+        
+    \item[Space Complexity:] 
+        The space complexity of storing an $m$ x $n$ table where each field in the table contains a single integer is $O(m * n)$.
+
+    \item[Overall:] Total:\\
+        Time Complexity: $O(m * n)$\\
+        Space Complexity: $O(m * n)$
+    
+\end{description}
+
+\subsection{Optimization of the Unique Paths Problem}
+Notice that for a given value in row $r$ in the table $dp$, $v$ can be calculated using just row $r$ and row $r-1$.
+Since we compute the values in $dp$ rowwise from the bottom up, we do not actually need to store the entire $dp$ table in memory as the values which are two or more rows below the row we are computing at any given time do not contribute to our calculation.
+Storing only two rows of the $dp$ table at a time reduces the space complexity from $O(m * n)$ to just $O(m)$.
+
+A Python implementation of this optimization is given in Figure \ref{fig:unique-paths-optimized}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def unique_paths_optimized(m,n):
+        # Initialize the bottom row of 1s
+        oldRow = [1] * n
+    
+        # For each subsequent row in the grid
+        for _ in range(m-1):
+            # Create a new row which is initialized to all 1s
+            newRow = [1] * n
+            # Traverse the new row in reverse, without the last element
+            for j in range(n - 2, -1, -1):
+                # Each value in the new row is the sum of the value to the right and below
+                newRow[j] = newRow[j+1] + oldRow[j]
+            oldRow = newRow
+    
+        return oldRow[0]
+    \end{lstlisting}
+    \caption{Unique Paths Optimized Python Implementation}
+    \label{fig:unique-paths-optimized}
+\end{figure}
