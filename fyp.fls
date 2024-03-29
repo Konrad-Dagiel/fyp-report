@@ -104,6 +104,9 @@ INPUT chapters\ch-analysis.aux
 INPUT .\chapters\ch-design.aux
 INPUT .\chapters\ch-design.aux
 INPUT chapters\ch-design.aux
+INPUT .\chapters\ch-benchmarking.aux
+INPUT .\chapters\ch-benchmarking.aux
+INPUT chapters\ch-benchmarking.aux
 INPUT .\chapters\ch-design-own.aux
 INPUT .\chapters\ch-design-own.aux
 INPUT chapters\ch-design-own.aux
@@ -201,6 +204,12 @@ INPUT chapters\algorithms\al-needleman_wunsch.tex
 INPUT .\chapters\algorithms\al-smith_waterman.tex
 INPUT .\chapters\algorithms\al-smith_waterman.tex
 INPUT chapters\algorithms\al-smith_waterman.tex
+INPUT .\chapters\ch-benchmarking.tex
+INPUT .\chapters\ch-benchmarking.tex
+OUTPUT chapters\ch-benchmarking.aux
+INPUT .\chapters\ch-benchmarking.tex
+INPUT .\chapters\ch-benchmarking.tex
+INPUT chapters\ch-benchmarking.tex
 INPUT .\chapters\ch-design-own.tex
 INPUT .\chapters\ch-design-own.tex
 OUTPUT chapters\ch-design-own.aux
@@ -213,6 +222,12 @@ INPUT chapters\algorithms\al-unique-paths.tex
 INPUT .\chapters\algorithms\al-min-path-sum.tex
 INPUT .\chapters\algorithms\al-min-path-sum.tex
 INPUT chapters\algorithms\al-min-path-sum.tex
+INPUT .\chapters\algorithms\al-3d-unique-paths.tex
+INPUT .\chapters\algorithms\al-3d-unique-paths.tex
+INPUT chapters\algorithms\al-3d-unique-paths.tex
+INPUT .\chapters\algorithms\al-nd-unique-paths.tex
+INPUT .\chapters\algorithms\al-nd-unique-paths.tex
+INPUT chapters\algorithms\al-nd-unique-paths.tex
 INPUT fyp.aux
 INPUT .\chapters\ch-introduction.aux
 INPUT .\chapters\ch-introduction.aux
@@ -223,6 +238,9 @@ INPUT chapters\ch-analysis.aux
 INPUT .\chapters\ch-design.aux
 INPUT .\chapters\ch-design.aux
 INPUT chapters\ch-design.aux
+INPUT .\chapters\ch-benchmarking.aux
+INPUT .\chapters\ch-benchmarking.aux
+INPUT chapters\ch-benchmarking.aux
 INPUT .\chapters\ch-design-own.aux
 INPUT .\chapters\ch-design-own.aux
 INPUT chapters\ch-design-own.aux

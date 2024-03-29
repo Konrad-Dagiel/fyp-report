@@ -1,0 +1,64 @@
+So far we have seen that Unique Paths and Min Path Sum can be solved for 2D array inputs.
+These problems can also be trivially solved for 1D array inputs, and single scalar inputs.
+But what if the input to the problem is not a 2D array but a 3D array? (But the constraint which prevents negative progress is still in place).
+
+\subsection{Tabulation Approach to 3D-Unique Paths}
+Consider an $m$ x $n$ x $k$ array called $input$, where we start at the top left at index $(0,0,0)$ (denoted $R$), and our target is in the bottom right at index $(m-1, n-1, k-1)$ (denoted $F$).
+We can only move down at the current depth, right at the current depth, or "in" (meaning we increase the depth we are at).
+The problem, like before, is to find the number of distinct paths from $R$ to $F$.
+We can use a similar approach as with the 2D problem, but this time dp will need to be a 3D array to store the intermediate values.
+Instead of summing the value to the right and below to get our current value, we sum the value to the right, below, and at the next depth level.
+The value at index $dp[i][j][t]$ represents the number of unique paths from $input[i][j][t]$ to $input[m-1][n-1][k-1]$.
+We will still initialize $dp[m-1][n-1][k-1]$ to 1.
+To calculate the value at $dp[i][j][t]$, we will sum up $dp[i+1][j][t]$, $dp[i][j+1][t]$ and $dp[i][j][t+1]$, unless the value is at a border,
+in which case we we will exclude that border from the sum, because going further in that direction is not possible\footnote{eg, if $i+1 = m$, we exclude $dp[i+1][j][t]$ from the sum as $dp[i+1][j][t]$ is out of bounds.}.
+The value at $dp[0][0][0]$ will be our solution.
+
+A sample python implementation is shown in Figure \ref{fig:3d-unique-paths}.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}
+    def unique_paths_3d(m, n, k):
+        dp = [[[0 for _ in range(k)] for _ in range(n)] for _ in range(m)]
+
+        dp[m - 1][n - 1][k - 1] = 1
+
+        for i in range(m - 1, -1, -1):
+            for j in range(n - 1, -1, -1):
+                for t in range(k - 1, -1, -1):
+                    if i + 1 < m:
+                        dp[i][j][t] += dp[i + 1][j][t]
+                    if j + 1 < n:
+                        dp[i][j][t] += dp[i][j + 1][t]
+                    if t + 1 < k:
+                        dp[i][j][t] += dp[i][j][t + 1]
+
+        return dp[0][0][0]
+    \end{lstlisting}
+    \caption{3D Unique Paths Python Implementation}
+    \label{fig:3d-unique-paths}
+\end{figure}
+\subsection{Complexity Analysis of 3D-Unique-Paths}
+
+\begin{description}
+    \item[Time Complexity:]
+        We have proved that the time complexity of 2D Unique Paths is $O(m * n)$ in Section \ref{ca-unique-paths}.
+        Similarly, we can see that the time complexity of 3D Unique Paths is $O(m * n * k)$.
+        
+        
+    \item[Space Complexity:] 
+        We have proved that the space complexity of 2D Unique Paths is $O(m * n)$ in Section \ref{ca-unique-paths}.
+        Similarly, we can see that the space complexity of 3D Unique Paths is $O(m * n * k)$.
+            
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(m * n * k)$\\
+        Space Complexity: $O(m * n * k)$
+\end{description}
+
+\subsection{Note on this Approach}
+We can trivially convert this 3D Unique Paths algorithm into a 3D Min Path Sum solution, and in fact we can convert any 2D problem with the constraint that negative progress is not allowed into a 3D problem using this approach.
+
+
+

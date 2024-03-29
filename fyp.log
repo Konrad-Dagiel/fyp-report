@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  28 MAR 2024 14:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  29 MAR 2024 18:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,7 +262,7 @@ Package: amsthm 2020/05/29 v2.20.6
 \c@definition=\count297
  (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
-) (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-design-own.aux))
+) (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux))
 \openout1 = `fyp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -402,33 +402,43 @@ Overfull \vbox (6.23756pt too high) has occurred while \output is active []
 Overfull \vbox (66.23756pt too high) has occurred while \output is active []
 
  [46]))
+\openout2 = `chapters/ch-benchmarking.aux'.
+
+ (chapters/ch-benchmarking.tex
+Chapter 4.
+[47
+
+
+
+
+] [48] [49] [50] [51]) [52] [53]
 \openout2 = `chapters/ch-design-own.aux'.
 
  (chapters/ch-design-own.tex
-Chapter 4.
-(chapters/algorithms/al-unique-paths.tex [47
+Chapter 5.
+(chapters/algorithms/al-unique-paths.tex [54
 
 
 
 
-] [48]) (chapters/algorithms/al-min-path-sum.tex [49] [50] [51])) [52] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-design-own.aux))
+] [55]) (chapters/algorithms/al-min-path-sum.tex [56] [57] [58]) (chapters/algorithms/al-3d-unique-paths.tex [59] [60]) (chapters/algorithms/al-nd-unique-paths.tex [61] [62])) [63] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7295 strings out of 474435
- 117339 string characters out of 5741933
+ 7384 strings out of 474435
+ 119657 string characters out of 5741933
  2111190 words of memory out of 5000000
- 29481 multiletter control sequences out of 15000+600000
+ 29557 multiletter control sequences out of 15000+600000
  566984 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,17n,93p,487b,1371s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,17n,93p,574b,1371s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on fyp.pdf (53 pages, 373637 bytes).
+Output written on fyp.pdf (64 pages, 411949 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
+ 293 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
