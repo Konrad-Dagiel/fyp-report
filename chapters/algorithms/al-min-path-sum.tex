@@ -12,19 +12,10 @@
         An integer $min_path_sum(cost)$, which represents the cost of the minimum path from $R$ to $F$.
         
     \item[Example:] For:\\
-    $cost = $
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{|c|c|c|}
-            \hline
-            1 & 3 & 1 \\
-            \hline
-            1 & 5 & 1 \\
-            \hline
-            4 & 2 & 1 \\
-            \hline
-        \end{tabular}
-    \end{table}
+    $cost = $\\
+    $[[1,3,1],$\\
+    $[1,5,1],$\\
+    $[4,2,1]]$\\
 
     $min_path_sum(cost) = 7$
 
@@ -34,11 +25,11 @@
             \centering
             \begin{tabular}{|c|c|c|}
                 \hline
-                R & $>$ & V \\
+                \textbf{R} & $\rightarrow$ & $\downarrow$ \\
                 \hline
-                 &  & V \\
+                 &  & $\downarrow$ \\
                 \hline
-                 &  & F \\
+                 &  & \textbf{F} \\
                 \hline
             \end{tabular}
         \end{table}

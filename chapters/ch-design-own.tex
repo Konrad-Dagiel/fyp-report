@@ -1,13 +1,120 @@
-\chapter{Multi Dimensional Dynamic Programming Algorithms}
+\chapter{The Interstellar Problem}
+The robot TARS has been sucked into the singularity, an N-dimensional grid. In order to escape, he must reach the point on the opposite side of the singularity from where he started.
+Inside, he can move in any direction through any dimension, as long as he is making progress towards his escape point with each move.
+\begin{enumerate}
+    \item How many different paths could TARS possibly take through the singularity in order to reach his goal and escape?
+    \item If each space in the singularity has a fuel cost, what is the minimum cost path from the start position to the goal?
+\end{enumerate}
 
-\section{Unique Paths}
+\section{The Interstellar Problem 1}
+\begin{description}
+    \item[Problem Statement:]
+    Given as input the shape of an n-rank tensor, find the number of unique paths from a corner of the tensor denoted $R$ to the opposite corner of the tensor,
+    denoted $F$, where the only moves allowed at any point in time strictly make progress towards $F$.
+        
+    \item[Input:]
+    A tuple of integers $dimensions$, where $|dimensions|$ is the number of dimensions in the n-rank tensor, and each integer in $dimensions$ represents the size of the corresponding dimension.
+        
+    \item[Output:] 
+    An integer $paths$, which represents the number of unique paths (where negative progress is not allowed) from $R$ to $F$.
+        
+    \item[Example 1:] For:\\
+    $dimensions$ = $(10)$\\
+    $paths = 1$
+    \item[Explanation 1:]
+    There is only one dimension in the singularity, hence one path:
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            \textbf{R} & $\rightarrow$ & $\rightarrow$ &$\rightarrow$ & $\rightarrow$ & $\rightarrow$& $\rightarrow$&$\rightarrow$ & \textbf{F} \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \item[Example 2:] For:\\
+    $dimensions$ = $(3,7)$\\
+    $paths = 28$
+
+    \item[Explanation 2:]
+    In this case the singularity has two dimensions, and the shape is $(3,7)$. This means TARS can go right or down, as any other movement would be negative progress.
+    There are 28 unique ways the robot can reach $F$ from $R$.
+    Example Path:
+
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            \textbf{R} & $\rightarrow$ & $\downarrow$ &  &  &  &  \\
+            \hline
+             &  & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\downarrow$ \\
+            \hline
+             &  &  &  &  &  & \textbf{F} \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \item[Example 3:] For:\\
+    $dimensions$ = $(2,7,5,2)$\\
+    $paths = 27720$
+
+    \item[Explanation 3:]
+    In this case the singularity has 4 dimensions, making it impossible to visualize. There are 27720 different paths TARS could take to reach $F$ from $R$.
+\end{description}
+
+\section{The Interstellar Problem 2}
+\begin{description}
+    \item[Problem Statement:]
+    Given as input an n-rank tensor where the value at each cell represents the fuel cost of landing on that cell, find the cost of the path from a corner of the tensor denoted $R$ to the opposite corner of the tensor,
+    denoted $F$ with the minimum total fuel cost, where the only moves allowed at any point in time strictly make progress towards $F$.
+        
+    \item[Input:]
+    An n-rank tensor of integers called $cost$, where each cell in $cost$ represents the fuel cost of landing on that cell.
+        
+    \item[Output:] 
+    An integer $min\_path$, which represents the cost of the cheapest path (where negative progress is not allowed) from $R$ to $F$.
+        
+    \item[Example 1:] For:\\
+    $cost$ = $[10]$\\
+    $min\_path = 10$
+    \item[Explanation 1:]
+    The singularity is a single cell of cost 10, so the total cost of the minimum path is 10:
+
+    \item[Example 2:] For:\\
+    $cost = $\\
+    $[[1,3,1],$\\
+    $[1,5,1],$\\
+    $[4,2,1]]$\\
+    $min\_path = 7$
+
+    \item[Explanation 2:]
+        Explanation: $1 + 3 + 1 + 1 + 1 = 7$ is the minimum path sum.
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|}
+                \hline
+                \textbf{R} & $\rightarrow$ & $\downarrow$ \\
+                \hline
+                 &  & $\downarrow$ \\
+                \hline
+                 &  & \textbf{F} \\
+                \hline
+            \end{tabular}
+        \end{table}
+\end{description}
+
+\section{Building Up to The Interstellar Problem}
+In order to understand the solution to the interstellar problem, we must first understand the following smaller problems,
+and build up to the solution to the interstellar problem.
+
+\subsection{Unique Paths}
 \input{chapters/algorithms/al-unique-paths.tex}
 
-\section{Minimum Path Sum}
+\subsection{Minimum Path Sum}
 \input{chapters/algorithms/al-min-path-sum.tex}
 
-\section{Extending Unique Paths and Min Path Sum to 3 Dimensions}
+\subsection{Extending Unique Paths and Min Path Sum to 3 Dimensions}
 \input{chapters/algorithms/al-3d-unique-paths.tex}
 
-\section{A Framework for Solving N-Dimensional Pathfinding Problems}
+\subsection{A Framework for Solving N-Dimensional Pathfinding Problems}
 \input{chapters/algorithms/al-nd-unique-paths.tex}

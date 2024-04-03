@@ -4,10 +4,11 @@ Because of this, we can solve any pathfinding problem from any corner $R$ of a r
 by simply initializing an $N$ dimensional table $dp$, initializing $dp[F]$ and each field on a border in $dp$ to an appropriate value\footnote{1 in the case of Unique Paths, or $cost[i]$ in Min Path Sum}, and deducing the value of an arbitrary field $v$ by doing a constant time operation (such as $sum$ or $max$) of each 'surrounding' value in a direction opposite to the direction you are allowed to travel in that dimension.
 
 
-\subsection{N-Dimensional Unique Paths Python Implementation Details}
+\section{The Interstellar Problem Implementation Details}
+Now that we have shown the above, we may attempt to use this knowledge to solve The Interstellar Problem.
 This implemetation is tricky as we must simulate $n$ for loops where $n$ is the dimension count.
 Numpy was used to access, store data in, and manipulate the input tensor as well as the $dp$ table.
-This choice was made because numpy allows us to access elements in n-rank tensors by providing a tuple of length $n$ as an index.
+This choice was made because Numpy allows us to access elements in n-rank tensors by providing a tuple of length $n$ as an index.
 Numpy also allows us to easily initialialize n-rank tensors through the use of its $np.zeros(shape)$ function, rather than having to use something similar to Figure \ref{fig:zeros}:
 
 \begin{figure}[H]
@@ -27,30 +28,30 @@ Numpy's $np.ndindex()$ is a function that provides an iterator yielding tuples o
 It is particularly useful for iterating over the indices of n-dimensional arrays.
 This function returns an object that can be iterated over, generating all possible index tuples for a specified shape.
 
-The pseudocode of the algorithm using numpy is as follows:
+The pseudocode of the algorithm using Numpy is as follows:
 
 \begin{enumerate}
     \item Initialize an n-dimensional array of zeros called $dp$ to store the number of paths for each cell, with $dp[R]$ set to 1.
     \item The $np.ndindex(shape)$ generates an iterator over all possible indices in the n-dimensional array.
     \item For each index, represented by the $current\_cell$:
-    \item Iterate over each dimension using for $i$ in $range(num_dimensions)$.
+    \item Iterate over each dimension using for $i$ in $range(num\_dimensions)$.
     \item Check if the current cell's index in the current dimension ($current\_cell[i]$) is greater than 0. If true, it means there is a valid cell to move from in that dimension.
     \item Create a copy of the current cell (denoted $prev\_cell$) and decrement the index in the current dimension ($prev\_cell[i] -= 1$). This represents the cell from which we are coming.
     \item Add the number of paths from the previous cell to the current cell in the $dp$ array ($dp[index] += dp[tuple(prev\_cell)]$).
 
 \end{enumerate}
 
-\subsection{Python Implementation of N-Dimensional Unique Paths}
+\section{Python Implementation of The Interstellar Problem 1}
 
 Figure \ref{fig:nd-unique-paths} shows a Python Implementation of N-Dimensional Unique Paths using the framework discussed above.
-The code is heavily commented so we can see the framework in action. Note that this approach can be trivially converted to calculate the Min Path Sum, or any other pathfinding problem where negative progress is not allowed.
+The code is heavily commented so we can see the framework in action. Note that this approach can be trivially converted to calculate the Min Path Sum (The Interstellar Problem 2) instead, or any other pathfinding problem where negative progress is not allowed.
 
 \begin{figure}[H]
     \centering
     \begin{lstlisting}
     import numpy as np
 
-    def unique_paths_nd(dimensions):
+    def interstellar_1(dimensions):
         # Determine the number of dimensions
         num_dimensions = len(dimensions)
     
@@ -79,9 +80,29 @@ The code is heavily commented so we can see the framework in action. Note that t
     
     # Example usage:
     dimensions = (2,7,5)
-    print(unique_paths_nd(dimensions))
+    print(interstellar_1(dimensions))
     \end{lstlisting}
-    \caption{Python Implementation of N-Dimensional Unique Paths}
+    \caption{Python Implementation of The Interstellar Problem 1}
     \label{fig:nd-unique-paths}
 \end{figure}
+
+\subsection{Complexity Analysis of The Interstellar Problem 1}
+Let $n$ be the length of the tuple $dimensions$.
+\begin{description}
+    \item[Time Complexity:]
+        The time complexity of filling a tensor of shape $dimensions$ with values,
+        where each value is obtained through $|dimensions|$ constant time additions
+        is $O(\prod_{i=1}^{n} dimensions_i * n)$. This is because there are $\prod_{i=1}^{n} dimensions_i$ cells to fill, and each takes $n$ operations to complete, one addition from each dimension.
+        
+    \item[Space Complexity:] 
+    The space complexity of filling a tensor of shape $dimensions$ with values,
+    is $O(\prod_{i=1}^{n} dimensions_i)$.
+    This is because there are $\prod_{i=1}^{n} dimensions_i$ cells to fill and store.
+    
+    \item[Overall:] Total:\\
+        Time Complexity: $O(\prod_{i=1}^{n} dimensions_i * n)$\\
+        Space Complexity: $O(\prod_{i=1}^{n} dimensions_i)$
+
+\end{description}
+
 

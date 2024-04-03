@@ -25,7 +25,7 @@ The following are some of the common traps for measuring execution time that tim
     \item Compilation: For code snippets that are executed multiple times, timeit compiles the code to bytecode to speed up execution. This compilation step is done automatically and transparently, helping to reduce overhead and improve the accuracy of timing measurements.
 \end{itemize}
 
-\subsection{Discussion of Benchmarking Methods of Algorithms with Inputs of Size N}
+\section{Discussion of Benchmarking Methods of Algorithms with Inputs of Size N}
 When benchmarking algorithms with a variable input size, we cannot simply run the code multiple times on the same fixed input,
 as we cannot be sure if this input accurately reflects the average runtime of the algorithm.
 Instead, on each run, the input size is fixed but the input itself is randomized.
@@ -36,7 +36,7 @@ Therefore, we must somehow randomize the input on each test run, and get an aver
 When benchmarking the researched algorithms, we will use the following approaches in an attempt to get a more accurate view of the actual average runtimes on random examples.
 
 
-\subsection{Approach to Benchmarking the Fibonacci Problem}
+\section{Approach to Benchmarking the Fibonacci Problem}
 
 In order to benchmark the Fibonacci Problem, we do not need any randomization. We can simply input $n$, the index of the fibonacci number to be computed, and calculate the amount of time each of the brute force, memoization and tabulation approaches take to solve for $fib(n)$.
 The code used for benchmarking the different implementations of this problem is shown in Figure \ref{fig:bm-fibonacci}.
@@ -87,7 +87,7 @@ The code used for benchmarking the different implementations of this problem is 
 Results are rounded to 6 decimal places.
 
 
-\subsection{Approach to Benchmarking the Coin Change Problem}
+\section{Approach to Benchmarking the Coin Change Problem}
 
 In order to benchmark the Coin Change Problem, we must randomize a list of coin denominations $D$ of fixed size, and a total amount $a$, in order to get an accurate insight into the average runtime.
 The maximum and minimum size of the coin denominations and the total amount should be kept consistent throughout test runs to reduce the amount of variance.
@@ -144,7 +144,7 @@ The code used for benchmarking the different implementations of this problem is 
 Results in seconds rounded to 6 decimal places.
 
 
-\subsection{Approach to Benchmarking Problems With Single List Inputs}
+\section{Approach to Benchmarking Problems With Single List Inputs}
 In order to benchmark problems with single list inputs, we must randomize a list nums of fixed size in order to get an accurate insight into the average runtime.
 The maximum and minimum size of the elements of $nums$ should be kept consistent throughout test runs to reduce the amount of variance.
 Ideally, the inputs to each of the brute force, memoization and tabulation algorithms should be the same on each run to avoid the case where one of the algorithms "gets lucky" and consistently gets "easier" inputs than the others.
@@ -232,7 +232,7 @@ Results in seconds rounded to 6 decimal places.
 Results in seconds rounded to 6 decimal places.
 
 
-\subsection{Approach to Benchmarking the Binomial Coefficients Problem}
+\section{Approach to Benchmarking the Binomial Coefficients Problem}
 In order to benchmark the Binomial Coefficients Problem, we do not need any randomization. We can simply input $n$ and $k$, and calculate the average time each of the brute force, memoization and tabulation approaches take to solve for $C(n,k)$.
 For simplicity, we take $k$ as $n/2$.
 The code used for benchmarking the different implementations of this problem is shown in Figure \ref{fig:bm-binomial}.
