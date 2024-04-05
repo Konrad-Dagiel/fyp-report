@@ -2,65 +2,69 @@
 This section outlines the specific goals of the project, how they were approached, and the requirements of each of the deliverables.
 The goals were as follows:
 \begin{description}
-    \item[Self-study of the dynamic programming method:]
-    This was one of the biggest challenges of the project as I had no previous experience in the field, and dynamic programming is not typically taught in great detail at an undergraduate level.
+    \item[Self-study of the Dynamic Programming Method:]
+    This was one of the biggest challenges of the project as I personally had no previous experience in the field of dynamic programming,
+    and the topic is not typically taught in great detail at an undergraduate level.
     I approached this self-study through the reading of existing dynamic programming textbooks, taking online courses, browsing forums and many practice problems accompanied by online tutorials.
     My goal was not simply to be able to solve dynamic programming problems, but to be able to understand the approach in such a level that I could easily explain it to other undergraduates.
-    I wrote a detailed guide on dynamic programming, explaining when the approach is applicable and how to apply it once the criteria are met.
+    I initially wrote a detailed introduction to dynamic programming, explaining the type of problem the approach is applicable to and how to apply it once the criteria are met.
     I used the Fibonacci problem to demonstrate dynamic programming principles in use.
         
-    \item[Research eight famous dynamic programming problems:]
-    These problems are The Coin Change Problem, Longest Increasing Subsequence, Max Subarray Sum, Longest Alternating Subsequence, Binomial Coefficients, Longest Palindromic Subsequence, Longest Contiguous Palindromic Substring and The Needleman-Wunsch Algorithm.
-    I had to know these problems inside out, in order to be able to use them as teaching material in my online guide.
+    \item[Research Famous Dynamic Programming Problems:]
+    Eight famous problems were proposed by my supervisor for research.
+    These problems are The Coin Change Problem, Longest Increasing Subsequence, Max Subarray Sum,
+    Longest Alternating Subsequence, Binomial Coefficients, Longest Palindromic Subsequence, Longest Contiguous Palindromic Substring and The Needleman-Wunsch Algorithm.
+    After understanding the problems in depth, I was able to group them by similarity and order them by difficulty for use in my online tutorial.
+    I had to know these problems inside out in order to be able to use them as teaching material.
     For each of these problems, I wrote a detailed unambiguous problem statement including example inputs and outputs,
     where applicable provided a greedy approach and proved thoroughly why it is incorrect or sub-optimal,
     explained in detail why dynamic programming techniques are applicable to the problem by proving the optimal substructure property and demonstrating any overlapping subproblems,
     where applicable provided a deep explanation of the brute force approach to the problem,
     the memoization approach to the problem and the tabulation approach to the problem.
-    These are explained with the help of figures and diagrams in order to ensure that even a reader with only undergraduate experience can follow why we are taking each step.
-    Also, where applicable, any optimizations I introduced to these approaches are included.
-    In addition to the eight given problems, three additional problems which complement them are also included in the research. These are the Fibonacci problem, Longest Common Subsequence and the Smith-Waterman Algorithm for a total of 11 existing problems analyzed.
+    I explained these with the help of figures and diagrams in order to ensure that even a reader with only undergraduate experience could follow the process of solving these problems with ease.
+    I also included any optimizations I introduced to the known approaches to these problems.
+    In addition to the eight given problems, I included three additional problems which complement them in the research. These are the Fibonacci problem, Longest Common Subsequence and the Smith-Waterman Algorithm, giving a total of 11 famous problems analyzed.
      
-    \item[Original implementations and complexity analysis of these problems:]
-    For the brute force,
-    memoization, tabulation and optimized approaches
-    a Python implementation is given which can be run on any input in order to help demonstrate the algorithm in action.
-    Each Python implementation is coded in a clean comprehensive manner and includes comments where necessary in order to ensure clarity.
-    For the solutions which use dynamic programming tables, a $printTable$ flag is included which prints the dynamic programming table in full when set, further clarifying what the algorithm is doing.
+    \item[Implementations and Complexity Analysis:]
+    For each of the brute force,
+    memoization, tabulation and optimized approaches,
+    I included a Python implementation which can be run on any input in order to help demonstrate the algorithm in action.
+    Each Python implementation was coded in a clean, comprehensive manner and includes comments where necessary in order to ensure clarity.
+    For the solutions which use dynamic programming tables, I included a $printTable$ flag which prints the dynamic programming table in full when set, further clarifying what the algorithm is doing.
     A thorough complexity analysis is given for each of the approaches, which aims to prove just how efficient dynamic programming is compared to other approaches to the problems.
     
-    \item[Benchmarking different approaches to these problems:]
-    For each of the problems which has a brute force and at least one dynamic programming solution, the results of various test runs are included.
-    This comparative analysis also seeks to show the massive decrease in runtime achieved by applying dynamic programming principles to the problems.
-    A section showing the methods used to comparatively analysing different approaches to the same algorithm is also included.
+    \item[Comparative Analysis and Benchmarking:]
+    For each of the problems which has at least a brute force and dynamic programming solution, I included the result of various test runs on random inputs.
+    This comparative analysis seeks to show the massive decrease in runtime achieved by applying dynamic programming principles to the problems.
+    A section outlining the methodology used to comparatively analyze different approaches to the same algorithm is also included in the report.
     
-    \item[An online guide to dynamic programming which is understandable to CS undergrads:]
-    The goal of this was to compile all of my above research and condense it into an online guide which could be accessed and understood by any Computer Science undergraduate.
-    In order to achieve this, a Jupyter notebook was used as it would allow the use of Markdown in order to structure the learning material.
-    The reader could also run any code included in the notebook on their own inputs, aiding with their understanding.
+    \item[The Online Guide to Dynamic Programming:]
+    The goal of the online guide was to compile all of my above research and condense it into a format which could be easily accessed and understood by any computer science undergraduate.
+    In order to achieve this I used a Jupyter Notebook, as it would allow the use of Markdown to structure the learning material,
+    and allow the reader to run any code included in the notebook on their own inputs, aiding with their understanding.
     The guide was carefully made to mirror my own research, starting with the basics of what dynamic programming is and when it can be applied, and slowly building up to solving complex dynamic programming problems.
     When choosing what to include in the guide, I used my own experience and structured it in a way I would have liked to have been taught if I were to learn the topic again from scratch.
-    Upon completing the guide, the reader should easily be able to identify and solve dynamic programming problems, making it an ideal resource for undergraduates preparing for technical intrviews, or those who have an interest in learning dynamic programming independently.
+    Upon completing the guide, the reader should easily be able to identify and solve dynamic programming problems, making it an ideal resource for undergraduates preparing for technical interviews.
     This guide is also structured in such a way that it can be used as teaching material for a lecturer looking to teach a module on dynamic programming to a class of any skill level.
-    In order to ensure that the online guide is comprehensive, it was distributed to Computer Science undergraduates accompanied by a survey and common feedback and suggestions were implemented.
+    In order to ensure that the online guide was comprehensive, it was distributed to computer science undergraduates at multiple stages during its development accompanied by a survey which asked the students for feedback.
+    Common feedback and suggestions were implemented, improving the efficiency of the guide greatly.
     
-    \item[Coming up with original dynamic programming problems:]
+    \item[New Dynamic Programming Problems:]
     The goal of this was to come up with original problems which could be solved using dynamic programming principles.
-    This was a difficult task as there is countless dynamic programming algorithms in existence,
+    This was a difficult task as there are countless dynamic programming algorithms in existence,
     and any progress would repeatedly be stunted by the discovery that the problem (or a very similar problem) has already been solved.
     My plan was to think in a higher dimension, as most of the dynamic programming problems I encountered during my research had at most a 2-Dimensional $dp$ table.
-    I was able to come up with a problem which I called The Interstellar Problem, as it involves pathfinding through an N-Dimensional grid.
-    Included is a proof by induction that the framework used to solve The Interstellar Problem can be used to solve any pathfinding problem in an N-Dimensional space assuming the correct constraints are imposed.
+    I was able to come up with a problem which I named The Interstellar Problem (After the 2014 Cristopher Nolan film $Interstellar$ which inspired the problem).
+    I gave a proof by induction that the framework used to solve The Interstellar Problem can be used to solve any pathfinding problem in an N-Dimensional space assuming the correct constraints are imposed.
     
-    \item[Research on multi-dimensional dynamic programming problems:]
+    \item[Research on Multi-Dimensional Dynamic Programming Problems:]
     In order to get a better understanding of how a multi-dimensional dynamic programming algorithm would operate,
     I compiled various existing problems where the input is multi-dimensional.
-    I implemented my own solutions to these problems in Python and did a complexity analysis on their various approaches.
-    These problems are Unique Paths and Minimum Path Sum.
+    I implemented my own solutions to these problems in Python and did a complexity analysis on their various approaches, with the hope of building on these solutions in order to eventually solve The Interstellar Problem.
+    These problems are two LeetCode classics, Unique Paths and Minimum Path Sum.
     
-    \item[Implementations of original dynamic programming problems:]
+    \item[Implementation of The Interstellar Problem:]
     The Python implementation of The Interstellar Problem, including heavily commented code and a description of the modules used to make the solution efficient, as well as a complexity analysis of the solution are given in this section.
-        
 \end{description}
 
 

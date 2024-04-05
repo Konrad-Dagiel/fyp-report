@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[12pt]{report}
 
 % Packages
 \usepackage[utf8]{inputenc} % For input encoding
@@ -56,7 +56,11 @@
 \maketitle
 
 \chapter*{Abstract}
-A section on what this thesis is about
+The outcome of this project is a self-contained, complete guide to dynamic programming which can 
+be accessed by anyone online. The text serves to take a programmer with zero dynamic 
+programming experience and give them a deep understanding of the topic, providing them with
+enough comprehensive knowledge to solve dynamic programming problems on their own.
+This project also proposes solutions to two new dynamic programming problems, The Interstellar Problem I and The Interstellar Problem II.
 
 \chapter*{Declaration}
 Declaration of Originality.\\
@@ -89,8 +93,10 @@ Throughout this notebook when we refer to Dynamic Programming, we refer to a mor
 
 \include{chapters/ch-design.tex} % all existing algos
 
-\include{chapters/ch-benchmarking} % benchmarking algos
+\include{chapters/ch-benchmarking.tex} % benchmarking algos
 
-\include{chapters/ch-design-own} % all OG algos
+\include{chapters/ch-design-own.tex} % all OG algos
+
+\include{chapters/ch-conclusions.tex} % reflection and timeline
 
 \end{document}

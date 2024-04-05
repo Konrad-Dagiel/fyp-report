@@ -36,7 +36,7 @@
         
 \end{description}
 
-\subsection{Tabulation Approach to Minimum Path Sum}
+\subsection{Tabulation Approach to Min Path Sum}
 We can solve this problem in a very similar manner to Unique Paths.
 We start by creating a table $dp$ with the same dimensions as the input matrix, where $dp[i][j]$ represents the minimum path cost from $dp[i][j]$ to $F$.
 We can initialize $F$ to be it's own cost in the input matrix (the cost of moving from $F$ to $F$ is $cost[F]$).
@@ -134,7 +134,7 @@ Let $m$ be the number of rows in $cost$ (the input matrix), and $n$ be the numbe
     
 \end{description}
 
-\subsection{Optimization of Minimum Path Sum}
+\subsection{Optimization of Min Path Sum}
 We can use the exact same optimization as we did with Unique Paths, as each value in row $r$ can be calculated from just the values in row $r$ and row $r-1$.
 Storing only two rows at a given time will reduce the Space complexity to $O(m)$.
 
