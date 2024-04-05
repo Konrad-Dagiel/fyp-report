@@ -1,7 +1,7 @@
 \chapter{Research on Dynamic Programming}
 
 \section{Introduction to Dynamic Programming}
-Dynamic Programming has many definitions, but can be summarized as method of breaking down a larger problem into sub-problems, so that if you work through the sub-problems in the right order, building each answer on the previous one, you eventually solve the larger problem.
+Dynamic Programming has many definitions, but can be summarized as a method of breaking down a larger problem into sub-problems, such that if you work through the sub-problems in the right order, building each answer on the previous one, you eventually arrive at a solution to the larger problem.
 The two attributes a problem needs to have in order to be classified as a dynamic programming problem are as follows:
 
 \begin{definition}[Optimal Substructure]
@@ -9,7 +9,7 @@ The two attributes a problem needs to have in order to be classified as a dynami
 \end{definition}
 
 \begin{definition}[Overlapping Subproblems]
-    A problem is said to have overlapping subproblems if the problem can be broken down into subproblems which can be reused several times or a recursive algorithm would solve the same subproblem more than once resulting in repeated work. (If the subproblems do not overlap, the algorithm is categorized as a "divide and conquer" algorithm rather than a dynamic programming algorithm.)
+    A problem is said to have overlapping subproblems if the problem can be broken down into subproblems which can be reused several times, or a recursive algorithm would solve the same subproblem more than once resulting in repeated work. (If the subproblems do not overlap, the algorithm is categorized as a "divide and conquer" algorithm rather than a dynamic programming algorithm.)
 \end{definition} 
 Once we have deduced that a problem has both of these properties, we can use dynamic programming principles in order to solve the problem in an efficient manner.
 When solving a dynamic programming problem, it is common to start by implementing a brute force solution which explores all subproblems and returns a solution.
@@ -17,9 +17,11 @@ We can then extend our solution to use a cache to store the results of any subpr
 This is known as "memoization", or "top-down dynamic programming".
 We can then look for any patterns in the cache table which, given an initialization (usually the base case of the recursive solution), would allow us to compute the values stored in the cache without ever traversing the decision tree of the problem itself.
 This is known as "tabulation", or "bottom-up dynamic programming".
+Finally, we can space optimize the cache to avoid storing information which is not needed to arrive at the solution.
+This way, we arrive at the optimized dynamic programming solution to the problem.
 In order to demonstrate this, we will use a simple problem called The Fibonacci Problem.
 
-\subsection{Demonstration of Dynamic Programming Principles using the Fibonacci Problem}
+\section{The Fibonacci Problem}
 \input{chapters/algorithms/al-fibonacci.tex}
 
 \section{Dynamic Programming Summary}
