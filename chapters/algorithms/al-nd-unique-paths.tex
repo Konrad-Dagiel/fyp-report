@@ -1,14 +1,18 @@
-We can see that extending a K-Dimensional pathfinding problem where no negative progress is allowed (similar to Unique Paths or Min Path Sum),
-we can extend it to a K+1-Dimensional problem by simply considering a single new 'direction' in our calculation.
-Because of this, we can solve any pathfinding problem from any corner $R$ of a rank $N$ tensor to the opposite corner $F$ (where no negative progress is allowed),
-by simply initializing an $N$ dimensional table $dp$, initializing $dp[F]$ and each field on a border in $dp$ to an appropriate value\footnote{1 in the case of Unique Paths, or $cost[i]$ in Min Path Sum}, and deducing the value of an arbitrary field $v$ by doing a constant time operation (such as $sum$ or $max$) of each 'surrounding' value in a direction opposite to the direction you are allowed to travel in that dimension.
+Consider a K-Dimensional pathfinding problem where no negative progress is allowed (similar to Unique Paths or Min Path Sum).
+We can extend it to a K+1-Dimensional problem by simply considering a single new 'direction' in our calculation.
+We have implemented this for Unique Paths in Figure \ref{fig:3d-unique-paths}.
+
+We have shown that we can theoretically transform a K-dimensional pathfinding problem into a K+1-Dimensional pathfinding problem.
+We can repeat this transformation N times in order to arrive at any N-Dimensional pathfinding problem.
+
 
 
 \section{The Interstellar Problem Implementation Details}
-Now that we have shown the above, we may attempt to use this knowledge to solve The Interstellar Problem.
-This implemetation is tricky as we must simulate $n$ for loops where $n$ is the dimension count.
-Numpy was used to access, store data in, and manipulate the input tensor as well as the $dp$ table.
-This choice was made because Numpy allows us to access elements in n-rank tensors by providing a tuple of length $n$ as an index.
+Now that we have proved that The Interstellar Problem is solvable, we may attempt to implement a solution in Python.
+This implemetation is tricky as we must simulate $n$ for loops where $n$ is the dimension count. The transformation from K to K+1-Dimensional pathfinding problems is trivial in theory, but requires thinking outside the box to implement in practice.
+Numpy was used to 
+access, store data in, and manipulate the input tensor as well as the $dp$ table.
+This choice was made because Numpy allows us to access elements in n-rank tensors by providing a tuple of length $n$ as an index, rather than manually accessing each cell through a series of nested indices.
 Numpy also allows us to easily initialialize n-rank tensors through the use of its $np.zeros(shape)$ function, rather than having to use something similar to Figure \ref{fig:zeros}:
 
 \begin{figure}[H]
@@ -27,8 +31,8 @@ Numpy also allows us to easily initialialize n-rank tensors through the use of i
 Numpy's $np.ndindex()$ is a function that provides an iterator yielding tuples of indices for a given shape.
 It is particularly useful for iterating over the indices of n-dimensional arrays.
 This function returns an object that can be iterated over, generating all possible index tuples for a specified shape.
-
-The pseudocode of the algorithm using Numpy is as follows:
+\newpage
+The pseudocode for The Interstellar Problem I is as follows:
 
 \begin{enumerate}
     \item Initialize an n-dimensional array of zeros called $dp$ to store the number of paths for each cell, with $dp[R]$ set to 1.
@@ -43,8 +47,8 @@ The pseudocode of the algorithm using Numpy is as follows:
 
 \section{Python Implementation of The Interstellar Problem 1}
 
-Figure \ref{fig:nd-unique-paths} shows a Python Implementation of N-Dimensional Unique Paths using the framework discussed above.
-The code is heavily commented so we can see the framework in action. Note that this approach can be trivially converted to calculate the Min Path Sum (The Interstellar Problem 2) instead, or any other pathfinding problem where negative progress is not allowed.
+Figure \ref{fig:nd-unique-paths} shows a Python Implementation of The Interstellar Problem I using the pseudocode described above.
+The code is heavily commented so we can see the framework in action. Note that this approach can be trivially converted to calculate the Min Path Sum (The Interstellar Problem II) instead, or any other pathfinding problem through an N-dimensional field where negative progress is not allowed.
 
 \begin{figure}[H]
     \centering
@@ -82,17 +86,16 @@ The code is heavily commented so we can see the framework in action. Note that t
     dimensions = (2,7,5)
     print(interstellar_1(dimensions))
     \end{lstlisting}
-    \caption{Python Implementation of The Interstellar Problem 1}
+    \caption{Python Implementation of The Interstellar Problem I}
     \label{fig:nd-unique-paths}
 \end{figure}
 
-\subsection{Complexity Analysis of The Interstellar Problem 1}
+\subsection{Complexity Analysis of The Interstellar Problem I}
 Let $n$ be the length of the tuple $dimensions$.
 \begin{description}
     \item[Time Complexity:]
         The time complexity of filling a tensor of shape $dimensions$ with values,
-        where each value is obtained through $|dimensions|$ constant time additions
-        is $O(\prod_{i=1}^{n} dimensions_i * n)$. This is because there are $\prod_{i=1}^{n} dimensions_i$ cells to fill, and each takes $n$ operations to complete, one addition from each dimension.
+        where each value is obtained through $n$ constant time additions is:\\$O((\prod_{i=1}^{n} dimensions_i) * n)$. This is because there are $\prod_{i=1}^{n} dimensions_i$ cells to fill, and each takes $n$ operations to complete, one addition from each dimension.
         
     \item[Space Complexity:] 
     The space complexity of filling a tensor of shape $dimensions$ with values,
@@ -100,7 +103,7 @@ Let $n$ be the length of the tuple $dimensions$.
     This is because there are $\prod_{i=1}^{n} dimensions_i$ cells to fill and store.
     
     \item[Overall:] Total:\\
-        Time Complexity: $O(\prod_{i=1}^{n} dimensions_i * n)$\\
+        Time Complexity: $O((\prod_{i=1}^{n} dimensions_i) * n)$\\
         Space Complexity: $O(\prod_{i=1}^{n} dimensions_i)$
 
 \end{description}

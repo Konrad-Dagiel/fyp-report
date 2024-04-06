@@ -29,6 +29,7 @@
                  &  &  &  &  &  & \textbf{F} \\
                 \hline
             \end{tabular}
+            \caption{Example Path for Unique Paths}
         \end{table}
 
         
@@ -54,6 +55,7 @@ The square directly above and to the left of $dp[F]$ can also be initialized to 
         1 & 1 & 1 & 1 & 1 & 1 & 1 \\
         \hline
     \end{tabular}
+    \caption{Example Initialized $dp$ Table for Unique Paths}
 \end{table}
 
 Now we simply fill the grid from the bottom right to the top left,
@@ -70,6 +72,7 @@ where the value of each square is the sum of the value below it and to its right
         1 & 1 & 1 & 1 & 1 & 1 & 1 \\
         \hline
     \end{tabular}
+    \caption{Example Filled $dp$ Table for Unique Paths}
 \end{table}
 
 The top left square is where the robot was, so that is the number of paths from the robot to the finish square.
@@ -114,11 +117,12 @@ A sample Python implementation is given in \ref{fig:unique-paths}
         Space Complexity: $O(m * n)$
     
 \end{description}
+\newpage
 
 \subsection{Optimization of the Unique Paths Problem}
 Notice that for a given value in row $r$ in the table $dp$, $v$ can be calculated using just row $r$ and row $r-1$.
 Since we compute the values in $dp$ rowwise from the bottom up, we do not actually need to store the entire $dp$ table in memory as the values which are two or more rows below the row we are computing at any given time do not contribute to our calculation.
-Storing only two rows of the $dp$ table at a time reduces the space complexity from $O(m * n)$ to just $O(m)$.
+Storing only two rows of the $dp$ table at a time reduces the space complexity from $O(m * n)$ to just $O(m)$.\\
 
 A Python implementation of this optimization is given in Figure \ref{fig:unique-paths-optimized}.
 
@@ -144,3 +148,9 @@ A Python implementation of this optimization is given in Figure \ref{fig:unique-
     \caption{Unique Paths Optimized Python Implementation}
     \label{fig:unique-paths-optimized}
 \end{figure}
+
+A further optimization involves swapping the values $m$ and $n$ such that $m > n$. We will arrive at the same answer, but storing smaller rows in memory.
+This optimization further reduces the space complexity of Unique Paths to $O(min(m,n))$.
+
+We have seen a similar optimization in Section \ref{subsec:lcs-optimized}.
+\newpage

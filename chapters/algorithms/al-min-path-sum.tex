@@ -1,6 +1,6 @@
 \begin{description}
     \item[Problem Statement:]
-        Given a 2D array filled with non-negative numbers representing the 'cost' at that field in the input matrix,
+        Given a 2D array filled with non-negative numbers where the number at each cell represents the 'cost' of including that cell in a path,
         find the cost of the path from the top-left corner (denoted $R$) to the bottom-right corner (denoted $F$) which minimizes the sum of numbers along the path.
         (minimizes path cost).
         You can only move down or to the right at any point in time (no path can make negative progress).
@@ -9,7 +9,7 @@
         A 2D array, called $cost$.
         
     \item[Output:]
-        An integer $min_path_sum(cost)$, which represents the cost of the minimum path from $R$ to $F$.
+        An integer $min\_path\_sum(cost)$, which represents the cost of the minimum path from $R$ to $F$.
         
     \item[Example:] For:\\
     $cost = $\\
@@ -17,7 +17,7 @@
     $[1,5,1],$\\
     $[4,2,1]]$\\
 
-    $min_path_sum(cost) = 7$
+    $min\_path\_sum(cost) = 7$
 
     \item[Explanation:]
         Explanation: $1 + 3 + 1 + 1 + 1 = 7$ is the minimum path sum.
@@ -32,6 +32,7 @@
                  &  & \textbf{F} \\
                 \hline
             \end{tabular}
+            \caption{The Minimum Cost Path for the Example Input}
         \end{table}
         
 \end{description}
@@ -45,13 +46,14 @@ We can initialize $F$ to be it's own cost in the input matrix (the cost of movin
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
-         &  &  \\
+        \phantom{0} & \phantom{0} &  \\
         \hline
          &  &  \\
         \hline
          &  & 1 \\
         \hline
     \end{tabular}
+    \caption{Example Initialized $dp$ Table for Min Path Sum}
 \end{table}
 Now we can iterate through the input matrix backwards using the same logic as in Unique Paths, but this time:
 
@@ -80,9 +82,10 @@ The top left of the grid will give us the minimum cost of reaching the bottom ri
         7 & 3 & 1 \\
         \hline
     \end{tabular}
+    \caption{Example Filled $dp$ Table for Min Path Sum}
 \end{table}
 
-A sample Python Implementation of this is given in Figure \ref{fig:min-path-sum}
+A sample Python implementation of this is given in Figure \ref{fig:min-path-sum}
 
 \begin{figure}[H]
     \centering
@@ -116,7 +119,7 @@ A sample Python Implementation of this is given in Figure \ref{fig:min-path-sum}
     \caption{Min Path Sum Python Implementation}
     \label{fig:min-path-sum}
 \end{figure}
-
+\newpage
 \subsection{Complexity Analysis of Min Path Sum}
 Let $m$ be the number of rows in $cost$ (the input matrix), and $n$ be the number of columns in $cost$.
 
@@ -170,7 +173,9 @@ A sample Python implementation is given in Figure \ref{fig:min-path-sum-optimize
     \label{fig:min-path-sum-optimized}
 \end{figure}
 \subsection{Note on Optimization}
+Let $m$ be the row count and $n$ be the column count of $cost$.
 This two-row framework can be used to solve any pathing problem which is constrained such that negative progress is not possible.
 This optimization can be taken even further. We have solved both problems rowwise starting from the bottom. This problem can equally be solved columnwise,
 using the same optimization except this time storing two columns instead of two rows.
-If we solve these problems rowwise in the case of $m \leq n$, and columnwise if $m > n$, we actually reduce the space complexity even further to $O(min(m,n))$.
+This is equivalent to transposing the $cost$ matrix such that $m > n$ as we did with Unique Paths, but without incuring the cost of the transposition.
+If we solve these problems rowwise in the case of $m \leq n$, and columnwise if $m > n$, we reduce the space complexity even further to $O(min(m,n))$.

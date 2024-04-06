@@ -1,4 +1,7 @@
 \chapter{The Interstellar Problem}
+This chapter presents the design, implementation and analysis of my own original dynamic programming problems, The Interstellar Problem I and The Interstellar Problem II.
+The problem reads as follows:\\
+
 The robot TARS has been sucked into the singularity, an N-dimensional grid. He starts in a corner of the grid. In order to escape, he must reach the opposite corner of the singularity from where he started.
 Inside, he can move in any direction through any dimension, as long as he is making progress towards his escape point with each move.
 \begin{enumerate}
@@ -6,7 +9,7 @@ Inside, he can move in any direction through any dimension, as long as he is mak
     \item If each space in the singularity has a fuel cost, what is the minimum cost path from the start position to the goal?
 \end{enumerate}
 
-\section{The Interstellar Problem 1}
+\section{The Interstellar Problem I}
 \begin{description}
     \item[Problem Statement:]
     Given as input the shape of an n-rank tensor, find the number of unique paths from a corner of the tensor denoted $R$ to the opposite corner of the tensor,
@@ -30,6 +33,7 @@ Inside, he can move in any direction through any dimension, as long as he is mak
             \textbf{R} & $\rightarrow$ & $\rightarrow$ &$\rightarrow$ & $\rightarrow$ & $\rightarrow$& $\rightarrow$&$\rightarrow$ & \textbf{F} \\
             \hline
         \end{tabular}
+        \caption{Visualization for Example 1}
     \end{table}
 
     \item[Example 2:] For:\\
@@ -52,6 +56,7 @@ Inside, he can move in any direction through any dimension, as long as he is mak
              &  &  &  &  &  & \textbf{F} \\
             \hline
         \end{tabular}
+        \caption{Visualization for Example 2}
     \end{table}
 
     \item[Example 3:] For:\\
@@ -62,7 +67,7 @@ Inside, he can move in any direction through any dimension, as long as he is mak
     In this case the singularity has 4 dimensions, making it impossible to visualize. There are 27720 different paths TARS could take to reach $F$ from $R$.
 \end{description}
 
-\section{The Interstellar Problem 2}
+\section{The Interstellar Problem II}
 \begin{description}
     \item[Problem Statement:]
     Given as input an n-rank tensor where the value at each cell represents the fuel cost of landing on that cell, find the cost of the path from a corner of the tensor denoted $R$ to the opposite corner of the tensor,
@@ -88,7 +93,7 @@ Inside, he can move in any direction through any dimension, as long as he is mak
     $min\_path = 7$
 
     \item[Explanation 2:]
-        Explanation: $1 + 3 + 1 + 1 + 1 = 7$ is the minimum path sum.
+        Explanation: $1 + 3 + 1 + 1 + 1 = 7$ is the minimum path cost through the singularity.
         \begin{table}[H]
             \centering
             \begin{tabular}{|c|c|c|}
@@ -100,6 +105,7 @@ Inside, he can move in any direction through any dimension, as long as he is mak
                  &  & \textbf{F} \\
                 \hline
             \end{tabular}
+            \caption{Visualization for Example 2}
         \end{table}
 \end{description}
 
@@ -113,8 +119,8 @@ and build up to the solution to the interstellar problem.
 \subsection{Min Path Sum}
 \input{chapters/algorithms/al-min-path-sum.tex}
 
-\subsection{Extending Unique Paths and Min Path Sum to 3 Dimensions}
+\subsection{Extending Pathfinding Problems to 3 Dimensions}
 \input{chapters/algorithms/al-3d-unique-paths.tex}
 
-\subsection{A Framework for Solving N-Dimensional Pathfinding Problems}
+\subsection{Correctness of N-Dimensional Pathfinding Problems}
 \input{chapters/algorithms/al-nd-unique-paths.tex}
