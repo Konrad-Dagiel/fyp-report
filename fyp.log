@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  6 APR 2024 20:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  6 APR 2024 21:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -435,39 +435,154 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@expandcount=\count317
  (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-\c@definition=\count318
+))) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip77
+\thanksmargin=\skip78
+\droptitle=\skip79
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count318
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count319
+)
+\@linkdim=\dimen276
+\Hy@linkcounter=\count320
+\Hy@pagecounter=\count321
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count322
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count323
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen277
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count324
+\Field@Width=\dimen278
+\Fld@charsize=\dimen279
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count325
+\c@Item=\count326
+\c@Hfootnote=\count327
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count328
+\c@bookmark@seq@number=\count329
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip80
+)
+\c@definition=\count330
  (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux) (chapters/ch-conclusions.aux))
 \openout1 = `fyp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
  (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
-\scratchdimen=\dimen276
+\scratchcounter=\count331
+\scratchdimen=\dimen280
 \scratchbox=\box77
-\nofMPsegments=\count320
-\nofMParguments=\count321
+\nofMPsegments=\count332
+\nofMParguments=\count333
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count322
-\MPscratchDim=\dimen277
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen281
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
 \everyMPtoPDFconversion=\toks48
 ) (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -509,37 +624,77 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count325
-[1
+\c@lstlisting=\count337
+Package hyperref Info: Link coloring OFF on input line 53.
+(fyp.out) (fyp.out)
+\@outlinefile=\write4
+\openout4 = `fyp.out'.
+
+ [1
 
 {C:/Users/kdawg/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [1
 
-] [2
+]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.95 \chapter
+             *{Acknowledgements} [2
 
-] [3
+]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.102 \tableofcontents
+                       [3
 
 ] (fyp.toc
 Overfull \hbox (4.5121pt too wide) in paragraph at lines 9--9
- [][] []\OT1/cmr/m/n/12 Complexity Anal-y-sis of the Mem-o-iza-tion Ap-proach to The Fi-bonacci 
+ [][] [][]\OT1/cmr/m/n/12 Complexity Anal-y-sis of the Mem-o-iza-tion Ap-proach to The Fi-bonacci 
  []
 
 
 Overfull \hbox (5.66069pt too wide) in paragraph at lines 23--23
- [][] []\OT1/cmr/m/n/12 Complexity Anal-y-sis of the Tab-u-la-tion Ap-proach to the Coin Change 
+ [][] [][]\OT1/cmr/m/n/12 Complexity Anal-y-sis of the Tab-u-la-tion Ap-proach to the Coin Change 
  []
 
-[4
 
-] [5] [6])
-\tf@toc=\write4
-\openout4 = `fyp.toc'.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.25 ...reasing Subsequence}{19}{subsection.3.5.1}
+                                                  % [4
 
- [7]
+]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 ...ngest Common Subsequence}{41}{section.3.9}
+                                                  % [5]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.87 ...5}The Interstellar Problem}{64}{chapter.5}
+                                                  % [6])
+\tf@toc=\write5
+\openout5 = `fyp.toc'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.104 \include{chapters/ch-introduction.tex}
+                                             % intro to project [7]
 \openout2 = `chapters/ch-introduction.aux'.
 
  (chapters/ch-introduction.tex
 Chapter 1.
-) [8
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.104 \include{chapters/ch-introduction.tex}
+                                             % intro to project [1
 
 
 ]
@@ -552,27 +707,27 @@ Overfull \hbox (2.75568pt too wide) in paragraph at lines 14--27
 []\OT1/cmr/m/n/12 Eight fa-mous prob-lems were
  []
 
-[9
+[2
 
 
 
 
-] [10]) [11]
+] [3]) [4]
 \openout2 = `chapters/ch-design.aux'.
 
  (chapters/ch-design.tex
 Chapter 3.
-[12
+[5
 
 
 
 
-] (chapters/algorithms/al-fibonacci.tex [13] [14] [15] [16] [17]
+] (chapters/algorithms/al-fibonacci.tex [6] [7] [8] [9] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 258--266
 
  []
 
-[18]) (chapters/algorithms/al-coin_change.tex [19] [20]
+[11]) (chapters/algorithms/al-coin_change.tex [12] [13]
 Underfull \hbox (badness 10000) in paragraph at lines 58--62
 
  []
@@ -585,17 +740,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--72
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21] [22] [23]
+[14] [15] [16]
 Underfull \hbox (badness 10000) in paragraph at lines 214--219
 
  []
 
-[24]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
-) (chapters/algorithms/al-lis.tex [25] [26] [27]
+) (chapters/algorithms/al-lis.tex [18] [19] [20]
 Overfull \hbox (19.10997pt too wide) in paragraph at lines 90--90
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Brute Force Ap-proach to Longest
  []
@@ -605,7 +760,7 @@ Overfull \hbox (5.77666pt too wide) in paragraph at lines 112--112
 []\OT1/cmr/bx/n/14.4 Memoization Ap-proach to Longest In-creas-ing Sub-se-quence 
  []
 
-[28] [29] [30] [31]
+[21] [22] [23] [24]
 Underfull \hbox (badness 10000) in paragraph at lines 230--234
 
  []
@@ -615,62 +770,62 @@ Overfull \hbox (12.60988pt too wide) in paragraph at lines 254--254
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Tab-u-la-tion Ap-proach to Longest
  []
 
-) (chapters/algorithms/al-max_subarray_sum.tex [32] [33] [34] [35] [36]) (chapters/algorithms/al-las.tex
+) (chapters/algorithms/al-max_subarray_sum.tex [25] [26] [27] [28] [29]) (chapters/algorithms/al-las.tex
 Overfull \hbox (6.21999pt too wide) in paragraph at lines 27--27
 []\OT1/cmr/bx/n/14.4 Brute Force Ap-proach to Longest Al-ter-nat-ing Sub-se-quence 
  []
 
-[37]
+[30]
 Overfull \hbox (19.10997pt too wide) in paragraph at lines 73--73
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Brute Force Ap-proach to Longest
  []
 
-[38]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 106--111
 
  []
 
-[39] [40] [41]
+[32] [33] [34]
 Overfull \hbox (10.10158pt too wide) in paragraph at lines 213--213
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Op-ti-mized Ap-proach to Longest
  []
 
-[42]) (chapters/algorithms/al-binomial_coefficients.tex [43]
+[35]) (chapters/algorithms/al-binomial_coefficients.tex [36]
 Underfull \hbox (badness 10000) in paragraph at lines 68--77
 
  []
 
-[44] [45]
+[37] [38]
 Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-[46]
+[39]
 Underfull \hbox (badness 10000) in paragraph at lines 216--223
 
  []
 
-) (chapters/algorithms/al-lcs.tex [47]
+) (chapters/algorithms/al-lcs.tex [40]
 Overfull \hbox (19.10997pt too wide) in paragraph at lines 26--26
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Brute Force Ap-proach to Longest
  []
 
-[48]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
  []
 
-[49]
+[42]
 Overfull \hbox (12.60988pt too wide) in paragraph at lines 152--152
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Tab-u-la-tion Ap-proach to Longest
  []
 
-[50]
+[43]
 Overfull \hbox (2.04651pt too wide) in paragraph at lines 170--170
 []\OT1/cmr/bx/n/14.4 Optimized Tab-u-la-tion Ap-proach to Longest Com-mon Sub-
  []
 
-) (chapters/algorithms/al-lps.tex [51]
+) (chapters/algorithms/al-lps.tex [44]
 Overfull \hbox (11.41153pt too wide) in paragraph at lines 19--19
 []\OT1/cmr/bx/n/14.4 Tabulation Ap-proach to Longest Palin-dromic Sub-se-quence 
  []
@@ -680,68 +835,68 @@ Overfull \hbox (6.49992pt too wide) in paragraph at lines 26--26
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of Longest Palin-dromic Sub-se-quence 
  []
 
-) (chapters/algorithms/al-lcps.tex [52]
+) (chapters/algorithms/al-lcps.tex [45]
 Overfull \hbox (8.3366pt too wide) in paragraph at lines 21--21
 []\OT1/cmr/bx/n/14.4 Brute Force Ap-proach to Longest Con-tigu-ous Palin-dromic
  []
 
-[53]
+[46]
 Overfull \hbox (1.8365pt too wide) in paragraph at lines 52--52
 []\OT1/cmr/bx/n/14.4 Tabulation Ap-proach to Longest Con-tigu-ous Palin-dromic
  []
 
-[54] [55]
+[47] [48]
 Overfull \vbox (15.41537pt too high) has occurred while \output is active []
 
- [56]
+ [49]
 Overfull \hbox (20.70987pt too wide) in paragraph at lines 232--232
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Tab-u-la-tion Ap-proach to Longest
  []
 
-) (chapters/algorithms/al-needleman_wunsch.tex [57] [58]
+) (chapters/algorithms/al-needleman_wunsch.tex [50] [51]
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 177.
  (C:\Users\kdawg\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 177.
- [59]
+ [52]
 Overfull \vbox (4.86679pt too high) has occurred while \output is active []
 
- [60]) (chapters/algorithms/al-smith_waterman.tex
+ [53]) (chapters/algorithms/al-smith_waterman.tex
 Overfull \hbox (0.16641pt too wide) in paragraph at lines 30--32
 []\OT1/cmr/m/n/12 Create a ma-trix of size: $(\OML/cmm/m/it/12 len\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 seq\OT1/cmr/m/n/12 1) + 1)$ x $(\OML/cmm/m/it/12 len\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 seq\OT1/cmr/m/n/12 2) + 1)$ as fol-lows: (Like in Needleman-
  []
 
-[61] [62]
+[54] [55]
 Overfull \vbox (64.4346pt too high) has occurred while \output is active []
 
- [63]))
+ [56]))
 \openout2 = `chapters/ch-benchmarking.aux'.
 
  (chapters/ch-benchmarking.tex
 Chapter 4.
-[64
+[57
 
 
 
 
-] [65]
+] [58]
 Overfull \hbox (18.05183pt too wide) in paragraph at lines 86--86
 []\OT1/cmr/bx/n/17.28 Approach to Bench-mark-ing the Coin Change Prob-
  []
 
-[66] [67] [68]
+[59] [60] [61]
 Overfull \hbox (7.58333pt too wide) in paragraph at lines 209--209
 []\OT1/cmr/bx/n/14.4 Results of Bench-mark-ing Longest Al-ter-nat-ing Sub-se-quence 
  []
 
-[69]
+[62]
 Overfull \hbox (4.27985pt too wide) in paragraph at lines 229--229
 []\OT1/cmr/bx/n/17.28 Approach to Bench-mark-ing Bi-no-mial Co-ef-fi-cients 
  []
 
-) [70]
+) [63]
 \openout2 = `chapters/ch-design-own.aux'.
 
  (chapters/ch-design-own.tex
@@ -751,59 +906,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
 
-[71
+[64
 
 
 
 
-] [72] (chapters/algorithms/al-unique-paths.tex [73] [74] [75]
+] [65] (chapters/algorithms/al-unique-paths.tex [66] [67] [68]
 Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
 
-[76]) (chapters/algorithms/al-min-path-sum.tex
+[69]) (chapters/algorithms/al-min-path-sum.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--19
 
  []
 
-[77] [78] [79] [80]) (chapters/algorithms/al-3d-unique-paths.tex [81] [82]) (chapters/algorithms/al-nd-unique-paths.tex [83]
+[70] [71] [72] [73]) (chapters/algorithms/al-3d-unique-paths.tex [74] [75]) (chapters/algorithms/al-nd-unique-paths.tex [76]
 Overfull \hbox (1.7279pt too wide) in paragraph at lines 10--10
 []\OT1/cmr/bx/n/17.28 The In-ter-stel-lar Prob-lem Im-ple-men-ta-tion De-tails 
  []
 
-[84]
+[77]
 Overfull \hbox (0.88986pt too wide) in paragraph at lines 48--48
 []\OT1/cmr/bx/n/17.28 Python Im-ple-men-ta-tion of The In-ter-stel-lar Prob-
  []
 
-[85] [86])) [87]
+[78] [79])) [80]
 \openout2 = `chapters/ch-conclusions.aux'.
 
  (chapters/ch-conclusions.tex
 Chapter 6.
-[88
+[81
 
 
 
 
-]) [89] [90] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux) (chapters/ch-conclusions.aux))
+] [82]) [83] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux) (chapters/ch-conclusions.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+Package rerunfilecheck Info: File `fyp.out' has not changed.
+(rerunfilecheck)             Checksum: 17E357DBC207668A370F8B416EFF2E0A;34103.
  ) 
 Here is how much of TeX's memory you used:
- 17637 strings out of 474435
- 347676 string characters out of 5741933
- 2111190 words of memory out of 5000000
- 39595 multiletter control sequences out of 15000+600000
- 568480 words of font info for 72 fonts, out of 8000000 for 9000
+ 25615 strings out of 474435
+ 470531 string characters out of 5741933
+ 2117190 words of memory out of 5000000
+ 46554 multiletter control sequences out of 15000+600000
+ 568285 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,17n,93p,488b,1483s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on fyp.pdf (91 pages, 427557 bytes).
+ 84i,17n,93p,619b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on fyp.pdf (91 pages, 649183 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2010 PDF objects out of 2073 (max. 8388607)
+ 915 named destinations out of 1000 (max. 500000)
+ 893 words of extra memory for PDF output out of 10000 (max. 10000000)
 

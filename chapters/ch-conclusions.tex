@@ -15,28 +15,41 @@
     Beyond the theory of dynamic programming, I also learned how to take a complicated concept and condense it in such a way that it is understandable to any reader.
     It has been said that in order to truly understand a concept you must be able to unambiguously teach it to another person, and this project is a testament to that statement.
     In order to effectively teach dynamic programming to undergraduates, I had to learn to learn as well as learning to teach.
-    As far as technical skills, I sharpened my ability to perform complexity analysis on recursive, exponential and optimized algorithms. This is something I struggled with in the past.
+
+    As for technical skills, I sharpened my ability to perform complexity analysis on recursive, exponential and optimized algorithms. This is something I struggled with in the past.
     I learned how to identify a problem as being solvable through dynamic programming methods, and how to apply memoization and tabulation to these problems in order to speed up the runtime of their brute force solutions.
-    Another skill I'm proud of learning is identifying where memory is being used unnecessarily, and space optimizing existing solutions to well known dynamic programming algorithms. My own space optimizations are scattered throughout the report.
+    Another skill I'm proud of learning is identifying where memory is being used unnecessarily, and space optimizing existing solutions to well known dynamic programming algorithms. My own original ideas for, and implementations of, space optimizations for existing algorithms are scattered throughout the report.
     I gained experience in the Timeit and Numpy libraries, learning new useful methods from each of them by reading their documentation.
     Finally, I learned how to formulate a problem statement unambiguously, making it clear what exactly my own dynamic programming problems are aiming to solve.
     Writing the dynamic programming course taught me how to use Jupyter Notebook and writing the report taught me how to use LaTeX.
 \end{description}
 \section{Summary of How the Project was Conducted}
-The first months of the project were spent reading literature on dynamic programming, taking online courses on dynamic programming, and practicing problems to gain an appreciation for what the topic is about.
-I used each of the eight suggested problems to deepen my understanding of the topic, one by one figuring out the brute force,
-memoization and tabulation approaches and writing down exactly what made it all 'click' for me,
-so that I could eventually teach them more effectively.
+\begin{description}
+    \item[Learning Dynamic Programming:]
+    The first months of the project were spent reading literature on dynamic programming, taking online courses on dynamic programming, and practicing problems to gain an appreciation for what the topic is about.
+    I used each of the eight suggested problems to deepen my understanding of the topic, one by one figuring out the brute force,
+    memoization and tabulation approaches and writing down exactly what made it all 'click' for me,
+    so that I could eventually teach them more effectively.
+
+    \item[Creating the Online Guide:]
 I made drafts of each 'lesson' on each algorithm based on my limited knowledge.
 Once I had all eight suggested problems covered, as well as three additional problems which I found useful in learning the method,
 I carefully re-ordered the problems not by difficulty, but in a way I would have liked to have been taught dynamic programming. Keeping similar problems together and starting simple for each different type of problem, working up to complex solutions.
 Once this was done, I completely re-wrote the lessons on the researched algorithms taking into account the new ordering and filling in any gaps I previously left due to lack of knowledge.
 At this point, I felt confident enough to perform a formal complexity analysis on each of the researched problems, formulating it in a way which is understandable to undergraduates.
 After more research, I felt confident that with some effort I could come up with dynamic programming problems of my own to solve.
+
+    \item[Original Dynamic Programming Problems:]
 A major issue I continued to run into was seemingly coming up with original problems, only to later find that they were already solved.
 Some of these problems were: Biggest Palindromic Submatrix, Optimal Matrix Multiplication Sequencing, The Matchstick Game, and Optimal Register Allocation.
 Finally I was able to build on two existing problems called Unique Paths and Min Path Sum to come up with my own original problem, The Interstellar Problem.
-The Implementation of The Interstellar Problem was the most technically challenging (but rewarding) part of the problem, as it required many iterations and a dive into some lesser known libraries before finally deciding to scrap all of it and start fresh with Numpy.
-I then asked my fellow undergraduate students for feedback on the lessons and asked if they could understand my explanation of the Interstellar Problem.
-I got great advice on changing the wording, splitting blocks of text up and further explaining some concepts which were not obvious. I took time to implement each piece of advice in order to maximize user experience.
-After all of that was done, all that was left to do was to research how to do comparative analysis on different implementations of the same problem, which resulted in me benchmarking the different approaches to the researched problems in order to demonstrate the difference in runtime achieved using dynamic programming.
+The implementation of The Interstellar Problem was the most technically challenging (but rewarding) part of the project, as it required many iterations and a dive into some lesser known libraries before finally deciding to scrap all of it and start fresh with Numpy.
+
+    \item[Perfecting the Online Guide:]
+I then asked my fellow undergraduate students to read my online guide accompanied by a user experience survey,
+and asked if they could understand my written explanation of the Interstellar Problem.
+I got great advice on changing the wording, splitting blocks of text up, including various forms of visualization into the guide, and further explaining some concepts which were not obvious. I took time to implement each piece of advice in order to maximize user experience.
+
+    \item[Benchmarking the Different Approaches:]
+All that was left was to research how to do comparative analysis on different implementations of the same problem, which resulted in me benchmarking the different approaches to the researched problems in order to demonstrate the difference in runtime achieved using dynamic programming.
+\end{description}

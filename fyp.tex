@@ -12,8 +12,10 @@
 \usepackage[ruled,vlined]{algorithm2e} % For pseudocode
 \usepackage{amsmath} % For \text command
 \usepackage{float} % For H option
-\usepackage{amsthm} %for maths expressions
+\usepackage{amsthm} %for maths
 \usepackage{tikz} % for trees
+\usepackage{titling} %for title page
+\usepackage{hyperref} %makes it click;)
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]  % Define a new theorem environment called "definition"
@@ -47,15 +49,26 @@
 
 \onehalfspacing
 
-\title{\textbf{Dynamic Programming} \\
-\Large{University College Cork}}
-\author{Konrad Dagiel}
-\date{April 2023}
 
 \begin{document}
+\begin{titlepage}
+    \centering
+    {\huge\bfseries Dynamic Programming\par}
+    \vspace{2cm}
+    {\Large\itshape Konrad Dagiel\par}
+    \vspace{1cm}
+    {\scshape\Large Final-Year Project- BSc in Computer Science \par}
+    \vspace{1cm}
+    {\Large Supervisor: Michel Schellekens \par}
+    \vspace{1cm}
+    {\scshape\Large Department of Computer Science \par}
+    \vspace{1cm}
+    {\scshape\LARGE University College Cork \par}
+    \vspace{1.5cm}
+    {\large April 2024\par}
+\end{titlepage}
 
-\maketitle
-
+\pagenumbering{gobble}
 \chapter*{Abstract}
 The outcome of this project is a self-contained, complete guide to dynamic programming which can 
 be accessed by anyone online. The text serves to take a programmer with zero dynamic 
