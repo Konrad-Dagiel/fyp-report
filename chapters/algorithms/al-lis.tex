@@ -2,17 +2,17 @@
 \begin{description}
     \item[Problem Statement:]
         Given an array, return the length of the longest strictly increasing subsequence in the array.
-        A sequence is said to be increasing if and only if $x1<x2<x3<...xn$.
+        A sequence is said to be increasing if and only if \\$x1<x2<x3<...xn$.
         A subsequence does not have to be contiguous.
 
     \item[Input:]
         An integer array $nums$.
         
     \item[Output:]
-        An integer $lis$, the length of the longest increasing subsequence of $nums$.
+        An integer $lis(nums)$, the length of the longest increasing subsequence of $nums$.
     \item[Example:] For:\\
         $nums = [2,5,3,7,101,18]$\\
-        $lis = 4$
+        $lis(nums) = 4$
 
     \item[Explanation:]
     The subsequence $[2,5,7,101]$ is the longest increasing subsequence in $nums$, and has length $4$.
@@ -29,20 +29,18 @@ Much like coin change, this problem appears trivial at first glance. One may att
     \label{algo:lis-greedy}
     \KwIn{An integer array $nums$.}
     \KwOut{An integer $lis$, the longest increasing subsequence in $nums$.}
-    $lis := 0$\;
-    $index := 0$\;
-    $cur := nums[0]$\;
+    $lis \leftarrow 0$\;
+    $index \leftarrow 0$\;
+    $cur \leftarrow nums[0]$\;
     \While{$index \leq |nums|$}{
         \If{$nums[index] > cur$}{
             $lis += 1$\;
-            $cur := nums[index]$\;
+            $cur \leftarrow nums[index]$\;
         }
         $index +=1$\;
     }
     \KwRet{$lis$}
 \end{algorithm}
-
-
 In Algorithm \ref{algo:lis-greedy} we iterate through nums keeping track of the current max value enountered, incrementing our result each time a new larger value is encountered.
 
 \subsection{Optimality of the Greedy Approach to Longest Increasing Subsequence}
@@ -52,20 +50,19 @@ Take:$$nums = [10,9,2,5,3,7,101,18]$$
 Given these inputs, the greedy result is: $r1 = 2  ([10,101])$.\\
 An optimal solution for these inputs is: $r2 = 4 ([2,3,7,101])$.\\
 We see that $r1 > r2$, meaning the greedy approach does not find the maximised solution.
-
 We therefore need a more sophisticated approach.
 
 \subsection{Brute Force Approach to Longest Increasing Subsequence}
 
-We can try a brute force approach, where we start at $nums[0]$, and for each $i \in nums$ generate two subsequences,
-one where we  exclude it from the subsequence and one where we include it in the subsequence if
+We can try a brute force approach, where we start at $nums[0]$, and for each $i \in nums$ we generate two subsequences,
+one where we  exclude $i$ from the subsequence and one where we include $i$ in the subsequence if
 $nums[current\_index] > nums[prev\_index]$ (So that we ensure each subsequence generated is strictly increasing).
 We keep track of the $prev\_index$, which represents the last index we included in the result,
 and the $current\_index$, which is the index for which we are making the choice.
 This will generate all possible increasing subsequenes.
 We keep track of the length of the longest increasing subsequence, and return it once all increasing subsequences are explored.
 
-A sample python implementation is shown in Figure \ref{fig:lis-bf}.
+A sample Python implementation is shown in Figure \ref{fig:lis-bf}.
 
 \begin{figure}[H]
     \centering
@@ -75,18 +72,14 @@ A sample python implementation is shown in Figure \ref{fig:lis-bf}.
             # Base case: reached the end of the sequence
             if current_index == len(nums):
                 return 0
-    
             # Case 1: Exclude the current element
             exclude_current = dfs(prev_index, current_index + 1)
-    
             # Case 2: Include the current element if it is greater than the previous one
             include_current = 0
             if prev_index < 0 or nums[current_index] > nums[prev_index]:
                 include_current = 1 + dfs(current_index, current_index + 1)
-    
             # Return the maximum length of the two cases
             return max(exclude_current, include_current)
-    
         # Start the recursion with initial indices (-1 represents no previous index)
         return dfs(-1, 0)
     \end{lstlisting}
@@ -98,7 +91,7 @@ A sample python implementation is shown in Figure \ref{fig:lis-bf}.
 Let $n$ be the length of $nums$.
 \begin{description}
     \item[Time Complexity:]
-        For the worst case scenario, There are $n$ indices to consider.
+        For the worst case scenario, there are $n$ indices to consider.
         There are two subtrees at each decision, one where we include the current index, and one where we do not.
         This brings the time complexity to $O(2^n)$.
         
@@ -118,7 +111,7 @@ Let $n$ be the length of $nums$.
 
 \subsection{Memoization Approach to Longest Increasing Subsequence}
 
-Notice that for an aribitrary longest increasing subsequence of length $k$ ending at index $i$,
+Note that for an aribitrary longest increasing subsequence of length $k$ ending at index $i$,
 if there exists exactly one number which can extend the sequence, the length of the total subsequence is guaranteed to be $k+1$.
 This shows the optimal substructure property.
 Also, when looking for subsequences at index $i$,
@@ -168,8 +161,6 @@ A sample python implementation is shown in Figure \ref{fig:lis-memo}.
     \label{fig:lis-memo}
 \end{figure}
 
-
-
 \subsection{Complexity Analysis of the Memoization Approach to Longest Increasing Subsequence}
 Let n be the length of nums.
 \begin{description}
@@ -198,21 +189,48 @@ We know that a subsequence which consists of only the last index will result in 
 We can work backwards, for the second last, third last ect.. deciding if including that element will result in a longer increasing subsequence or not,
 and storing the longest possible increasing subsequence starting at each index until we reach index 0.
 We create a table called $dp$ of size $|nums|$, where $dp[i]$ represents the longest increasing subsequence starting at index $i$ in nums.
-Lets take the example $nums = [1,2,4,3]$.
+Lets take the following example:$$nums = [1,2,4,3]$$
 We initialize $dp[3] \leftarrow 1$, as the longest increasing subsequence starting at index 3 is 1.
+\begin{table}[H]
+    \centering
+    $dp:$
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \phantom{0} & \phantom{0} & \phantom{0} & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
 Now, consider $nums[2] = 4$
 We can either take $nums[2]$ as a subsequence by itself, or include $nums[2]$ in any subsequence at any index that comes after it (as long as it maintains the property of an increasing subsequence).
 Including it would make $dp[2] = 1+dp[3]$,
 Excluding it would make $dp[2] = 1$.
-Since including it would not result in an increasing subsequence\footnote{The resulting sequence $[4,3]$ is not increasing.}, we must exclude it, so $dp[2] = 1$
+Since including it would not result in an increasing subsequence, we must exclude it, so $dp[2] = 1$.
+\begin{table}[H]
+    \centering
+    $dp:$
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \phantom{0} & \phantom{0} & 1 & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
 Now Conisder $nums[1] = 2$.
-We can either take it by itself or include it in any subsequence at any index that comes after it.
-Including it would make $dp[1] \leftarrow max(1+dp[2], 1+dp[3])$, and taking it by itself would make $dp[1] = 1$.
-We choose the option which maximizes the value of $dp[1]$, which is $1+dp[2]$\footnote{Or, equally, $1+dp[3]$.} $= 2$.
-So for $dp[i]$, by the same logic, we simply put $max(1,1+dp[j1],1+dp[j2],1+dp[j3]...)$\footnote{Where $jx$ is the index which comes $x$ places after $i$.}.
-(only include $1+dp[jx]$ in the max function if $nums[i] < nums[jx]$, to maintain increasing subsequence property).
+We can either take it by itself or include it in any subsequence at any index that comes after it and maintains the increasing subsequence property.
+Including it would make $dp[1] = max(1+dp[2], 1+dp[3])$, and taking it by itself would make $dp[1] = 1$.
+We choose the option which maximizes the value of $dp[1]$, which is $1+dp[2]$ (or, equally, $1+dp[3]$) $= 2$.
+\begin{table}[H]
+    \centering
+    $dp:$
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \phantom{0} & 2 & 1 & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+To generalize this, we set each $dp[i]$ to $max(1,1+dp[j1],1+dp[j2],1+dp[j3]...)$ where $jx$ is the index which comes $x$ places after $i$.
+We only include $1+dp[jx]$ in the max function if $nums[i] < nums[jx]$, to maintain increasing subsequence property.
 This will give us a table where $dp[i]$ contains the longest increasing subsequence of $nums$ where the first number is $nums[i]$.
-We can then simply return $max(dp)$.
+We can then simply return $max(dp)$.\\
 
 A sample python implementation is shown in Figure \ref{fig:lis-dp}.
 
