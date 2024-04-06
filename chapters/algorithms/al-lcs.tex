@@ -1,6 +1,6 @@
 \begin{description}
     \item[Problem Statement:]
-        Given two strings, return the length of their longest common subsequence\footnote{Subsequences do not have to be contiguous.}.
+        Given two strings, return the length of their longest common subsequence.
 
     \item[Input:] 
         Two strings $text1$ and $text2$.
@@ -9,19 +9,19 @@
         
     \item[Example:] For:\\
         $text1 = "abcde"$\\
-        $text2 = "ace"$\\
+        $text2 = "acae"$\\
         $lcs = 3$
 
     \item[Explanation:]
-        The longest common subsequence of $"abcde"$ and $"ace"$ is $"ace"$, which is of length $3$.
+        The longest common subsequence of $"abcde"$ and $"acae"$ is $"ace"$, which is of length $3$.
    
 \end{description}
 
 \subsection{Longest Common Subsequence Brute Force}
-The naiive way to find the longest common subsequence of two strings is to generate all possible subsequences of both strings.
+The brute force way to find the longest common subsequence of two strings is to generate all possible subsequences of both strings.
 We initialize a $lcs$ variable to store the length of the longest common subsequence.
 We then iterate over each list of subsequences and report any common subsequences we find, updating $lcs$ accordingly.
-Finally we return $lcs$.
+Finally we return $lcs$. An implementation of this would be so inefficient it would overload any CPU running the code on subsequences of more than a few characters in length.
 
 \subsection{Complexity Analysis of the Brute Force Approach to Longest Common Subsequence}
 For the calculation of worst case time and space complexity, we assume that both strings are equal in length, and that length is denoted by $n$.
@@ -29,7 +29,7 @@ For the calculation of worst case time and space complexity, we assume that both
 \begin{description}
     \item[Time Complexity:]
         The time complexity of generating every subsequence of a string of length $n$ is $O(2^n)$,
-        and doing this for both strings is $O(2 * (2^n))$ which is $O(2^n+1)$,
+        and doing this for both strings is $O(2 * (2^n))$ which is $O(2^{n+1})$,
         as for each character we decide if we include it in or exclude it from the substring.
         The time complexity of iterating over two lists of substrings both of size $O(2^n)$ and looking for matches is $O((2^n)^2)$ which is equal to $O(2^{2n})$.
         This is still of order $O(2^n)$.
@@ -47,23 +47,23 @@ For the calculation of worst case time and space complexity, we assume that both
 
 Notice that:
 
-OBSERVATION 1: If we have a common character at the current position, such as position 1 in:
+\textbf{Ovservation 1:} If we have a common character at the current position, such as position 1 in:
 
-$$text1=abcde, text2=ace$$
+$$text1=abcde,\phantom{0} text2=ace$$
 
-The solution will be $1 + lcs(bcde,ce)$\footnote{Remove the common character from both texts, add 1 and recurse. The reason we add 1 is because each common character contributes 1 length to our final output.}.
-This shows the problem has the optimal substructure property.
+The solution will be $1 + lcs(bcde,ce)$. (We have removed the character in position 1 in both inputs, added 1 to our output, and recursed.)
+This shows the problem has the optimal substructure property.\\
 
-OBSERVATION 2: If there is no common character at the current position such as in:
+\textbf{Ovservation 2:} If there is no common character at the current position such as in:
 
-$$text1=bcde, text2=ce$$
+$$text1=bcde,\phantom{0} text2=ce$$
 
-The solution will be $max(lcs(cde,ce), lcs(bcde,e))$\footnote{Remove the first character from either the first or second text, recurse on both cases.}.
+The solution will be $max(lcs(cde,ce), lcs(bcde,e))$. (We have removed the character in the first position in each of the inputs individually, left the output unchanged, and recursed on both cases to find the max.)
 As we have the chance to recurse on the same two substrings multiple times, the problem has the overlapping subproblems property.
 \subsection{Tabulation Approach to Longest Common Subsequence}
 We can use these two cases to solve this problem by tabulation.
-We create a table called $dp$ with $i+1$ rows and $j+1$ columns, where $i$ and $j$ are the lengths of $text1$ and $text2$ respectively.
-Each row and column of $dp$ represents a character in $text1$ and $text2$.
+We create a table called $dp$ with $i$ rows and $j$ columns, where $i$ and $j$ are the lengths of $text1$ and $text2$ respectively.
+Each row and column of $dp$ represents a character in $text1$ and $text2$. (Note that the visualization of $dp$ includes an additional row and column which contain labels for the characters in $text2$ and $text1$ respectively, These are for clarity only and are not part of the $dp$ table.)
 
 \begin{table}[htbp]
     \centering
@@ -82,6 +82,7 @@ Each row and column of $dp$ represents a character in $text1$ and $text2$.
         \textbf{e} &   &   &    \\
         \hline
     \end{tabular}
+    \caption{Initialization of $dp$ table for $text1="abcde"$ and $text2="ace"$}
 \end{table}
 
 In this table, for example,
@@ -94,16 +95,16 @@ We fill the table starting from the bottom right as follows:
 \begin{enumerate}
     \item If the row and column have the same label, we have found a common character.
 
-    As per OBSERVATION 1, we fill the space with $1 + dp[i+1][j+1]$.
+    As per \textbf{observation 1}, we fill the space with $1 + dp[i+1][j+1]$.
     
-    \item If the row and col do not have the same label, we must use OBSERVATION 2:
+    \item If the row and col do not have the same label, we must use \textbf{observation 2}:
 
     Fill the space with $max(dp[i][j+1], dp[i+1][j])$.
     
-    \item If we go out of bounds, we simply take zero\footnote{For ease of code, the grid is ($i+1$) x ($j+1$) and initialized to all zeros, so we don't have to check for going out of bounds.}.
+    \item If we go out of bounds, we simply take zero\footnote{For ease of code, we can make $dp$ of size ($i+1$) x ($j+1$) instead, and initialize it to contain all zeros. This way we don't have to check for going out of bounds.}.
 \end{enumerate}
 
-Our solution will be located at $dp[0][0]$, which represents $lcs(text1,text2)$.
+Our solution will be located at $dp[0][0]$, which represents $lcs(text1,text2)$. Below we can see the $dp$ table filled according to the above rules.
 
 \begin{table}[htbp]
     \centering
@@ -122,11 +123,12 @@ Our solution will be located at $dp[0][0]$, which represents $lcs(text1,text2)$.
         \textbf{e} & 1 & 1 & 1  \\
         \hline
     \end{tabular}
+    \label{tab:lcs-dp-table}
+    \caption{Filled $dp$ table for $text1="abcde"$ and $text2="ace"$}
 \end{table}
 
 
-
-A sample python implementation is shown in Figure \ref{fig:lcs-dp}.
+A sample Python implementation is shown in Figure \ref{fig:lcs-dp}.
 
 \begin{figure}[H]
     \centering
@@ -147,7 +149,7 @@ A sample python implementation is shown in Figure \ref{fig:lcs-dp}.
     \label{fig:lcs-dp}
 \end{figure}
 
-\subsection{Complexity Analysis of the Tabulation Approach to Longest Common Subsequence}
+\subsection{Complexity Analysis of the Tabulation Approach to Longest Common Subsequence}\label{subsec:ca-lcs-dp}
 
 Let $i$ be the length of $text1$, and $j$ be the length of $text2$.
 
@@ -165,4 +167,39 @@ Let $i$ be the length of $text1$, and $j$ be the length of $text2$.
     
 \end{description}
 
-NOTE THAT SINCE EACH ROW OF THIS TABLE CAN BE COMPUTED USING THE PREVIOUS ROW ONLY, THE SAME TWO-ROW METHOD CAN BE USED AS IN BINOMIAL COEFFICIENTS
+\subsection{Optimized Tabulation Approach to Longest Common Subsequence}\label{subsec:lcs-optimized}
+The same two-row optimization as in Section \ref{subsec:binomial-coefficents-optimized} can be applied to this problem.
+Notice that each row of the $dp$ table can be computed using only the previous row, as we never look more than one row down in the table when computing a new row.
+Consider the following two rows of our previous $dp$ table.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{NewRow} & $\phantom{0}$ & $\phantom{0}$ & $\phantom{0}$ \\
+        \hline
+        \textbf{OldRow} & 2 & 2 & 1  \\
+        \hline
+    \end{tabular}
+    \caption{Optimized $dp$ table for $text1="abcde"$ and $text2="ace"$}
+\end{table}
+
+We can see that $OldRow$ contains all of the necessary information to fill $NewRow$.
+We use the same algorithm as the tabulation approach, simply setting $OldRow$ to $NewRow$ and emptying $NewRow$ as we go up the table,
+storing only two rows at a time.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{NewRow} & 3 & 2 & 1 \\
+        \hline
+        \textbf{OldRow} & 2 & 2 & 1  \\
+        \hline
+    \end{tabular}
+    \caption{Filled Optimized $dp$ table for $text1="abcde"$ and $text2="ace"$}
+\end{table}
+
+We could also arrange the table such that the shorter input is on "top", minimizing the size of the rows we store. These optimizations would reduce the space complexity to $O(min(i,j))$.
+
+
+

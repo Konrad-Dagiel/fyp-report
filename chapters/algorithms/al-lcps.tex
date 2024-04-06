@@ -1,12 +1,12 @@
 \begin{description}
     \item[Problem Statement:]
-        Given a string, return the longest palindromic substring\footnote{Substrings must be contiguous.} of the string.
+        Given a string, return the longest contiguous palindromic substring of the string.
 
     \item[Input:] 
         A string $s$.
         
     \item[Output:] 
-        A string $lpcs(s)$, which is the longest palindromic substring of $s$.
+        A string $lpcs(s)$, which is the longest contiguous palindromic substring of $s$.
         
     \item[Example:] For:\\
         $s = "aaaabbaa"$\\
@@ -36,8 +36,7 @@ Let n be the length of s.
         The space complexity of generating all substrings and storing them in a list is also $O(n^3)$
         because we have $O(n^2)$ substrings, each of which has a maximum length of $O(n)$.
         However, in our algorithm it is possible to iterate over the subsrtings of $s$ in place using a double for loop
-        \footnote{See Figure \ref{fig:max-subarray-sum-bf} for an example of how to do this.}, we can store one substring at a time,
-        which has a maximum length of $n$. This brings the space complexity down to $O(n)$.
+        like in Figure \ref{fig:max-subarray-sum-bf}. This brings the space complexity down to $O(n)$.
         
     \item[Overall:] Total:\\
         Time Complexity: $O(n^3)$\\
@@ -51,9 +50,9 @@ For example, when checking if $s[i:j]$ is a palindrome, we often need to check i
 which overlaps with other similar subproblems.
 Therefore, we can use dynamic programming principles to optimize the solution to this problem.
 \subsection{Tabulation Approach to Longest Contiguous Palindromic Substring.}
-We can create a table $dp$ where $dp[i][j]$ is 1 if $s[i:j+1]$ is a palindrome, else 0. (eg: if $dp[1][3] = 1$, $s[1:4] (\text{"aaa" in our example string})$ is a palindrome.)
+We can create a table $dp$ where $dp[i][j] = 1$ if $s[i:j+1]$ is a palindrome, else 0. (eg: if $dp[1][3] = 1$, $s[1:4] (\text{"aaa" in our example string})$ is a palindrome.)
 We start with a table $dp$ which is a 2D matrix of size $|s| * |s|$.
-We can initialize all fields where $i == j$ to 1, as single letters are palindromes.
+We can initialize all fields where $i == j$ to 1, as all single letter substrings are palindromes by definition. (Note that the below table has an extra row and column containing labels for each of the other rows and columns in the table. These are not part of the $dp$ table and are included in the figure for clarity.)
 
 \begin{table}[htbp]
     \centering
@@ -78,6 +77,7 @@ We can initialize all fields where $i == j$ to 1, as single letters are palindro
         \textbf{a} &  &  &  &  &  &  &  & 1 \\
         \hline
     \end{tabular}
+    \caption{Initialized $dp$ table for $s="aaaabbaa"$ for single characters}
 \end{table}
 
 We can initialize all fields where $j = i+1$ and $s[i] = s[j]$ to 1 as all pairs of the same letter are palindromes.
@@ -107,10 +107,11 @@ This handles the case where the palindrome has an even amount of characters (mea
         \textbf{a} &  &  &  &  &  &  &  & 1 \\
         \hline
     \end{tabular}
+    \caption{Initialized $dp$ table for $s="aaaabbaa"$ for character pairs}
 \end{table}
 
 Now, notice that if a string $p$ is a palindrome, and $x$ is a character, the string $xpx$ is guaranteed to be a palindrome.
-Using this, for all substrings $s'$ of length 3, we check if the start and end are the same letter, and the middle is a palindrome (we know from the existing entries in the table).
+Using this, for all substrings $s'$ of $s$ with length 3, we check if the start and end are the same letter, and the middle is a palindrome (we know from the existing entries in the table).
 If so, we know that $s'$ is a palindrome, so we can set $dp[i][j]$ to 1.
 We can put a 1 in $dp[i][j]$ the table if and only if:
 
@@ -148,9 +149,10 @@ We will end up with a table as follows:
         \textbf{a} &  &  &  &  &  &  &  & 1 \\
         \hline
     \end{tabular}
+    \caption{Filled $dp$ table for all substrings of length $\leq 3$ for input $s="aaaabbaa"$}
 \end{table}
 
-Do this for all lengths from $3 \rightarrow len(s) - 1$.
+Do this for all lengths from $3 \rightarrow len(s)$.
 We will end up with the following table.
 
 \begin{table}[htbp]
@@ -176,30 +178,27 @@ We will end up with the following table.
         \textbf{a} &  &  &  &  &  &  &  & 1 \\
         \hline
     \end{tabular}
+    \caption{Filled $dp$ table for input $s="aaaabbaa"$}
 \end{table}
 
 
-From the table we can deduce all palindromic substrings, including the longest palindromic substring.
+From the table we can deduce the longest palindromic substring.
 To get the longest palindromic substring from the table, we track $start$ and $max\_length$, which get updated every time a new palindrome is found.
 This works because palindromes are found from shortest to longest, so every new palindrome found is the maximum length palindrome.
-We can then simply return a slice of the input string as follows: $s[start,start+max_length]$.
-This will yield the maximum length palindromic substring.
-
-A sample python implementation is shown in Figure \ref{fig:lpcs-dp}.
+We can then simply return a slice of the input string as follows: $s[start,start+max\_length]$.
+A sample Python implementation is shown in Figure \ref{fig:lpcs-dp}.
 
 \begin{figure}[H]
     \centering
     \begin{lstlisting}
     def lpcs(s):
         n = len(s)
-        # Single character strings are palindromes, so we can return s
+        # Single character strings are palindromes
         if n <=1: return s
-    
-        # Create a n*n table of zeros
+
         dp = [[0] * n for _ in range(n)]
     
         # Initialize all single character substrings to 1
-
         # Single character substrings start and end at the same index, so we locate them with dp[i][i]
         for i in range(n):
             dp[i][i] = 1
@@ -216,9 +215,7 @@ A sample python implementation is shown in Figure \ref{fig:lpcs-dp}.
                 start, max_length = i,2
     
         # For all substrings with length >=3, starting at length 3, 
-        # set dp[i][j] to 1 if start and end are the same letter
-        # and the middle is a palindrome
-                
+        # set dp[i][j] to 1 if start and end are the same letter and the middle is a palindrome
         for length in range(3, n+1):
             for i in range(n - length + 1):
                 j = i + length - 1
@@ -228,7 +225,7 @@ A sample python implementation is shown in Figure \ref{fig:lpcs-dp}.
     
         return s[start:start+max_length]
     \end{lstlisting}
-    \caption{Longest Contiguous Palindromic Substring Tabulation Python Implementation}
+    \caption{Longest Contiguous Palindromic Substring Python Implementation}
     \label{fig:lpcs-dp}
 \end{figure}
 

@@ -24,18 +24,17 @@ This famous dynamic programming algorithm is used for local alignment of DNA and
         G C T\\
         G C T
 \end{description}
-
-The trick is to find an efficient way to trim the sequences, such that the number of aligned letters is maximised. In this case it is 3.
-
-This is very similar to Needleman-Wunsch. The algorithm is the same as above, however all negative values become zero as follows:
+In this case it is 3.
+The initialization and filling stages are almost identical to the Needleman-Wunsch algorithm, the key difference being that all negative values are set to zero.
 
 Create a matrix of size: $(len(seq1) + 1)$ x $(len(seq2) + 1)$ as follows:
+(Like in Needleman-Wunsch, the additional row and column containing labels is added for clarity.)
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+          & $\phantom{\textbf{A}}$ & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
         \hline
          &  &  &  &  &  &  \\
         \hline
@@ -48,6 +47,7 @@ Create a matrix of size: $(len(seq1) + 1)$ x $(len(seq2) + 1)$ as follows:
         \textbf{T} &  &  &  &  &  &  \\
         \hline
     \end{tabular}
+    \caption{Empty Smith-Waterman Table}
 \end{table}
 
 
@@ -67,7 +67,7 @@ Starting with 0 at $(0,0)$, fill the extra row and column with progressive GAP p
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+          & $\phantom{\textbf{A}}$ & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
         \hline
         & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
@@ -80,6 +80,7 @@ Starting with 0 at $(0,0)$, fill the extra row and column with progressive GAP p
         \textbf{T} & 0 &  &  &  &  &  \\
         \hline
     \end{tabular}
+    \caption{Initialized Smith-Waterman Table}
 \end{table}
 
 \subsection{Filling the Smith-Waterman Table}
@@ -87,11 +88,11 @@ Starting with 0 at $(0,0)$, fill the extra row and column with progressive GAP p
 Now starting at $(1,1)$, and going row-wise, fill each cell with the max of the following, converting any negative values to 0:
 
 \begin{enumerate}
-    \item Value from left + $GAP$
+    \item Value from left + $GAP$ [0 if negative]
     
-    \item Value from above + $GAP$
+    \item Value from above + $GAP$ [0 if negative]
     
-    \item Value from diagonal + ($Match$ or $Mismatch$) [depending on wether the row and column label are the same letter]
+    \item Value from diagonal + ($Match$ or $Mismatch$) [depending on wether the row and column label are the same letter] [0 if negatve]
 
 \end{enumerate}
 
@@ -99,7 +100,6 @@ So, for the $(1,1)$ cell, we fill it with $max(-4,-4,1) = 1$.
 
 And for the $(1,2)$ cell, we fill it with $max(-1,-6,-3) = -1 \rightarrow 0$.
 
-And so on...
 
 Until we get:
 
@@ -107,7 +107,7 @@ Until we get:
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+          & $\phantom{\textbf{A}}$ & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
         \hline
         & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
@@ -120,21 +120,19 @@ Until we get:
         \textbf{T} & 0 & 0 & 1 & 0 & 0 & 3 \\
         \hline
     \end{tabular}
+    \caption{Filled Smith-Waterman Table}
 \end{table}
 
 \subsection{Traceback in the Smith-Waterman Table}
 
 Starting from the highest value in the matrix, move diagonally backwards until any 0 is reached.
-
 For each diagonal movement, align the coresponding characters.
-
 Note, the characters are aligned in reverse.
-
-A sample python implementation is given in Figure \ref{fig:smith-waterman}
+A sample Python implementation is given in Figure \ref{fig:smith-waterman}
 
 \begin{figure}[H]
     \centering
-    \begin{lstlisting}
+    \begin{lstlisting}[basicstyle=\footnotesize]
     def smith_waterman(seq1, seq2, match=1, mismatch=-1, gap=-2):
         m, n = len(seq2), len(seq1)
         score = [[0] * (n + 1) for _ in range(m + 1)]

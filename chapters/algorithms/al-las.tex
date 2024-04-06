@@ -1,6 +1,6 @@
 \begin{description}
     \item[Problem Statement:]
-        Given an array, find the length of the longest alternating subsequence in the array\footnote{Subsequences do not have to be continuous.}.
+        Given an array, find the length of the longest alternating subsequence in the array.
         A sequence ${x1,x2,x3,x4...xn}$ is alternating if its elements satisfy one of the following:
 
         $x1>x2<x3>x4<...$
@@ -26,9 +26,9 @@
 
 \subsection{Brute Force Approach to Longest Alternating Subsequence}
 
-The naiive way to approach this problem is to generate every possible subsequence of nums. 
+The brute force way to approach this problem is to generate every possible subsequence of $nums$. 
 For each subsequence, we can check if it is alternating iteratively, and if it is, calculate its length.
-We keep track of the maximum length of all of the alternating subsequences.
+We keep track of the overall maximum length as we iterate through the subsequences. This way we are able to store just one subsequence at a time.
 
 An implementation of the brute force algorithm is given in Figure \ref{fig:las-bf}.
 
@@ -64,7 +64,7 @@ An implementation of the brute force algorithm is given in Figure \ref{fig:las-b
 \end{figure}
 
 
-In line 18 in Figure \ref{fig:las-bf}, The expression $1 << n$ represents a bitwise left shift operation.
+NOTE: In line 18 in Figure \ref{fig:las-bf}, The expression $1 << n$ represents a bitwise left shift operation.
 In Python, $<<$ is the left shift operator, and it shifts the binary representation of the number to the left by $n$ positions.
 In the context of generating all possible subsequences, $1 << n$ is used to create a bitmask with the rightmost $n$ bits set to $1$.
 Each bit in the bitmask corresponds to whether the corresponding element in the array is included or excluded in the current subsequence.
@@ -75,12 +75,12 @@ Let n be the length of nums.
 \begin{description}
     \item[Time Complexity:]
         The complexity of generating every possible subsequence is $O(2^n)$.
-        Checking if a sequence is alternating is $O(|sequence|)$,
+        Checking if a sequence is alternating is $O(|sequence|)$, which in the worst case is $n$,
         and getting the length of a subsequence, as well as comparing it to the $max\_length$ are $O(1)$.
         This is overall of order $O(2^n)$.
         
     \item[Space Complexity:] 
-        The space complexity is $O(n)$, as we must store a single subarray at a time,
+        The space complexity is $O(n)$, as we must store a single subsequence at a time,
         which in the worst case is of length $n$.
         
     \item[Overall:] Total:\\
@@ -89,6 +89,8 @@ Let n be the length of nums.
     
 \end{description}
 
+
+\subsection{Auxiliary Arrays Solution for Longest Alternating Subsequence}
 Notice that for an aribitrary longest alternating subsequence of length $k$ ending at index $i$,
 if there exists exactly one number which can extend the sequence,
 the length of the total longest alternating subsequence is guaranteed to be $k+1$.
@@ -99,16 +101,16 @@ This shows the overlapping subproblems property.
 
 As using memoization on subsequence problems is not space efficient,
 we can use tabulation and only store the necessary information rather than an intermediate result for every subsequence.
-The following is known as the Auxiliary Arrays solution.
+The following tabulation solution to Longest Alternating Subsequence is commonly referred to as the Auxiliary Arrays solution.
 
-\subsection{Auxiliary Arrays Solution for Longest Alternating Subsequence}
 Two auxiliary arrays $inc$ and $dec$, of length $|nums|$ are initialized.
 $inc[i]$ contains the length of the longest alternating subsequence of $nums[0:i]$,
 where the last element of the subsequence is greater than the previous element.
 $dec[i]$ contains the length of the longest alternating subarray of $nums[0:i]$,
-where the last element of the subsequence is less than the previous element.
+where the last element of the subsequence is less than the previous element.\\
 
 The algorithm iterates through $nums$, considering each element $nums[i]$ and updating the inc and dec arrays based on the following conditions:
+\newpage
 
 \begin{enumerate}
     \item If $nums[i]$ is greater than $nums[j]$ for some previous index $j$, it means the sequence can be extended in an increasing manner.
@@ -144,6 +146,7 @@ A sample python implementation is shown in Figure \ref{fig:las-auxiliary}.
     \caption{Longest Alternating Subsequence Auxiliary Arrays Python Implementation}
     \label{fig:las-auxiliary}
 \end{figure}
+\newpage
 
 \subsection{Complexity Analysis of the Auxiliary Arrays Approach to Longest Alternating Subsequence}
 Let n be the length of nums.
@@ -225,3 +228,5 @@ Let n be the length of nums.
         Space Complexity: $O(1)$
     
 \end{description}
+
+\newpage

@@ -4,7 +4,7 @@ This famous dynamic programming algorithm is used for global alignment of DNA an
     
     \item[Problem Statement:]
         Given two character sequences $seq1$ and $seq2$,
-        place zero or more 'gap's in $seq1$ and/or $seq2$ such that the maximum number of characters in $seq1$ and $seq2$ are 'aligned'.
+        place zero or more 'gap's (denoted $"-"$) in $seq1$ and/or $seq2$ such that the maximum number of characters in $seq1$ and $seq2$ are 'aligned'.
         Characters $X$ and $Y$ are 'aligned' when $X == Y$ and the index of $X$ in $seq1$ is exactly equal to the index of $Y$ in $seq2$.
         
     \item[Input:] 
@@ -27,16 +27,18 @@ This famous dynamic programming algorithm is used for global alignment of DNA an
 
 The trick is to find an efficient way to place gaps in the sequences to maximise the amount of globally aligned letters.
 We can do this with tabulation:
+\newpage
 
 Create a matrix of size: $(len(seq1) + 1)$ x $(len(seq2) + 1)$ as follows:
+(Note that the visualization of the table includes an additional row and column which contain labels in \textbf{bold} representing the characters of $seq1$ and $seq2$ respectively. These are not part of the actual Needleman-Wunch table and are included for clarity.)
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+          & $\phantom{\textbf{A}}$ & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
         \hline
-         &  &  &  &  &  &  \\
+         & $\phantom{0}$ &  &  &  &  &  \\
         \hline
         \textbf{A} &  &  &  &  &  &  \\
         \hline
@@ -47,6 +49,7 @@ Create a matrix of size: $(len(seq1) + 1)$ x $(len(seq2) + 1)$ as follows:
         \textbf{T} &  &  &  &  &  &  \\
         \hline
     \end{tabular}
+    \caption{Empty Needleman-Wunsch Table.}
 \end{table}
 
 
@@ -66,9 +69,9 @@ Starting with 0 at $(0,0)$, fill the extra row and column with progressive GAP p
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-          &  & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
+          & $\phantom{\textbf{A}}$ & \textbf{A} & \textbf{T} & \textbf{G} & \textbf{C} & \textbf{T} \\
         \hline
-        & 0 & -2 & -4 & -6 & -8 & -10 \\
+        $\phantom{\textbf{A}}$& 0 & -2 & -4 & -6 & -8 & -10 \\
         \hline
         \textbf{A} & -2 &  &  &  &  &  \\
         \hline
@@ -79,6 +82,7 @@ Starting with 0 at $(0,0)$, fill the extra row and column with progressive GAP p
         \textbf{T} & -8 &  &  &  &  &  \\
         \hline
     \end{tabular}
+    \caption{Initialized Needleman-Wunsch Table.}
 \end{table}
 
 \subsection{Filling the Needleman-Wunsch Table}
@@ -119,6 +123,7 @@ Until we get:
         \textbf{T} & -8 & -5 & -2 & -3 & -1 & 2 \\
         \hline
     \end{tabular}
+    \caption{Filled Needleman-Wunsch Table}
 \end{table}
 
 \subsection{Traceback in the Needleman-Wunsch Table}
@@ -141,11 +146,11 @@ continue the following until $(0,0)$ is reached:
 
 Note that the aligned sequences will be written from right to left.
 
-A sample python implementation is given in Figure \ref{fig:needleman-wunsch}
+A sample Python implementation is given in Figure \ref{fig:needleman-wunsch}
 
 \begin{figure}[H]
     \centering
-    \begin{lstlisting}
+    \begin{lstlisting}[basicstyle=\footnotesize]
     def needleman_wunsch(seq1, seq2, match=1, mismatch=-1, gap=-2):
         # Initialize the scoring matrix
         m, n = len(seq2), len(seq1)

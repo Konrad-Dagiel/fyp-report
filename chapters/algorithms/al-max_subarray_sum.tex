@@ -1,6 +1,6 @@
 \begin{description}
     \item[Problem Statement:]
-        Given an integer array, return the largest value that a subarray\footnote{A subarray is a contiguous subsequence. This means all elements of the subsequence are strictly consecutive in the original sequence.} of the array sums to.
+        Given an integer array, return the largest value that a subarray of the array sums to. A subarray is a contiguous subsequence. This means all elements of the subsequence are strictly consecutive in the original sequence.
 
     \item[Input:]
         An integer array $nums$.
@@ -19,15 +19,15 @@
 
 
 \subsection{Brute Force Approach to Max Subarray Sum}
-The naiive way to solve this problem is to generate every possible subarray of $nums$
+The brute force way to solve this problem is to generate every possible subarray of $nums$
 starting with the subarray containing only $nums[0]$, and ending with the entirety of $nums$.
 Then sum each subarray and get the maximum of these sums.
-Instead of generating every subarray, we can iterate over each subarray in place by iterating over $nums$ with a $start$ pointer marking the start of the subarray,
+Instead of generating and storing every subarray, we can iterate over each subarray in place by iterating over $nums$ with a $start$ pointer marking the start of the subarray,
 and iterate over the rest of the array with an $end$ pointer marking the end of the subarray. This reduces the space complexity from O(n) to O(1) (see section \ref{subsec:ca-max-subarray-sum-bf}).
 We can improve this further by keeping track of a $current\_sum$ and $max\_sum$ and updating them dynamically as we execute the $end$ loop rather than summing each subarray after it is generated,
 reducing the time complexity from $O(n^3)$ to $O(n^2)$ (see section \ref{subsec:ca-max-subarray-sum-bf}).
 
-A sample python implementation is shown in Figure \ref{fig:max-subarray-sum-bf}.
+A sample Python implementation is shown in Figure \ref{fig:max-subarray-sum-bf}.
 
 \begin{figure}[H]
     \centering
@@ -83,35 +83,35 @@ Kadane's algorithm is shown in Algorithm \ref{algo:kadanes}:
 \begin{algorithm}[H]
     \caption{Kadane's Algorithm}
     \label{algo:kadanes}
-    \KwIn{An integer array $nums$}
-    \KwOut{An integer $max\_sum$, the max subarray sum of $nums$}
-    $max\_sum = 0$\;
-    $current\_sum = 0$\;
+    \KwIn{An integer array $nums$.}
+    \KwOut{An integer $max\_sum$, the max subarray sum of $nums$.}
+    $max\_sum \leftarrow 0$\;
+    $current\_sum \leftarrow 0$\;
     \ForEach{$i \in nums$}{
         \If{$current\_sum < 0$}{
-            $current\_sum := 0$\;
+            $current\_sum \leftarrow 0$\;
         }
         $current\_sum += i$\;
         \If{$current\_sum > max\_sum$}{
-            $max\_sum := current\_sum$\;
+            $max\_sum \leftarrow current\_sum$\;
         }
     }
     \KwRet{$max\_sum$}
 \end{algorithm}
 \subsection*{Explanation of Kadanes Algorithm}
 In Kadane's algorithm, we iterate over $nums$, and at each step increment $current\_sum$ by the value of the current element. 
-If $current\_sum$ becomes negative, $current\_sum$ is set to the value of current element. 
+If $current\_sum$ becomes negative, $current\_sum$ is reset to zero. 
 The $max\_sum$ is updated to $current\_sum$ whenever $current\_sum$ becomes greater than $max\_sum$.
 If the array consists entirely of negative numbers, the algorithm will return 0 for the maximum subarray sum.
 If you want to modify the algorithm such that empty subarrays are not allowed, you can initialize $max\_sum$ and $current\_sum$ to the first element of the array instead of 0.
 This way, the algorithm will return the largest single negative element if the array consists entirely of negative numbers.
 Kadane's algorithm is considered a dynamic programming algorithm even though it does not use a table, because it satisfies the necessary criteria:
 
-Optimal Substructure: The problem of finding the maximum subarray can be divided into smaller subproblems, where the solution to the problem at each index depends on the solution to the problem at the previous index.
+\textbf{Optimal Substructure:} The problem of finding the maximum subarray can be divided into smaller subproblems, where the solution to the problem at each index depends on the solution to the problem at the previous index.
 
-Overlapping Subproblems: The subproblems in Kadane's algorithm overlap, as the solution to the problem at each index relies on the solution to the problem at the previous index.
+\textbf{Overlapping Subproblems:} The subproblems in Kadane's algorithm overlap, as the solution to the problem at each index relies on the solution to the problem at the previous index.
 
-A sample python implementation is shown in Figure \ref{fig:kadanes}.
+A sample Python implementation is shown in Figure \ref{fig:kadanes}.
 
 \begin{figure}[H]
     \centering
@@ -149,7 +149,8 @@ Let n be the length of nums.
 
         
     \item[Overall:] Total:\\
-        Time Complexity: $O(n)\\
-        Space Complexity: $O(1)
+        Time Complexity: $O(n)$\\
+        Space Complexity: $O(1)$
     
 \end{description}
+\newpage

@@ -1,6 +1,6 @@
 \begin{description}
     \item[Problem Statement:]
-        Given a string, return the length of the longest subsequence\footnote{Subsequences do not have to be continuous.} of the string which is a palindrome\footnote{A palindrome is a string which is identical to itself when reversed (Example: "racecar").}.
+        Given a string, return the length of the longest subsequence of the string which is a palindrome. A palindrome is a string which is identical to itself when reversed (Example: "racecar").
     
     \item[Input:]
         A string $s$.
@@ -17,19 +17,26 @@
 \end{description}
 
 \subsection{Tabulation Approach to Longest Palindromic Subsequence}
-This problem is simply a special case of Longest Common Subsequence.
-The longest palindromic subsequence of $s$ is simply the longest common subsequence of $s$ and $reverse(s)$.
-Therefore the same logic applies. See Section \ref{section:lcs}.
+This problem is simply a special case of Longest Common Subsequence,
+which is covered in Section \ref{section:lcs}.
+The longest palindromic subsequence of a string $s$ is equal to the longest common subsequence of $s$ and $reverse(s)$.
+Therefore the logic of Longest Common Subsequence can be used to solve of Longest Palindromic Subseqence, if we make $text1=s$ and $text2=reverse(s)$.\\
+For the implementation of the $lcs$ subroutine, see Figure \ref{fig:lcs-dp}.
 
-A sample python implementation is shown in Figure \ref{fig:lps-dp}.
-For the implementation of the lcs subroutine, see Figure \ref{fig:lcs-dp}.
-
-\begin{figure}[H]
-    \centering
-    \begin{lstlisting}
-    def lps(s):
-        return lcs(s,s[::-1])
-    \end{lstlisting}
-    \caption{Longest Palindromic Subsequence Python Implementation}
-    \label{fig:lps-dp}
-\end{figure}
+\subsection{Complexity Analysis of Longest Palindromic Subsequence}
+Let $n$ be the length of $s$.
+\begin{description}
+    \item[Time Complexity:]
+        The time complexity of reversing $s$ is $O(n)$.
+        The time complexity of finding the longest common subsequence of $s$ and $reverse(s)$ is $O(n^2)$, as proved in Section \ref{subsec:ca-lcs-dp}.
+        In total this is of order $O(n^2)$.
+        
+    \item[Space Complexity:] 
+        The space complexity of finding the longest common subsequence of $s$ and $reverse(s)$ is $O(n^2)$ as proved in Section \ref{subsec:ca-lcs-dp},
+        but can be optimized to $O(n)$ using the two row method described in Section \ref{subsec:lcs-optimized}.
+        
+    \item[Overall:] Total:\\
+        Time Complexity: $O(n^2)$\\
+        Space Complexity: $O(n)$
+    
+\end{description}
