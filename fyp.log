@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  6 APR 2024 19:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  6 APR 2024 19:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -727,56 +727,61 @@ Chapter 4.
 
 
 ] [65]
-Overfull \hbox (18.05183pt too wide) in paragraph at lines 90--90
+Overfull \hbox (18.05183pt too wide) in paragraph at lines 86--86
 []\OT1/cmr/bx/n/17.28 Approach to Bench-mark-ing the Coin Change Prob-
  []
 
-[66] [67] [68] [69]
-Overfull \hbox (7.58333pt too wide) in paragraph at lines 215--215
+[66] [67] [68]
+Overfull \hbox (7.58333pt too wide) in paragraph at lines 209--209
 []\OT1/cmr/bx/n/14.4 Results of Bench-mark-ing Longest Al-ter-nat-ing Sub-se-quence 
  []
 
-[70]) [71]
+[69]
+Overfull \hbox (4.27985pt too wide) in paragraph at lines 229--229
+[]\OT1/cmr/bx/n/17.28 Approach to Bench-mark-ing Bi-no-mial Co-ef-fi-cients 
+ []
+
+) [70]
 \openout2 = `chapters/ch-design-own.aux'.
 
  (chapters/ch-design-own.tex
 Chapter 5.
-[72
+[71
 
 
 
 
-] [73] (chapters/algorithms/al-unique-paths.tex [74] [75] [76]) (chapters/algorithms/al-min-path-sum.tex
+] [72] (chapters/algorithms/al-unique-paths.tex [73] [74] [75]) (chapters/algorithms/al-min-path-sum.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--19
 
  []
 
-[77] [78] [79] [80]) (chapters/algorithms/al-3d-unique-paths.tex [81] [82])
+[76] [77] [78] [79]) (chapters/algorithms/al-3d-unique-paths.tex [80] [81])
 Overfull \hbox (16.42812pt too wide) in paragraph at lines 119--119
 []\OT1/cmr/bx/n/14.4 A Frame-work for Solv-ing N-Dimensional Pathfind-ing Prob-
  []
 
-(chapters/algorithms/al-nd-unique-paths.tex [83]
+(chapters/algorithms/al-nd-unique-paths.tex [82]
 Overfull \hbox (1.7279pt too wide) in paragraph at lines 7--7
 []\OT1/cmr/bx/n/17.28 The In-ter-stel-lar Prob-lem Im-ple-men-ta-tion De-tails 
  []
 
-[84]
+[83]
 Overfull \hbox (0.88986pt too wide) in paragraph at lines 44--44
 []\OT1/cmr/bx/n/17.28 Python Im-ple-men-ta-tion of The In-ter-stel-lar Prob-
  []
 
-[85] [86])) [87]
+[84] [85])) [86]
 \openout2 = `chapters/ch-conclusions.aux'.
 
  (chapters/ch-conclusions.tex
 Chapter 6.
-[88
+[87
 
 
 
 
-]) [89] [90] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux) (chapters/ch-conclusions.aux))
+]) [88] [89] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux) (chapters/ch-conclusions.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -791,9 +796,9 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,17n,93p,578b,1483s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on fyp.pdf (91 pages, 430604 bytes).
+Output written on fyp.pdf (90 pages, 428351 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
+ 380 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

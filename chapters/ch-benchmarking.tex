@@ -1,28 +1,24 @@
 \chapter{Benchmarking of the Researched Algorithms}
-This section presents a comparative analysis of dynamic programming algorithms,
+This chapter presents a comparative analysis of some of the dynamic programming algorithms discussed in Chapter 3,
 focusing on their computational efficiency.
-Using Python's timeit module,
+Using Python's Timeit module,
 we conduct timed experiments to measure the execution performance of these algorithms across varying input sizes and scenarios.
-We aim to evaluate the scalability and practical effectiveness of these algorithms in solving real-world computational problems. 
+We aim to evaluate the scalability and practical effectiveness of these algorithms.
 
 \subsection*{The Timeit Module}
 This module provides a simple way to time small bits of Python code.
-It has both a Command-Line Interface as well as a callable one.
 It avoids a number of common traps for measuring execution times.
-See also Tim Peters’ introduction to the “Algorithms” chapter in the second edition of Python Cookbook,
-published by O’Reilly.\\
-The following are some of the common traps for measuring execution time that timeit avoids:
+The following are some of the measures Timeit takes to avoid common traps when measuring execution time.
 \begin{itemize}
-    \item Warm-up Time: The Timeit module runs the code multiple times (by default, 1 million times) to ensure that any overhead related to JIT compilation or other one-time operations is amortized and doesn't skew the timing results.
-    This helps ensure that the measured time reflects the actual performance of the code snippet, rather than the overhead of the Python interpreter starting up or other initialization tasks.
+    \item The Timeit module runs the code multiple times (by default, 1 million times) to ensure that any variablility is amortized.
 
-    \item External Factors: Timeit executes the code in a controlled environment, minimizing the impact of external factors such as other processes running on the system, I/O operations, or system load. This helps ensure that the timing measurements are as consistent and reliable as possible.
+    \item Timeit executes the code in a controlled environment, minimizing the impact of external factors such as other processes running on the system, I/O operations, or system load.
 
-    \item Garbage Collection: The Timeit module disables the garbage collector during timing measurements to prevent it from interfering with the results. Garbage collection can introduce variability in execution times, especially for short code snippets, so disabling it helps ensure more consistent timing measurements.
+    \item The Timeit module disables the garbage collector during timing measurements to prevent it from interfering with the results. Garbage collection can introduce variability in execution times.
 
-    \item Timer Resolution: Timeit uses high-resolution timers to measure execution times accurately, taking into account the system's timer resolution. This helps avoid inaccuracies that can arise from low-resolution timers, especially when measuring very short code snippets.
+    \item Timeit uses high-resolution timers to measure execution times accurately. This helps avoid inaccuracies that can arise from low-resolution timers, especially when measuring very short code snippets.
 
-    \item Compilation: For code snippets that are executed multiple times, timeit compiles the code to bytecode to speed up execution. This compilation step is done automatically and transparently, helping to reduce overhead and improve the accuracy of timing measurements.
+    \item For code snippets that are executed multiple times, timeit compiles the code to bytecode to speed up execution.
 \end{itemize}
 
 \section{Discussion of Benchmarking Methods of Algorithms with Inputs of Size N}
@@ -91,7 +87,6 @@ Results are rounded to 6 decimal places.
 
 In order to benchmark the Coin Change Problem, we must randomize a list of coin denominations $D$ of fixed size, and a total amount $a$, in order to get an accurate insight into the average runtime.
 The maximum and minimum size of the coin denominations and the total amount should be kept consistent throughout test runs to reduce the amount of variance.
-Ideally, the inputs to each of the brute force, memoization and tabulation algorithms should be the same on each run to avoid the case where one of the algorithms "gets lucky" and consistently gets "easier" inputs than the others.
 For simplicity, we se the target amount $a$ to the length of $D$.
 
 NOTE: Make sure $D\_min$ is NOT 0, as having a zero size coin will make the brute force and memoization solution non-terminable.
@@ -129,7 +124,7 @@ The code used for benchmarking the different implementations of this problem is 
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        \textbf{|D|=}  & \textbf{3} & \textbf{5} & \textbf{10} & \textbf{15} & \textbf{17}  & \textbf{1000} \\
+        \textbf{$|D|$=}  & \textbf{3} & \textbf{5} & \textbf{10} & \textbf{15} & \textbf{17}  & \textbf{1000} \\
         \hline
         \textbf{Brute Force} & 0.000026 & 0.000129 & 0.002109 & 2.391904 & * & * \\
         \hline
@@ -147,7 +142,6 @@ Results in seconds rounded to 6 decimal places.
 \section{Approach to Benchmarking Problems With Single List Inputs}
 In order to benchmark problems with single list inputs, we must randomize a list nums of fixed size in order to get an accurate insight into the average runtime.
 The maximum and minimum size of the elements of $nums$ should be kept consistent throughout test runs to reduce the amount of variance.
-Ideally, the inputs to each of the brute force, memoization and tabulation algorithms should be the same on each run to avoid the case where one of the algorithms "gets lucky" and consistently gets "easier" inputs than the others.
 For simplicity, the max number size in $nums$ is set to $|nums|$, and the minimum is set to $1$ or $-1 * |nums|$ (depending on the constraints of the problem).
 The code used for benchmarking the different implementations of problems of this type is shown in Figure \ref{fig:bm-subsequence}.
 
@@ -181,7 +175,7 @@ The code used for benchmarking the different implementations of problems of this
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        \textbf{|nums|=}  & \textbf{5} & \textbf{10} & \textbf{25} & \textbf{50} & \textbf{100}  & \textbf{1000} \\
+        \textbf{$|nums|$=}  & \textbf{5} & \textbf{10} & \textbf{25} & \textbf{50} & \textbf{100}  & \textbf{1000} \\
         \hline
         \textbf{Brute Force} & 0.000008 & 0.000071 & 0.001841 & 0.118709 & 53.019671 & * \\
         \hline
@@ -200,7 +194,7 @@ Results in seconds rounded to 6 decimal places.
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        \textbf{|nums|=}  & \textbf{5} & \textbf{25} & \textbf{100} & \textbf{1000} & \textbf{10000}  & \textbf{1000000} \\
+        \textbf{$|nums|$=}  & \textbf{5} & \textbf{25} & \textbf{100} & \textbf{1000} & \textbf{10000}  & \textbf{1000000} \\
         \hline
         \textbf{Brute Force} & 0.000007 & 0.000071 & 0.001073 & 0.076034 & 7.504696 & * \\
         \hline
@@ -217,7 +211,7 @@ Results in seconds rounded to 6 decimal places.
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        \textbf{|nums|=}  & \textbf{10} & \textbf{20} & \textbf{30} & \textbf{50} & \textbf{1000}  & \textbf{10000} \\
+        \textbf{$|nums|$=}  & \textbf{10} & \textbf{20} & \textbf{30} & \textbf{50} & \textbf{1000}  & \textbf{10000} \\
         \hline
         \textbf{Brute Force} & 0.001798 & 2.723978 & * & * & * & * \\
         \hline
@@ -230,9 +224,9 @@ Results in seconds rounded to 6 decimal places.
 \end{table}
 *=over 10 mins to run on an MSI GF63 Thin SCXR.\\
 Results in seconds rounded to 6 decimal places.
+\newpage
 
-
-\section{Approach to Benchmarking the Binomial Coefficients Problem}
+\section{Approach to Benchmarking Binomial Coefficients}
 In order to benchmark the Binomial Coefficients Problem, we do not need any randomization. We can simply input $n$ and $k$, and calculate the average time each of the brute force, memoization and tabulation approaches take to solve for $C(n,k)$.
 For simplicity, we take $k$ as $n/2$.
 The code used for benchmarking the different implementations of this problem is shown in Figure \ref{fig:bm-binomial}.
@@ -248,7 +242,6 @@ The code used for benchmarking the different implementations of this problem is 
             for _ in range(repetitions):
     
                 execution_time = timeit.timeit(lambda: func(n,k), number=1)
-    
                 total_time += execution_time
     
             average_time = total_time / repetitions
@@ -256,7 +249,7 @@ The code used for benchmarking the different implementations of this problem is 
             res_idx += 1
         return res
     \end{lstlisting}
-    \caption{Python Code Used for Benchmarking the Binomial Coefficients Implementations}
+    \caption{Python Code Used for Benchmarking Binomial Coefficients Implementations}
     \label{fig:bm-binomial}
 \end{figure}
 
