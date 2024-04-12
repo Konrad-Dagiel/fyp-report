@@ -22,7 +22,7 @@
 
 Much like coin change, this problem appears trivial at first glance. One may attempt to be greedy as follows:
 
-\subsection{Greedy Approach to Longest Increasing Subsequence}
+\subsection{Greedy Approach to LIS}
 
 \begin{algorithm}
     \caption{Greedy Approach to Longest Increasing Subsequence}
@@ -43,7 +43,7 @@ Much like coin change, this problem appears trivial at first glance. One may att
 \end{algorithm}
 In Algorithm \ref{algo:lis-greedy} we iterate through nums keeping track of the current max value enountered, incrementing our result each time a new larger value is encountered.
 
-\subsection{Optimality of the Greedy Approach to Longest Increasing Subsequence}
+\subsection{Optimality of the Greedy Approach to LIS}
 
 This algorithm is not optimal however, and we can prove this by counter-example.
 Take:$$nums = [10,9,2,5,3,7,101,18]$$
@@ -52,7 +52,7 @@ An optimal solution for these inputs is: $r2 = 4 ([2,3,7,101])$.\\
 We see that $r1 > r2$, meaning the greedy approach does not find the maximised solution.
 We therefore need a more sophisticated approach.
 
-\subsection{Brute Force Approach to Longest Increasing Subsequence}
+\subsection{Brute Force Approach to LIS}
 
 We can try a brute force approach, where we start at $nums[0]$, and for each $i \in nums$ we generate two subsequences,
 one where we  exclude $i$ from the subsequence and one where we include $i$ in the subsequence if
@@ -87,7 +87,7 @@ A sample Python implementation is shown in Figure \ref{fig:lis-bf}.
     \label{fig:lis-bf}
 \end{figure}
 
-\subsection{Complexity Analysis of the Brute Force Approach to Longest Increasing Subsequence}
+\subsection{Complexity Analysis of the Brute Force Approach to LIS}
 Let $n$ be the length of $nums$.
 \begin{description}
     \item[Time Complexity:]
@@ -109,7 +109,7 @@ Let $n$ be the length of $nums$.
 \end{description}
 
 
-\subsection{Memoization Approach to Longest Increasing Subsequence}
+\subsection{Memoization Approach to LIS}
 
 Note that for an aribitrary longest increasing subsequence of length $k$ ending at index $i$,
 if there exists exactly one number which can extend the sequence, the length of the total subsequence is guaranteed to be $k+1$.
@@ -161,7 +161,7 @@ A sample python implementation is shown in Figure \ref{fig:lis-memo}.
     \label{fig:lis-memo}
 \end{figure}
 
-\subsection{Complexity Analysis of the Memoization Approach to Longest Increasing Subsequence}
+\subsection{Complexity Analysis of the Memoization Approach to LIS}
 Let n be the length of nums.
 \begin{description}
     \item[Time Complexity:]
@@ -183,7 +183,7 @@ Let n be the length of nums.
     
 \end{description}
 
-\subsection{Tabulation Approach to Longest Increasing Subsequence}
+\subsection{Tabulation Approach to LIS}
 We can use tabulation to build a table from which we can deduce the result, similar to the Coin Change Problem.
 We know that a subsequence which consists of only the last index will result in an increasing subsequence of length 1.
 We can work backwards, for the second last, third last ect.. deciding if including that element will result in a longer increasing subsequence or not,
@@ -251,7 +251,7 @@ A sample python implementation is shown in Figure \ref{fig:lis-dp}.
     \label{fig:lis-dp}
 \end{figure}
 
-\subsection{Complexity Analysis of the Tabulation Approach to Longest Increasing Subsequence}
+\subsection{Complexity Analysis of the Tabulation Approach to LIS}
 Let n be the length of nums.
 \begin{description}
     \item[Time Complexity:]

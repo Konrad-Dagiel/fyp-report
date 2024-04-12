@@ -31,7 +31,7 @@ $$C(n,n) = 1$$
 
 We can use this as a recursive case and base cases in a brute force solution.
 
-\subsection{Brute Force Approach to Binomial Coefficients}
+\subsection{Brute Force Approach to C(n,k)}
 We can use recursion to arrive at our answer, using the definition as our recursive case and our base cases.
 
 A sample Python implementation is shown in Figure \ref{fig:binomial-bf}.
@@ -47,7 +47,7 @@ A sample Python implementation is shown in Figure \ref{fig:binomial-bf}.
     \label{fig:binomial-bf}
 \end{figure}
 
-\subsection{Complexity Analysis of the Brute Force Approach to Binomial Coefficients}
+\subsection{Complexity Analysis of the Brute Force Approach to C(n,k)}
 \begin{description}
     \item[Time Complexity:]
         For our analysis, in the worst case $k$ is equal to $n/2$.
@@ -64,7 +64,7 @@ A sample Python implementation is shown in Figure \ref{fig:binomial-bf}.
     
 \end{description}
 
-\subsection{Memoization Approach to Binomial Coefficients}
+\subsection{Memoization Approach to C(n,k)}
 If we look at the trace of calculating $C(4,2)$ in our recursive algorithm, we can see that it is guaranteed to be the sum of $C(3,1)$ and $C(3,2)$, as by definition $C(n,k) = C(n-1,k-1) + C(n-1, k)$.
 This shows the problem has the optimal substructure property.
 To calculate $C(3,2)$ we must know $C(2,1)$.
@@ -94,7 +94,7 @@ A sample Python implementation is shown in Figure \ref{fig:binomial-memo}.
     \label{fig:binomial-memo}
 \end{figure}
 
-\subsection{Complexity Analysis of the Memoization Approach to Binomial Coefficients}
+\subsection{Complexity Analysis of the Memoization Approach to C(n,k)}
 \begin{description}
     \item[Time Complexity:]
         The memoization table ensures that each unique subproblem is solved only once.
@@ -110,7 +110,7 @@ A sample Python implementation is shown in Figure \ref{fig:binomial-memo}.
     
 \end{description}
 
-\subsection{Tabulation Approach to Binomial Coefficients}
+\subsection{Tabulation Approach to C(n,k)}
 Instead of recursively creating the table by searching the entire tree of possible $n$ and $k$ values, we can use tabulation to fill in a table from which we can extract our answer.
 Consider a table $dp$ with dimensions ($n+1$) x ($k+1$), where $dp[i][j]$ in the table contains the result of $C(i,j)$
 We could build this table up starting from our base cases:
@@ -197,7 +197,7 @@ NOTE: We do not fill the table where $k > n$.
 This because it is impossible to choose $k$ unique examples from a set of size $n$.
 This is done by only iterating to $min(i,k)$ in the inner loop, shown on line 11 of Figure \ref{fig:binomial-dp}.
 
-\subsection{Complexity Analysis of the Tabulation Approach to Binomial Coefficients}
+\subsection{Complexity Analysis of the Tabulation Approach to C(n,k)}
 
 \begin{description}
     \item[Time Complexity:]
@@ -212,7 +212,7 @@ This is done by only iterating to $min(i,k)$ in the inner loop, shown on line 11
     
 \end{description}
 
-\subsection{Optimzied Tabulation Approach to Binomial Coefficeints}\label{subsec:binomial-coefficents-optimized}
+\subsection{Optimzied Tabulation Approach to C(n,k)}\label{subsec:binomial-coefficents-optimized}
 Notice that we can calculate the values in any row $r$ using the values in row $r-1$.
 Hence, we do not need to store the entire $dp$ table in memory, only two rows at a time.
 The current row $r$, and the previous row $r-1$.

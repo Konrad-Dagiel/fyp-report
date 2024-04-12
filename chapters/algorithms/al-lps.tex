@@ -16,14 +16,14 @@
         $"bbbb"$ is the longest palindromic subsequence of $s$. It has length $4$.
 \end{description}
 
-\subsection{Tabulation Approach to Longest Palindromic Subsequence}
+\subsection{Tabulation Approach to LPS}
 This problem is simply a special case of Longest Common Subsequence,
 which is covered in Section \ref{section:lcs}.
 The longest palindromic subsequence of a string $s$ is equal to the longest common subsequence of $s$ and $reverse(s)$.
 Therefore the logic of Longest Common Subsequence can be used to solve of Longest Palindromic Subseqence, if we make $text1=s$ and $text2=reverse(s)$.\\
 For the implementation of the $lcs$ subroutine, see Figure \ref{fig:lcs-dp}.
 
-\subsection{Complexity Analysis of Longest Palindromic Subsequence}
+\subsection{Complexity Analysis of LPS}
 Let $n$ be the length of $s$.
 \begin{description}
     \item[Time Complexity:]

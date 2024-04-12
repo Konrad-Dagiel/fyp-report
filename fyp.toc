@@ -2,109 +2,109 @@
 \contentsline {chapter}{\numberline {2}Analysis}{2}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Research on Dynamic Programming}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introduction to Dynamic Programming}{5}{section.3.1}%
-\contentsline {section}{\numberline {3.2}The Fibonacci Problem}{6}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Brute Force Approach to The Fibonacci Problem}{6}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Complexity Analysis of the Brute Force Approach to the Fibonacci Problem}{7}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Memoization Approach to The Fibonacci Problem}{8}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Complexity Analysis of the Memoization Approach to The Fibonacci Problem}{9}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Tabulation Approach to the Fibonacci Problem}{10}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Optimized Approach to the Fibonacci Problem}{11}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Complexity Analysis of the Tabulation Approach to the Fibonacci Problem}{11}{subsection.3.2.7}%
+\contentsline {section}{\numberline {3.2}The Fibonacci Problem - Fib(n)}{6}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Brute Force Approach to Fib(n)}{6}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Complexity Analysis of the Brute Force Approach to Fib(n)}{7}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Memoization Approach to Fib(n)}{8}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Complexity Analysis of the Memoization Approach to Fib(n)}{9}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Tabulation Approach to Fib(n)}{10}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Optimized Approach to Fib(n)}{11}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Complexity Analysis of the Tabulation Approach to Fib(n)}{11}{subsection.3.2.7}%
 \contentsline {section}{\numberline {3.3}Dynamic Programming Summary}{12}{section.3.3}%
 \contentsline {section}{\numberline {3.4}The Coin Change Problem}{13}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Greedy Approach to the Coin Change Problem}{13}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Optimality of the Greedy Approach to the Coin Change Problem}{14}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Correctness of the Greedy Approach to the Coin Change Problem}{14}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Brute Force Approach to the Coin Change Problem}{14}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Complexity Analysis of the Brute Force Approach to the Coin Change Problem}{15}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.5}Complexity Analysis of the Brute Force Approach to Coin Change}{15}{subsection.3.4.5}%
 \contentsline {subsection}{\numberline {3.4.6}Memoization Approach to the Coin Change Problem}{15}{subsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.4.7}Complexity Analysis of the Memoization Approach to the Coin Change Problem}{16}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.7}Complexity Analysis of the Memoization Approach to Coin Change}{16}{subsection.3.4.7}%
 \contentsline {subsection}{\numberline {3.4.8}Tabulation Approach to the Coin Change Problem}{17}{subsection.3.4.8}%
-\contentsline {subsection}{\numberline {3.4.9}Complexity Analysis of the Tabulation Approach to the Coin Change Problem}{18}{subsection.3.4.9}%
-\contentsline {section}{\numberline {3.5}Longest Increasing Subsequence}{19}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Greedy Approach to Longest Increasing Subsequence}{19}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Optimality of the Greedy Approach to Longest Increasing Subsequence}{20}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Brute Force Approach to Longest Increasing Subsequence}{20}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Complexity Analysis of the Brute Force Approach to Longest Increasing Subsequence}{21}{subsection.3.5.4}%
-\contentsline {subsection}{\numberline {3.5.5}Memoization Approach to Longest Increasing Subsequence}{22}{subsection.3.5.5}%
-\contentsline {subsection}{\numberline {3.5.6}Complexity Analysis of the Memoization Approach to Longest Increasing Subsequence}{23}{subsection.3.5.6}%
-\contentsline {subsection}{\numberline {3.5.7}Tabulation Approach to Longest Increasing Subsequence}{24}{subsection.3.5.7}%
-\contentsline {subsection}{\numberline {3.5.8}Complexity Analysis of the Tabulation Approach to Longest Increasing Subsequence}{25}{subsection.3.5.8}%
-\contentsline {section}{\numberline {3.6}Max Subarray Sum}{26}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Brute Force Approach to Max Subarray Sum}{26}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Complexity Analysis of the Brute Force Approach to Max Subarray Sum}{27}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Kadanes Algorithm for Max Subarray Sum}{28}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}Complexity Analysis of Kadane's Algorithm}{29}{subsection.3.6.4}%
-\contentsline {section}{\numberline {3.7}Longest Alternating Subsequence}{30}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Brute Force Approach to Longest Alternating Subsequence}{30}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Complexity Analysis of the Brute Force Approach to Longest Alternating Subsequence}{32}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}Auxiliary Arrays Solution for Longest Alternating Subsequence}{32}{subsection.3.7.3}%
-\contentsline {subsection}{\numberline {3.7.4}Complexity Analysis of the Auxiliary Arrays Approach to Longest Alternating Subsequence}{34}{subsection.3.7.4}%
-\contentsline {subsection}{\numberline {3.7.5}Optimized Soluiton to Longest Alternating Subsequence}{34}{subsection.3.7.5}%
-\contentsline {subsection}{\numberline {3.7.6}Complexity Analysis of the Optimized Approach to Longest Alternating Subsequence}{35}{subsection.3.7.6}%
-\contentsline {section}{\numberline {3.8}Binomial Coefficients}{36}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Brute Force Approach to Binomial Coefficients}{36}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Complexity Analysis of the Brute Force Approach to Binomial Coefficients}{37}{subsection.3.8.2}%
-\contentsline {subsection}{\numberline {3.8.3}Memoization Approach to Binomial Coefficients}{37}{subsection.3.8.3}%
-\contentsline {subsection}{\numberline {3.8.4}Complexity Analysis of the Memoization Approach to Binomial Coefficients}{38}{subsection.3.8.4}%
-\contentsline {subsection}{\numberline {3.8.5}Tabulation Approach to Binomial Coefficients}{38}{subsection.3.8.5}%
-\contentsline {subsection}{\numberline {3.8.6}Complexity Analysis of the Tabulation Approach to Binomial Coefficients}{40}{subsection.3.8.6}%
-\contentsline {subsection}{\numberline {3.8.7}Optimzied Tabulation Approach to Binomial Coefficeints}{40}{subsection.3.8.7}%
-\contentsline {section}{\numberline {3.9}Longest Common Subsequence}{41}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Longest Common Subsequence Brute Force}{41}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Complexity Analysis of the Brute Force Approach to Longest Common Subsequence}{41}{subsection.3.9.2}%
-\contentsline {subsection}{\numberline {3.9.3}Tabulation Approach to Longest Common Subsequence}{42}{subsection.3.9.3}%
-\contentsline {subsection}{\numberline {3.9.4}Complexity Analysis of the Tabulation Approach to Longest Common Subsequence}{44}{subsection.3.9.4}%
-\contentsline {subsection}{\numberline {3.9.5}Optimized Tabulation Approach to Longest Common Subsequence}{44}{subsection.3.9.5}%
-\contentsline {section}{\numberline {3.10}Longest Palindromic Subsequence}{45}{section.3.10}%
-\contentsline {subsection}{\numberline {3.10.1}Tabulation Approach to Longest Palindromic Subsequence}{45}{subsection.3.10.1}%
-\contentsline {subsection}{\numberline {3.10.2}Complexity Analysis of Longest Palindromic Subsequence}{45}{subsection.3.10.2}%
-\contentsline {section}{\numberline {3.11}Longest Contiguous Palindromic Substring}{46}{section.3.11}%
-\contentsline {subsection}{\numberline {3.11.1}Brute Force Approach to Longest Contiguous Palindromic Substring}{46}{subsection.3.11.1}%
-\contentsline {subsection}{\numberline {3.11.2}Complexity Analysis of the Brute Force Approach to Longest Contiguous Palindromic Substring}{46}{subsection.3.11.2}%
-\contentsline {subsection}{\numberline {3.11.3}Tabulation Approach to Longest Contiguous Palindromic Substring.}{47}{subsection.3.11.3}%
-\contentsline {subsection}{\numberline {3.11.4}Complexity Analysis of the Tabulation Approach to Longest Contiguous Palindromic Subsequence}{50}{subsection.3.11.4}%
-\contentsline {section}{\numberline {3.12}The Needleman-Wunsch Algorithm}{50}{section.3.12}%
-\contentsline {subsection}{\numberline {3.12.1}Initialization of the Needleman-Wunsch Table}{51}{subsection.3.12.1}%
-\contentsline {subsection}{\numberline {3.12.2}Filling the Needleman-Wunsch Table}{51}{subsection.3.12.2}%
-\contentsline {subsection}{\numberline {3.12.3}Traceback in the Needleman-Wunsch Table}{52}{subsection.3.12.3}%
-\contentsline {section}{\numberline {3.13}The Smith-Waterman Algorithm}{54}{section.3.13}%
-\contentsline {subsection}{\numberline {3.13.1}Initialization of the Smith-Waterman Table}{55}{subsection.3.13.1}%
-\contentsline {subsection}{\numberline {3.13.2}Filling the Smith-Waterman Table}{55}{subsection.3.13.2}%
-\contentsline {subsection}{\numberline {3.13.3}Traceback in the Smith-Waterman Table}{55}{subsection.3.13.3}%
-\contentsline {chapter}{\numberline {4}Benchmarking of the Researched Algorithms}{57}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Discussion of Benchmarking Methods of Algorithms with Inputs of Size N}{58}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Approach to Benchmarking the Fibonacci Problem}{58}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Results of Benchmarking the Fibonacci Problem}{59}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}Approach to Benchmarking the Coin Change Problem}{59}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Results of Benchmarking the Coin Change Problem}{60}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Approach to Benchmarking Problems With Single List Inputs}{61}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Results of Benchmarking Longest Increasing Subsequence}{62}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Results of Benchmarking Max Subarray Sum}{62}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Results of Benchmarking Longest Alternating Subsequence}{62}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Approach to Benchmarking Binomial Coefficients}{63}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Results of Benchmarking Binomial Coefficients}{63}{subsection.4.5.1}%
-\contentsline {chapter}{\numberline {5}The Interstellar Problem}{64}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The Interstellar Problem I}{64}{section.5.1}%
-\contentsline {section}{\numberline {5.2}The Interstellar Problem II}{65}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Building Up to The Interstellar Problem}{66}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Unique Paths}{66}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Tabulation Approach to Unique Paths}{67}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Complexity Analysis of Unique Paths}{68}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Optimization of the Unique Paths Problem}{69}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Min Path Sum}{70}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Tabulation Approach to Min Path Sum}{70}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Complexity Analysis of Min Path Sum}{73}{subsection.5.3.7}%
-\contentsline {subsection}{\numberline {5.3.8}Optimization of Min Path Sum}{73}{subsection.5.3.8}%
-\contentsline {subsection}{\numberline {5.3.9}Note on Optimization}{74}{subsection.5.3.9}%
-\contentsline {subsection}{\numberline {5.3.10}Extending Pathfinding Problems to 3 Dimensions}{75}{subsection.5.3.10}%
-\contentsline {subsection}{\numberline {5.3.11}Tabulation Approach to 3D-Unique Paths}{75}{subsection.5.3.11}%
-\contentsline {subsection}{\numberline {5.3.12}Complexity Analysis of 3D-Unique-Paths}{76}{subsection.5.3.12}%
-\contentsline {subsection}{\numberline {5.3.13}Note on this Approach}{76}{subsection.5.3.13}%
-\contentsline {subsection}{\numberline {5.3.14}Correctness of N-Dimensional Pathfinding Problems}{77}{subsection.5.3.14}%
-\contentsline {section}{\numberline {5.4}The Interstellar Problem Implementation Details}{77}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Python Implementation of The Interstellar Problem 1}{78}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Complexity Analysis of The Interstellar Problem I}{80}{subsection.5.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusions}{81}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Reflection}{81}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Summary of How the Project was Conducted}{82}{section.6.2}%
+\contentsline {subsection}{\numberline {3.4.9}Complexity Analysis of the Tabulation Approach to Coin Change}{18}{subsection.3.4.9}%
+\contentsline {section}{\numberline {3.5}Longest Increasing Subsequence - LIS}{19}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Greedy Approach to LIS}{19}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Optimality of the Greedy Approach to LIS}{19}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Brute Force Approach to LIS}{20}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Complexity Analysis of the Brute Force Approach to LIS}{21}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Memoization Approach to LIS}{21}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.6}Complexity Analysis of the Memoization Approach to LIS}{22}{subsection.3.5.6}%
+\contentsline {subsection}{\numberline {3.5.7}Tabulation Approach to LIS}{23}{subsection.3.5.7}%
+\contentsline {subsection}{\numberline {3.5.8}Complexity Analysis of the Tabulation Approach to LIS}{24}{subsection.3.5.8}%
+\contentsline {section}{\numberline {3.6}Max Subarray Sum - MSS}{24}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Brute Force Approach to Max Subarray Sum}{25}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Complexity Analysis of the Brute Force Approach to MSS}{26}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Kadanes Algorithm for Max Subarray Sum}{26}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Complexity Analysis of Kadane's Algorithm}{27}{subsection.3.6.4}%
+\contentsline {section}{\numberline {3.7}Longest Alternating Subsequence - LAS}{29}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Brute Force Approach to LAS}{29}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Complexity Analysis of the Brute Force Approach to LAS}{31}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Auxiliary Arrays Solution for LAS}{31}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Complexity Analysis of the Auxiliary Arrays Approach to LAS}{33}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.5}Optimized Soluiton to LAS}{33}{subsection.3.7.5}%
+\contentsline {subsection}{\numberline {3.7.6}Complexity Analysis of the Optimized Approach to LAS}{34}{subsection.3.7.6}%
+\contentsline {section}{\numberline {3.8}Binomial Coefficients - C(n,k)}{35}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Brute Force Approach to C(n,k)}{35}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Complexity Analysis of the Brute Force Approach to C(n,k)}{36}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Memoization Approach to C(n,k)}{36}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Complexity Analysis of the Memoization Approach to C(n,k)}{37}{subsection.3.8.4}%
+\contentsline {subsection}{\numberline {3.8.5}Tabulation Approach to C(n,k)}{37}{subsection.3.8.5}%
+\contentsline {subsection}{\numberline {3.8.6}Complexity Analysis of the Tabulation Approach to C(n,k)}{38}{subsection.3.8.6}%
+\contentsline {subsection}{\numberline {3.8.7}Optimzied Tabulation Approach to C(n,k)}{39}{subsection.3.8.7}%
+\contentsline {section}{\numberline {3.9}Longest Common Subsequence - LCS}{39}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Brute Force Approach to LCS}{40}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Complexity Analysis of the Brute Force Approach to LCS}{40}{subsection.3.9.2}%
+\contentsline {subsection}{\numberline {3.9.3}Tabulation Approach to LCS}{41}{subsection.3.9.3}%
+\contentsline {subsection}{\numberline {3.9.4}Complexity Analysis of the Tabulation Approach to LCS}{42}{subsection.3.9.4}%
+\contentsline {subsection}{\numberline {3.9.5}Optimized Tabulation Approach to LCS}{43}{subsection.3.9.5}%
+\contentsline {section}{\numberline {3.10}Longest Palindromic Subsequence - LPS}{43}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Tabulation Approach to LPS}{44}{subsection.3.10.1}%
+\contentsline {subsection}{\numberline {3.10.2}Complexity Analysis of LPS}{44}{subsection.3.10.2}%
+\contentsline {section}{\numberline {3.11}Longest Contiguous Palindromic Substring - LPCS}{44}{section.3.11}%
+\contentsline {subsection}{\numberline {3.11.1}Brute Force Approach to LCPS}{45}{subsection.3.11.1}%
+\contentsline {subsection}{\numberline {3.11.2}Complexity Analysis of the Brute Force Approach to LCPS}{45}{subsection.3.11.2}%
+\contentsline {subsection}{\numberline {3.11.3}Tabulation Approach to LCPS}{45}{subsection.3.11.3}%
+\contentsline {subsection}{\numberline {3.11.4}Complexity Analysis of the Tabulation Approach to LCPS}{49}{subsection.3.11.4}%
+\contentsline {section}{\numberline {3.12}The Needleman-Wunsch Algorithm}{49}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}Initialization of the Needleman-Wunsch Table}{50}{subsection.3.12.1}%
+\contentsline {subsection}{\numberline {3.12.2}Filling the Needleman-Wunsch Table}{50}{subsection.3.12.2}%
+\contentsline {subsection}{\numberline {3.12.3}Traceback in the Needleman-Wunsch Table}{51}{subsection.3.12.3}%
+\contentsline {section}{\numberline {3.13}The Smith-Waterman Algorithm}{53}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}Initialization of the Smith-Waterman Table}{54}{subsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.13.2}Filling the Smith-Waterman Table}{54}{subsection.3.13.2}%
+\contentsline {subsection}{\numberline {3.13.3}Traceback in the Smith-Waterman Table}{54}{subsection.3.13.3}%
+\contentsline {chapter}{\numberline {4}Benchmarking of the Researched Algorithms}{56}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Discussion of Benchmarking Methods of Algorithms with Inputs of Size N}{57}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Approach to Benchmarking the Fibonacci Problem}{57}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Results of Benchmarking the Fibonacci Problem}{58}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Approach to Benchmarking the Coin Change Problem}{58}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Results of Benchmarking the Coin Change Problem}{59}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Approach to Benchmarking Problems With Single List Inputs}{60}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Results of Benchmarking Longest Increasing Subsequence}{61}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Results of Benchmarking Max Subarray Sum}{61}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Results of Benchmarking Longest Alternating Subsequence}{61}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Approach to Benchmarking Binomial Coefficients}{62}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Results of Benchmarking Binomial Coefficients}{62}{subsection.4.5.1}%
+\contentsline {chapter}{\numberline {5}The Interstellar Problem}{63}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The Interstellar Problem I}{63}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The Interstellar Problem II}{64}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Building Up to The Interstellar Problem}{65}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Unique Paths}{65}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Tabulation Approach to Unique Paths}{66}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Complexity Analysis of Unique Paths}{67}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Optimization of the Unique Paths Problem}{68}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Min Path Sum}{69}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Tabulation Approach to Min Path Sum}{69}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Complexity Analysis of Min Path Sum}{72}{subsection.5.3.7}%
+\contentsline {subsection}{\numberline {5.3.8}Optimization of Min Path Sum}{72}{subsection.5.3.8}%
+\contentsline {subsection}{\numberline {5.3.9}Note on Optimization}{73}{subsection.5.3.9}%
+\contentsline {subsection}{\numberline {5.3.10}Extending Pathfinding Problems to 3 Dimensions}{74}{subsection.5.3.10}%
+\contentsline {subsection}{\numberline {5.3.11}Tabulation Approach to 3D-Unique Paths}{74}{subsection.5.3.11}%
+\contentsline {subsection}{\numberline {5.3.12}Complexity Analysis of 3D-Unique-Paths}{75}{subsection.5.3.12}%
+\contentsline {subsection}{\numberline {5.3.13}Note on this Approach}{75}{subsection.5.3.13}%
+\contentsline {subsection}{\numberline {5.3.14}Correctness of N-Dimensional Pathfinding Problems}{76}{subsection.5.3.14}%
+\contentsline {section}{\numberline {5.4}The Interstellar Problem Implementation Details}{76}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Python Implementation of The Interstellar Problem 1}{77}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Complexity Analysis of The Interstellar Problem I}{79}{subsection.5.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusions}{80}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Reflection}{80}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Summary of How the Project was Conducted}{81}{section.6.2}%

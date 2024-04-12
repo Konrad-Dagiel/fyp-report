@@ -9,24 +9,24 @@ The two attributes a problem needs to have in order to be classified as a dynami
 \end{definition}
 
 \begin{definition}[Overlapping Subproblems]
-    A problem is said to have overlapping subproblems if the problem can be broken down into subproblems which can be reused several times, or a recursive algorithm would solve the same subproblem more than once resulting in repeated work. (If the subproblems do not overlap, the algorithm is categorized as a "divide and conquer" algorithm rather than a dynamic programming algorithm.)
+    A problem is said to have overlapping subproblems if the problem can be broken down into subproblems which can be reused several times, or a recursive algorithm would solve the same subproblem more than once resulting in repeated work. (If the subproblems do not overlap, the algorithm is categorized as a ``divide and conquer'' algorithm rather than a dynamic programming algorithm.)
 \end{definition} 
 Once we have deduced that a problem has both of these properties, we can use dynamic programming principles in order to solve the problem in an efficient manner.
 When solving a dynamic programming problem, it is common to start by implementing a brute force solution which explores all subproblems and returns a solution.
 We can then extend our solution to use a cache to store the results of any subproblems encountered, such that when the subproblem is encountered again we do not need to re-compute the result, instead we can simply look up the cache in constant time.
-This is known as "memoization", or "top-down dynamic programming".
+This is known as \textbf{memoization}, or ``top-down dynamic programming''.
 We can then look for any patterns in the cache table which, given an initialization (usually the base case of the recursive solution), would allow us to compute the values stored in the cache without ever traversing the decision tree of the problem itself.
-This is known as "tabulation", or "bottom-up dynamic programming".
+This is known as \textbf{tabulation}, or ``bottom-up dynamic programming''.
 Finally, we can space optimize the cache to avoid storing information which is not needed to arrive at the solution.
 This way, we arrive at the optimized dynamic programming solution to the problem.
 In order to demonstrate this, we will use a simple problem called The Fibonacci Problem.
 
-\section{The Fibonacci Problem}
+\section{The Fibonacci Problem - Fib(n)}
 \input{chapters/algorithms/al-fibonacci.tex}
 
 \section{Dynamic Programming Summary}
 
-In summary, the "dynamic programming way of thinking" involves:
+In summary, the ``dynamic programming way of thinking'' involves:
 \begin{enumerate}
     \item Creating a brute force solution.
     \item Figuring out if the optimal substructure property holds.
@@ -56,25 +56,25 @@ In the accompanying online guide, the tabulation approach of each of the problem
 \section{The Coin Change Problem}
 \input{chapters/algorithms/al-coin_change.tex}
 
-\section{Longest Increasing Subsequence}
+\section{Longest Increasing Subsequence - LIS}
 \input{chapters/algorithms/al-lis.tex}
 
-\section{Max Subarray Sum}
+\section{Max Subarray Sum - MSS}
 \input{chapters/algorithms/al-max_subarray_sum.tex}
 
-\section{Longest Alternating Subsequence}
+\section{Longest Alternating Subsequence - LAS}
 \input{chapters/algorithms/al-las.tex}
 
-\section{Binomial Coefficients}
+\section{Binomial Coefficients - C(n,k)}
 \input{chapters/algorithms/al-binomial_coefficients.tex}
 
-\section{Longest Common Subsequence} \label{section:lcs}
+\section{Longest Common Subsequence - LCS} \label{section:lcs}
 \input{chapters/algorithms/al-lcs.tex}
 
-\section{Longest Palindromic Subsequence}
+\section{Longest Palindromic Subsequence - LPS}
 \input{chapters/algorithms/al-lps.tex}
 
-\section{Longest Contiguous Palindromic Substring}
+\section{Longest Contiguous Palindromic Substring - LPCS}
 \input{chapters/algorithms/al-lcps.tex}
 
 \section{The Needleman-Wunsch Algorithm}

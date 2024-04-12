@@ -22,9 +22,7 @@
 
 \end{description}
 
-    
-
-\subsection{Brute Force Approach to Longest Alternating Subsequence}
+\subsection{Brute Force Approach to LAS}
 
 The brute force way to approach this problem is to generate every possible subsequence of $nums$. 
 For each subsequence, we can check if it is alternating iteratively, and if it is, calculate its length.
@@ -70,7 +68,7 @@ In the context of generating all possible subsequences, $1 << n$ is used to crea
 Each bit in the bitmask corresponds to whether the corresponding element in the array is included or excluded in the current subsequence.
 The line "for $i$ in range$(1 << n)$" generates all possible subsequences by iterating through all bitmasks from 0 to $2^n-1$.
 
-\subsection{Complexity Analysis of the Brute Force Approach to Longest Alternating Subsequence}
+\subsection{Complexity Analysis of the Brute Force Approach to LAS}
 Let n be the length of nums.
 \begin{description}
     \item[Time Complexity:]
@@ -90,7 +88,7 @@ Let n be the length of nums.
 \end{description}
 
 
-\subsection{Auxiliary Arrays Solution for Longest Alternating Subsequence}
+\subsection{Auxiliary Arrays Solution for LAS}
 Notice that for an aribitrary longest alternating subsequence of length $k$ ending at index $i$,
 if there exists exactly one number which can extend the sequence,
 the length of the total longest alternating subsequence is guaranteed to be $k+1$.
@@ -123,7 +121,7 @@ The algorithm iterates through $nums$, considering each element $nums[i]$ and up
 \end{enumerate}
 
 
-A sample python implementation is shown in Figure \ref{fig:las-auxiliary}.
+A sample Python implementation is shown in Figure \ref{fig:las-auxiliary}.
 
 \begin{figure}[H]
     \centering
@@ -148,7 +146,7 @@ A sample python implementation is shown in Figure \ref{fig:las-auxiliary}.
 \end{figure}
 \newpage
 
-\subsection{Complexity Analysis of the Auxiliary Arrays Approach to Longest Alternating Subsequence}
+\subsection{Complexity Analysis of the Auxiliary Arrays Approach to LAS}
 Let n be the length of nums.
 \begin{description}
     \item[Time Complexity:]
@@ -171,7 +169,7 @@ Let n be the length of nums.
 \end{description}
 
 
-\subsection{Optimized Soluiton to Longest Alternating Subsequence}
+\subsection{Optimized Soluiton to LAS}
 Observe that at each step, the max of $inc$ and $dec$ can be found at the current index of the arrays,
 so we do not need to store the entire $inc$ and $dec$ arrays.
 Instead, we can use an $inc$ and $dec$ variable which will hold the value stored at $inc[i]$ and $dec[i]$ respectively.
@@ -186,7 +184,7 @@ We can do a single iteration over nums where:
 
 \end{enumerate}
 
-A sample python implementation is shown in Figure \ref{fig:las-optimized}.
+A sample Python implementation is shown in Figure \ref{fig:las-optimized}.
 
 \begin{figure}[H]
     \centering
@@ -210,7 +208,7 @@ A sample python implementation is shown in Figure \ref{fig:las-optimized}.
     \label{fig:las-optimized}
 \end{figure}
 
-\subsection{Complexity Analysis of the Optimized Approach to Longest Alternating Subsequence}
+\subsection{Complexity Analysis of the Optimized Approach to LAS}
 Let n be the length of nums.
 
 \begin{description}

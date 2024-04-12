@@ -22,7 +22,7 @@
 \end{description}
 
 
-\subsection{Brute Force Approach to The Fibonacci Problem}
+\subsection{Brute Force Approach to Fib(n)}
 
 We will always start with a brute force approach, in which which will use recursion to explore all subproblems and arrive at the solution. 
 We know that the base cases are $fib(1) = 1$ and $fib(2) = 1$.
@@ -81,7 +81,7 @@ We can see that the amount of repeating subproblems would scale exponentially wi
     \label{fig:fibonacci-bf-tree}
 \end{figure}
 
-\subsection{Complexity Analysis of the Brute Force Approach to the Fibonacci Problem}
+\subsection{Complexity Analysis of the Brute Force Approach to Fib(n)}
 
 \begin{description}
     \item[Time Complexity:]
@@ -103,10 +103,10 @@ We can see that the amount of repeating subproblems would scale exponentially wi
 \end{description}
 \newpage
 
-\subsection{Memoization Approach to The Fibonacci Problem}
+\subsection{Memoization Approach to Fib(n)}
 We can see that the optimal solution to $fib(n-1)$ + the optimal solution to $fib(n-2)$ will always be the optimal solution to $fib(n)$. This shows that the optimal substructure property holds.
 We can also see that the calculation of $fib(n-1)$ contains the calculation of $fib(n-2)$, which is proof of overlapping subproblems.
-This proves that The Fibonacci Problem fits the criteria for dynamic programming.
+This proves that the Fibonacci Problem fits the criteria for dynamic programming.
 We can hence make this calculation more efficient through the use of memoization.
 This simple adjustment involves storing a $(key, value)$ table called $memo$, where the key is an identifier for an intermediate subproblem and the value is the intermediate result of that subproblem.
 Now, for any subproblem, we first check if the result is in $memo$ and if it is, we do not perform the calculation again, instead we return the result of that calculation from $memo$ in constant time.
@@ -173,7 +173,7 @@ In this case, our $memo$ table key is $x$, and the value at $x$ returned is $fib
     \label{fig:fibonacci-memo-tree}
 \end{figure}
 
-\subsection{Complexity Analysis of the Memoization Approach to The Fibonacci Problem}
+\subsection{Complexity Analysis of the Memoization Approach to Fib(n)}
 
 \begin{description}
     \item[Time Complexity:]
@@ -195,7 +195,7 @@ In this case, our $memo$ table key is $x$, and the value at $x$ returned is $fib
 \end{description}
 \newpage
 
-\subsection{Tabulation Approach to the Fibonacci Problem}
+\subsection{Tabulation Approach to Fib(n)}
     
 With the memoization approach, we saw how to compute the solution top-down, starting at $fib(n-1) + fib(n-2)$,
 arriving at the base cases, and working up from there.
@@ -254,7 +254,7 @@ A sample Python implementation is shown in Figure \ref{fig:fibonacci-dp}.
 \end{figure}
 \newpage
 
-\subsection{Optimized Approach to the Fibonacci Problem}
+\subsection{Optimized Approach to Fib(n)}
 We can often save space with the tabulation
 approach by releasing parts of the $dp$ table which are not in use from memory.
 In this case, notice that we only need $fib(n-1)$ and $fib(n-2)$ to deduce the result of $fib(n)$.
@@ -282,7 +282,7 @@ A sample Python implementation is shown in Figure \ref{fig:fibonacci-optimized}.
     \label{fig:fibonacci-optimized}
 \end{figure}
 
-\subsection{Complexity Analysis of the Tabulation Approach to the Fibonacci Problem}
+\subsection{Complexity Analysis of the Tabulation Approach to Fib(n)}
 
 \begin{description}
     \item[Time Complexity:]

@@ -17,13 +17,13 @@
    
 \end{description}
 
-\subsection{Longest Common Subsequence Brute Force}
+\subsection{Brute Force Approach to LCS}
 The brute force way to find the longest common subsequence of two strings is to generate all possible subsequences of both strings.
 We initialize a $lcs$ variable to store the length of the longest common subsequence.
 We then iterate over each list of subsequences and report any common subsequences we find, updating $lcs$ accordingly.
 Finally we return $lcs$. An implementation of this would be so inefficient it would overload any CPU running the code on subsequences of more than a few characters in length.
 
-\subsection{Complexity Analysis of the Brute Force Approach to Longest Common Subsequence}
+\subsection{Complexity Analysis of the Brute Force Approach to LCS}
 For the calculation of worst case time and space complexity, we assume that both strings are equal in length, and that length is denoted by $n$.
 
 \begin{description}
@@ -60,7 +60,7 @@ $$text1=bcde,\phantom{0} text2=ce$$
 
 The solution will be $max(lcs(cde,ce), lcs(bcde,e))$. (We have removed the character in the first position in each of the inputs individually, left the output unchanged, and recursed on both cases to find the max.)
 As we have the chance to recurse on the same two substrings multiple times, the problem has the overlapping subproblems property.
-\subsection{Tabulation Approach to Longest Common Subsequence}
+\subsection{Tabulation Approach to LCS}
 We can use these two cases to solve this problem by tabulation.
 We create a table called $dp$ with $i$ rows and $j$ columns, where $i$ and $j$ are the lengths of $text1$ and $text2$ respectively.
 Each row and column of $dp$ represents a character in $text1$ and $text2$. (Note that the visualization of $dp$ includes an additional row and column which contain labels for the characters in $text2$ and $text1$ respectively, These are for clarity only and are not part of the $dp$ table.)
@@ -149,7 +149,7 @@ A sample Python implementation is shown in Figure \ref{fig:lcs-dp}.
     \label{fig:lcs-dp}
 \end{figure}
 
-\subsection{Complexity Analysis of the Tabulation Approach to Longest Common Subsequence}\label{subsec:ca-lcs-dp}
+\subsection{Complexity Analysis of the Tabulation Approach to LCS}\label{subsec:ca-lcs-dp}
 
 Let $i$ be the length of $text1$, and $j$ be the length of $text2$.
 
@@ -167,7 +167,7 @@ Let $i$ be the length of $text1$, and $j$ be the length of $text2$.
     
 \end{description}
 
-\subsection{Optimized Tabulation Approach to Longest Common Subsequence}\label{subsec:lcs-optimized}
+\subsection{Optimized Tabulation Approach to LCS}\label{subsec:lcs-optimized}
 The same two-row optimization as in Section \ref{subsec:binomial-coefficents-optimized} can be applied to this problem.
 Notice that each row of the $dp$ table can be computed using only the previous row, as we never look more than one row down in the table when computing a new row.
 Consider the following two rows of our previous $dp$ table.
