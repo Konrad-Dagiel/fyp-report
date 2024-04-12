@@ -89,22 +89,15 @@
 \contentsline {section}{\numberline {5.2}The Interstellar Problem II}{64}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Building Up to The Interstellar Problem}{65}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Unique Paths}{65}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Tabulation Approach to Unique Paths}{66}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Complexity Analysis of Unique Paths}{67}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Optimization of the Unique Paths Problem}{68}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Min Path Sum}{69}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Tabulation Approach to Min Path Sum}{69}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Complexity Analysis of Min Path Sum}{72}{subsection.5.3.7}%
-\contentsline {subsection}{\numberline {5.3.8}Optimization of Min Path Sum}{72}{subsection.5.3.8}%
-\contentsline {subsection}{\numberline {5.3.9}Note on Optimization}{73}{subsection.5.3.9}%
-\contentsline {subsection}{\numberline {5.3.10}Extending Pathfinding Problems to 3 Dimensions}{74}{subsection.5.3.10}%
-\contentsline {subsection}{\numberline {5.3.11}Tabulation Approach to 3D-Unique Paths}{74}{subsection.5.3.11}%
-\contentsline {subsection}{\numberline {5.3.12}Complexity Analysis of 3D-Unique-Paths}{75}{subsection.5.3.12}%
-\contentsline {subsection}{\numberline {5.3.13}Note on this Approach}{75}{subsection.5.3.13}%
-\contentsline {subsection}{\numberline {5.3.14}Correctness of N-Dimensional Pathfinding Problems}{76}{subsection.5.3.14}%
+\contentsline {subsection}{\numberline {5.3.2}Min Path Sum}{69}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Extending Pathfinding Problems to 3 Dimensions}{74}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Tabulation Approach to 3D-Unique Paths}{74}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Complexity Analysis of 3D-Unique-Paths}{75}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Note on this Approach}{75}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Correctness of N-Dimensional Pathfinding Problems}{76}{subsection.5.3.7}%
 \contentsline {section}{\numberline {5.4}The Interstellar Problem Implementation Details}{76}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Python Implementation of The Interstellar Problem 1}{77}{section.5.5}%
 \contentsline {subsection}{\numberline {5.5.1}Complexity Analysis of The Interstellar Problem I}{79}{subsection.5.5.1}%
 \contentsline {chapter}{\numberline {6}Conclusions}{80}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Reflection}{80}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Summary of How the Project was Conducted}{81}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Summary of how the Project was Conducted}{81}{section.6.2}%

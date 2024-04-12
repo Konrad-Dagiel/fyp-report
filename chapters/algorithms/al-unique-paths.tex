@@ -35,7 +35,7 @@
         
 \end{description}
 
-\subsection{Tabulation Approach to Unique Paths}
+\subsection*{Tabulation Approach to Unique Paths}
 Notice that wherever the robot lands on the grid, it is possible to reach the finish square,
 so we do not have to worry about cases where the robot cannot reach the finish square (backtracking).
 Notice also that the number of paths from any square is the sum of the number paths to the right, and the number of paths if you go down.
@@ -102,7 +102,7 @@ A sample Python implementation is given in \ref{fig:unique-paths}
     \label{fig:unique-paths}
 \end{figure}
 
-\subsection{Complexity Analysis of Unique Paths}\label{ca-unique-paths}
+\subsection*{Complexity Analysis of Unique Paths}\label{ca-unique-paths}
 
 \begin{description}
     \item[Time Complexity:]
@@ -119,7 +119,7 @@ A sample Python implementation is given in \ref{fig:unique-paths}
 \end{description}
 \newpage
 
-\subsection{Optimization of the Unique Paths Problem}
+\subsection*{Optimization of the Unique Paths Problem}
 Notice that for a given value in row $r$ in the table $dp$, $v$ can be calculated using just row $r$ and row $r-1$.
 Since we compute the values in $dp$ rowwise from the bottom up, we do not actually need to store the entire $dp$ table in memory as the values which are two or more rows below the row we are computing at any given time do not contribute to our calculation.
 Storing only two rows of the $dp$ table at a time reduces the space complexity from $O(m * n)$ to just $O(m)$.\\

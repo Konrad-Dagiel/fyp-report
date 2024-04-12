@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  12 APR 2024 16:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  12 APR 2024 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -660,12 +660,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
 <to be read again> 
                    \relax 
 l.70 ...leman-Wunsch Table}{51}{subsection.3.12.3}
-                                                  % [5]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.107 ...rstellar Problem I}{79}{subsection.5.5.1}
-                                                  % [6])
+                                                  % [5])
 \tf@toc=\write5
 \openout5 = `fyp.toc'.
 
@@ -674,7 +669,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
 <to be read again> 
                    \relax 
 l.106 \include{chapters/ch-introduction.tex}
-                                             % intro to project [7]
+                                             % intro to project [6]
 \openout2 = `chapters/ch-introduction.aux'.
 
  (chapters/ch-introduction.tex
@@ -897,20 +892,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `fyp.out' has not changed.
-(rerunfilecheck)             Checksum: 3CBF39E8DBA67C8728DA21F8B1917D6E;29534.
+(rerunfilecheck)             Checksum: 7C23D9796E56AA334C50BB307C8D1120;27861.
  ) 
 Here is how much of TeX's memory you used:
- 25614 strings out of 474435
- 470524 string characters out of 5741933
+ 25607 strings out of 474435
+ 470350 string characters out of 5741933
  2115190 words of memory out of 5000000
- 46554 multiletter control sequences out of 15000+600000
+ 46547 multiletter control sequences out of 15000+600000
  568285 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,93p,559b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on fyp.pdf (90 pages, 639557 bytes).
+Output written on fyp.pdf (89 pages, 634096 bytes).
 PDF statistics:
- 1984 PDF objects out of 2073 (max. 8388607)
+ 1953 PDF objects out of 2073 (max. 8388607)
  914 named destinations out of 1000 (max. 500000)
- 893 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 837 words of extra memory for PDF output out of 10000 (max. 10000000)
 
