@@ -1,0 +1,61 @@
+\begin{thebibliography}{10}
+
+\bibitem{bellman1954theory}
+Richard Bellman.
+\newblock The theory of dynamic programming.
+\newblock {\em Bulletin of the American Mathematical Society}, 60(6):503--515,
+  1954.
+
+\bibitem{bellman1966dynamic}
+Richard Bellman.
+\newblock Dynamic programming.
+\newblock {\em science}, 153(3731):34--37, 1966.
+
+\bibitem{algosbook1}
+Rivest Cormen, Leiseron and Stein.
+\newblock {\em Introduction to Algorithms, 2nd ed.}
+\newblock MIT, 2001.
+
+\bibitem{algosbook2}
+Rivest Cormen, Leiseron and Stein.
+\newblock {\em Introduction to Algorithms, 3rd ed.}
+\newblock MIT, 2014.
+
+\bibitem{enjoyalgorithms}
+Enjoyalgorithms.
+\newblock Enjoyalgorithms, 2024.
+\newblock Accessed: April 12 , 2024.
+
+\bibitem{geeksforgeeks}
+GFG.
+\newblock Geeksforgeeks, 2024.
+\newblock Accessed: April 12 , 2024.
+
+\bibitem{leetcode}
+LeetCode.
+\newblock Leetcode, 2024.
+\newblock Accessed: April 12 , 2024.
+
+\bibitem{likic2008needleman}
+Vladimir Likic.
+\newblock The needleman-wunsch algorithm for sequence alignment.
+\newblock {\em Lecture given at the 7th Melbourne Bioinformatics Course, Bi021
+  Molecular Science and Biotechnology Institute, University of Melbourne},
+  pages 1--46, 2008.
+
+\bibitem{abdulla2018dynamic}
+Sajil Neissery~Abdulla.
+\newblock Dynamic programming, 11 2018.
+
+\bibitem{REVEILLAC201555}
+Jean-Michel Réveillac.
+\newblock 4 - dynamic programming.
+\newblock In Jean-Michel Réveillac, editor, {\em Optimization Tools for
+  Logistics}, pages 55--75. Elsevier, 2015.
+
+\bibitem{conversableeconomist}
+Timothy Taylor.
+\newblock Cnoversable economist, 2022.
+\newblock Accessed: April 12 , 2024.
+
+\end{thebibliography}

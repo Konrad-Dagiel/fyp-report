@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  12 APR 2024 16:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  15 APR 2024 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -707,12 +707,12 @@ Chapter 3.
 
 
 
-] (chapters/algorithms/al-fibonacci.tex
+] (chapters/algorithms/al-fibonacci.tex [6]
 Overfull \hbox (9.37827pt too wide) in paragraph at lines 84--84
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Brute Force Ap-proach to Fib(n) 
  []
 
-[6] [7] [8] [9] [10]
+[7] [8] [9] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 258--266
 
  []
@@ -786,7 +786,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--56
  []
 
 [41] [42]) (chapters/algorithms/al-lps.tex [43])
-Overfull \hbox (24.59583pt too wide) in paragraph at lines 77--77
+Overfull \hbox (24.59583pt too wide) in paragraph at lines 79--79
 []\OT1/cmr/bx/n/17.28 Longest Con-tigu-ous Palin-dromic Sub-string - LPCS 
  []
 
@@ -816,32 +816,32 @@ Overfull \hbox (0.16641pt too wide) in paragraph at lines 30--32
 [53] [54]
 Overfull \vbox (64.4346pt too high) has occurred while \output is active []
 
- [55]))
+ [55])) [56]
 \openout2 = `chapters/ch-benchmarking.aux'.
 
  (chapters/ch-benchmarking.tex
 Chapter 4.
-[56
+[57
 
 
 
 
-] [57]
+] [58]
 Overfull \hbox (18.05183pt too wide) in paragraph at lines 86--86
 []\OT1/cmr/bx/n/17.28 Approach to Bench-mark-ing the Coin Change Prob-
  []
 
-[58] [59] [60]
+[59] [60] [61]
 Overfull \hbox (7.58333pt too wide) in paragraph at lines 209--209
 []\OT1/cmr/bx/n/14.4 Results of Bench-mark-ing Longest Al-ter-nat-ing Sub-se-quence 
  []
 
-[61]
+[62]
 Overfull \hbox (4.27985pt too wide) in paragraph at lines 229--229
 []\OT1/cmr/bx/n/17.28 Approach to Bench-mark-ing Bi-no-mial Co-ef-fi-cients 
  []
 
-) [62]
+) [63]
 \openout2 = `chapters/ch-design-own.aux'.
 
  (chapters/ch-design-own.tex
@@ -851,61 +851,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
 
-[63
+[64
 
 
 
 
-] [64] (chapters/algorithms/al-unique-paths.tex [65] [66] [67]
+] [65] (chapters/algorithms/al-unique-paths.tex [66] [67] [68]
 Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
 
-[68]) (chapters/algorithms/al-min-path-sum.tex
+[69]) (chapters/algorithms/al-min-path-sum.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--19
 
  []
 
-[69] [70] [71] [72]) (chapters/algorithms/al-3d-unique-paths.tex [73] [74]) (chapters/algorithms/al-nd-unique-paths.tex [75]
+[70] [71] [72] [73]) (chapters/algorithms/al-3d-unique-paths.tex [74] [75]) (chapters/algorithms/al-nd-unique-paths.tex [76]
 Overfull \hbox (1.7279pt too wide) in paragraph at lines 10--10
 []\OT1/cmr/bx/n/17.28 The In-ter-stel-lar Prob-lem Im-ple-men-ta-tion De-tails 
  []
 
-[76]
+[77]
 Overfull \hbox (0.88986pt too wide) in paragraph at lines 48--48
 []\OT1/cmr/bx/n/17.28 Python Im-ple-men-ta-tion of The In-ter-stel-lar Prob-
  []
 
-[77] [78])) [79]
+[78] [79])) [80]
 \openout2 = `chapters/ch-conclusions.aux'.
 
  (chapters/ch-conclusions.tex
 Chapter 6.
-[80
+[81
 
 
 
 
-] [81]) [82] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux) (chapters/ch-conclusions.aux))
+] [82]) [83] (fyp.bbl) [84
+
+
+
+] (fyp.aux (chapters/ch-introduction.aux) (chapters/ch-analysis.aux) (chapters/ch-design.aux) (chapters/ch-benchmarking.aux) (chapters/ch-design-own.aux) (chapters/ch-conclusions.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `fyp.out' has not changed.
-(rerunfilecheck)             Checksum: 7C23D9796E56AA334C50BB307C8D1120;27861.
+(rerunfilecheck)             Checksum: FB1E1452A847D23BFBCAE6BF0BD4FBED;27953.
  ) 
 Here is how much of TeX's memory you used:
- 25607 strings out of 474435
- 470350 string characters out of 5741933
+ 25667 strings out of 474435
+ 471564 string characters out of 5741933
  2115190 words of memory out of 5000000
- 46547 multiletter control sequences out of 15000+600000
+ 46589 multiletter control sequences out of 15000+600000
  568285 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,93p,559b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on fyp.pdf (89 pages, 634096 bytes).
+Output written on fyp.pdf (91 pages, 648218 bytes).
 PDF statistics:
- 1953 PDF objects out of 2073 (max. 8388607)
- 914 named destinations out of 1000 (max. 500000)
- 837 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1996 PDF objects out of 2073 (max. 8388607)
+ 929 named destinations out of 1000 (max. 500000)
+ 845 words of extra memory for PDF output out of 10000 (max. 10000000)
 

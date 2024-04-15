@@ -127,7 +127,7 @@ This optimization allows the algorithm to avoid repeating work,
 speeding up the runtime significantly.
 Notice that memoization is not a space efficient approach to solving subsequence problems, as there is usually a lot of subproblems to store. In the case of longest increasing subsequence, memoization actually has a worse space complexity than the brute force approach.
 
-A sample python implementation is shown in Figure \ref{fig:lis-memo}.
+A sample Python implementation is shown in Figure \ref{fig:lis-memo}.
 
 \begin{figure}[H]
     \centering
@@ -232,7 +232,7 @@ We only include $1+dp[jx]$ in the max function if $nums[i] < nums[jx]$, to maint
 This will give us a table where $dp[i]$ contains the longest increasing subsequence of $nums$ where the first number is $nums[i]$.
 We can then simply return $max(dp)$.\\
 
-A sample python implementation is shown in Figure \ref{fig:lis-dp}.
+A sample Python implementation is shown in Figure \ref{fig:lis-dp}.
 
 \begin{figure}[H]
     \centering

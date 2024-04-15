@@ -401,6 +401,9 @@ OUTPUT chapters\ch-conclusions.aux
 INPUT .\chapters\ch-conclusions.tex
 INPUT .\chapters\ch-conclusions.tex
 INPUT chapters\ch-conclusions.tex
+INPUT .\fyp.bbl
+INPUT .\fyp.bbl
+INPUT fyp.bbl
 INPUT fyp.aux
 INPUT .\chapters\ch-introduction.aux
 INPUT .\chapters\ch-introduction.aux

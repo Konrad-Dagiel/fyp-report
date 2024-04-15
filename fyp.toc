@@ -72,32 +72,33 @@
 \contentsline {subsection}{\numberline {3.13.1}Initialization of the Smith-Waterman Table}{54}{subsection.3.13.1}%
 \contentsline {subsection}{\numberline {3.13.2}Filling the Smith-Waterman Table}{54}{subsection.3.13.2}%
 \contentsline {subsection}{\numberline {3.13.3}Traceback in the Smith-Waterman Table}{54}{subsection.3.13.3}%
-\contentsline {chapter}{\numberline {4}Benchmarking of the Researched Algorithms}{56}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Discussion of Benchmarking Methods of Algorithms with Inputs of Size N}{57}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Approach to Benchmarking the Fibonacci Problem}{57}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Results of Benchmarking the Fibonacci Problem}{58}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}Approach to Benchmarking the Coin Change Problem}{58}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Results of Benchmarking the Coin Change Problem}{59}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Approach to Benchmarking Problems With Single List Inputs}{60}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Results of Benchmarking Longest Increasing Subsequence}{61}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Results of Benchmarking Max Subarray Sum}{61}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Results of Benchmarking Longest Alternating Subsequence}{61}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Approach to Benchmarking Binomial Coefficients}{62}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Results of Benchmarking Binomial Coefficients}{62}{subsection.4.5.1}%
-\contentsline {chapter}{\numberline {5}The Interstellar Problem}{63}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The Interstellar Problem I}{63}{section.5.1}%
-\contentsline {section}{\numberline {5.2}The Interstellar Problem II}{64}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Building Up to The Interstellar Problem}{65}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Unique Paths}{65}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Min Path Sum}{69}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Extending Pathfinding Problems to 3 Dimensions}{74}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Tabulation Approach to 3D-Unique Paths}{74}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Complexity Analysis of 3D-Unique-Paths}{75}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Note on this Approach}{75}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Correctness of N-Dimensional Pathfinding Problems}{76}{subsection.5.3.7}%
-\contentsline {section}{\numberline {5.4}The Interstellar Problem Implementation Details}{76}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Python Implementation of The Interstellar Problem 1}{77}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Complexity Analysis of The Interstellar Problem I}{79}{subsection.5.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusions}{80}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Reflection}{80}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Summary of how the Project was Conducted}{81}{section.6.2}%
+\contentsline {section}{\numberline {3.14}Sources}{56}{section.3.14}%
+\contentsline {chapter}{\numberline {4}Benchmarking of the Researched Algorithms}{57}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Discussion of Benchmarking Methods of Algorithms with Inputs of Size N}{58}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Approach to Benchmarking the Fibonacci Problem}{58}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Results of Benchmarking the Fibonacci Problem}{59}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Approach to Benchmarking the Coin Change Problem}{59}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Results of Benchmarking the Coin Change Problem}{60}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Approach to Benchmarking Problems With Single List Inputs}{61}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Results of Benchmarking Longest Increasing Subsequence}{62}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Results of Benchmarking Max Subarray Sum}{62}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Results of Benchmarking Longest Alternating Subsequence}{62}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Approach to Benchmarking Binomial Coefficients}{63}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Results of Benchmarking Binomial Coefficients}{63}{subsection.4.5.1}%
+\contentsline {chapter}{\numberline {5}The Interstellar Problem}{64}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The Interstellar Problem I}{64}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The Interstellar Problem II}{65}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Building Up to The Interstellar Problem}{66}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Unique Paths}{66}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Min Path Sum}{70}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Extending Pathfinding Problems to 3 Dimensions}{75}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Tabulation Approach to 3D-Unique Paths}{75}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Complexity Analysis of 3D-Unique-Paths}{76}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Note on this Approach}{76}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Correctness of N-Dimensional Pathfinding Problems}{77}{subsection.5.3.7}%
+\contentsline {section}{\numberline {5.4}The Interstellar Problem Implementation Details}{77}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Python Implementation of The Interstellar Problem 1}{78}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Complexity Analysis of The Interstellar Problem I}{80}{subsection.5.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusions}{81}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Reflection}{81}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Summary of how the Project was Conducted}{82}{section.6.2}%
