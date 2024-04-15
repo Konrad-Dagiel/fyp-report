@@ -63,7 +63,7 @@ As we have the chance to recurse on the same two substrings multiple times, the 
 \subsection{Tabulation Approach to LCS}
 We can use these two cases to solve this problem by tabulation.
 We create a table called $dp$ with $i$ rows and $j$ columns, where $i$ and $j$ are the lengths of $text1$ and $text2$ respectively.
-Each row and column of $dp$ represents a character in $text1$ and $text2$. (Note that the visualization of $dp$ includes an additional row and column which contain labels for the characters in $text2$ and $text1$ respectively, These are for clarity only and are not part of the $dp$ table.)
+Each row and column of $dp$ represents a character in $text1$ and $text2$. (Note that the visualization of $dp$ includes an additional row and column which contain labels for the characters in $text2$ and $text1$ respectively. These are for clarity only and are not part of the $dp$ table.)
 
 \begin{table}[htbp]
     \centering
@@ -91,7 +91,7 @@ $dp[3][1]$ will represent $lcs(de,ce)$ ect..
 i.e. $dp[i][j]$ represents the longest common subseqence of $text1[i:]$ and $text2[j:]$.
 
 We fill the table starting from the bottom right as follows:
-
+\newpage
 \begin{enumerate}
     \item If the row and column have the same label, we have found a common character.
 
@@ -148,7 +148,7 @@ A sample Python implementation is shown in Figure \ref{fig:lcs-dp}.
     \caption{Longest Common Subsequence Tabulation Python Implementation}
     \label{fig:lcs-dp}
 \end{figure}
-
+\newpage
 \subsection{Complexity Analysis of the Tabulation Approach to LCS}\label{subsec:ca-lcs-dp}
 
 Let $i$ be the length of $text1$, and $j$ be the length of $text2$.
@@ -201,5 +201,5 @@ storing only two rows at a time.
 
 We could also arrange the table such that the shorter input is on "top", minimizing the size of the rows we store. These optimizations would reduce the space complexity to $O(min(i,j))$.
 
-
+\newpage
 

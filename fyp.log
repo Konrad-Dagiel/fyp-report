@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  15 APR 2024 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  15 APR 2024 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -745,12 +745,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
-) (chapters/algorithms/al-lis.tex [18] [19] [20] [21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 230--234
+) (chapters/algorithms/al-lis.tex [18] [19] [20] [21] [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 231--235
 
  []
 
-[23]) (chapters/algorithms/al-max_subarray_sum.tex [24] [25] [26] [27] [28]) (chapters/algorithms/al-las.tex [29] [30]
+) (chapters/algorithms/al-max_subarray_sum.tex [24] [25] [26] [27] [28]) (chapters/algorithms/al-las.tex [29] [30]
 Underfull \hbox (badness 10000) in paragraph at lines 104--109
 
  []
@@ -770,13 +770,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-
-Overfull \hbox (3.94484pt too wide) in paragraph at lines 200--200
+[38]
+Overfull \hbox (3.94484pt too wide) in paragraph at lines 201--201
 []\OT1/cmr/bx/n/14.4 Complexity Anal-y-sis of the Tab-u-la-tion Ap-proach to C(n,k) 
  []
 
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 216--223
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--224
 
  []
 
@@ -785,7 +785,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
  []
 
-[41] [42]) (chapters/algorithms/al-lps.tex [43])
+[41] [42] [43]) (chapters/algorithms/al-lps.tex)
 Overfull \hbox (24.59583pt too wide) in paragraph at lines 79--79
 []\OT1/cmr/bx/n/17.28 Longest Con-tigu-ous Palin-dromic Sub-string - LPCS 
  []
@@ -876,7 +876,13 @@ Overfull \hbox (0.88986pt too wide) in paragraph at lines 48--48
 []\OT1/cmr/bx/n/17.28 Python Im-ple-men-ta-tion of The In-ter-stel-lar Prob-
  []
 
-[78] [79])) [80]
+[78] [79]
+<visualization.jpg, id=1713, 474.573pt x 140.32425pt>
+File: visualization.jpg Graphic file (type jpg)
+<use visualization.jpg>
+Package pdftex.def Info: visualization.jpg  used on input line 123.
+(pdftex.def)             Requested size: 362.37569pt x 107.1507pt.
+)) [80 <./visualization.jpg>]
 \openout2 = `chapters/ch-conclusions.aux'.
 
  (chapters/ch-conclusions.tex
@@ -896,20 +902,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `fyp.out' has not changed.
-(rerunfilecheck)             Checksum: FB1E1452A847D23BFBCAE6BF0BD4FBED;27953.
+(rerunfilecheck)             Checksum: DD063DBFF398B3D350F47A2D26E2241A;28254.
  ) 
 Here is how much of TeX's memory you used:
- 25667 strings out of 474435
- 471564 string characters out of 5741933
+ 25678 strings out of 474435
+ 471796 string characters out of 5741933
  2115190 words of memory out of 5000000
- 46589 multiletter control sequences out of 15000+600000
+ 46598 multiletter control sequences out of 15000+600000
  568285 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,93p,559b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\kdawg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kdawg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on fyp.pdf (91 pages, 648218 bytes).
+Output written on fyp.pdf (91 pages, 693067 bytes).
 PDF statistics:
- 1996 PDF objects out of 2073 (max. 8388607)
- 929 named destinations out of 1000 (max. 500000)
- 845 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2006 PDF objects out of 2073 (max. 8388607)
+ 931 named destinations out of 1000 (max. 500000)
+ 858 words of extra memory for PDF output out of 10000 (max. 10000000)
 

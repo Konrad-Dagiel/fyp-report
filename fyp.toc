@@ -30,11 +30,11 @@
 \contentsline {subsection}{\numberline {3.5.6}Complexity Analysis of the Memoization Approach to LIS}{22}{subsection.3.5.6}%
 \contentsline {subsection}{\numberline {3.5.7}Tabulation Approach to LIS}{23}{subsection.3.5.7}%
 \contentsline {subsection}{\numberline {3.5.8}Complexity Analysis of the Tabulation Approach to LIS}{24}{subsection.3.5.8}%
-\contentsline {section}{\numberline {3.6}Max Subarray Sum - MSS}{24}{section.3.6}%
+\contentsline {section}{\numberline {3.6}Max Subarray Sum - MSS}{25}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Brute Force Approach to Max Subarray Sum}{25}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Complexity Analysis of the Brute Force Approach to MSS}{26}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Kadanes Algorithm for Max Subarray Sum}{26}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}Complexity Analysis of Kadane's Algorithm}{27}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.3}Kadanes Algorithm for Max Subarray Sum}{27}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Complexity Analysis of Kadane's Algorithm}{28}{subsection.3.6.4}%
 \contentsline {section}{\numberline {3.7}Longest Alternating Subsequence - LAS}{29}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Brute Force Approach to LAS}{29}{subsection.3.7.1}%
 \contentsline {subsection}{\numberline {3.7.2}Complexity Analysis of the Brute Force Approach to LAS}{31}{subsection.3.7.2}%
@@ -48,21 +48,21 @@
 \contentsline {subsection}{\numberline {3.8.3}Memoization Approach to C(n,k)}{36}{subsection.3.8.3}%
 \contentsline {subsection}{\numberline {3.8.4}Complexity Analysis of the Memoization Approach to C(n,k)}{37}{subsection.3.8.4}%
 \contentsline {subsection}{\numberline {3.8.5}Tabulation Approach to C(n,k)}{37}{subsection.3.8.5}%
-\contentsline {subsection}{\numberline {3.8.6}Complexity Analysis of the Tabulation Approach to C(n,k)}{38}{subsection.3.8.6}%
+\contentsline {subsection}{\numberline {3.8.6}Complexity Analysis of the Tabulation Approach to C(n,k)}{39}{subsection.3.8.6}%
 \contentsline {subsection}{\numberline {3.8.7}Optimzied Tabulation Approach to C(n,k)}{39}{subsection.3.8.7}%
-\contentsline {section}{\numberline {3.9}Longest Common Subsequence - LCS}{39}{section.3.9}%
+\contentsline {section}{\numberline {3.9}Longest Common Subsequence - LCS}{40}{section.3.9}%
 \contentsline {subsection}{\numberline {3.9.1}Brute Force Approach to LCS}{40}{subsection.3.9.1}%
 \contentsline {subsection}{\numberline {3.9.2}Complexity Analysis of the Brute Force Approach to LCS}{40}{subsection.3.9.2}%
 \contentsline {subsection}{\numberline {3.9.3}Tabulation Approach to LCS}{41}{subsection.3.9.3}%
-\contentsline {subsection}{\numberline {3.9.4}Complexity Analysis of the Tabulation Approach to LCS}{42}{subsection.3.9.4}%
+\contentsline {subsection}{\numberline {3.9.4}Complexity Analysis of the Tabulation Approach to LCS}{43}{subsection.3.9.4}%
 \contentsline {subsection}{\numberline {3.9.5}Optimized Tabulation Approach to LCS}{43}{subsection.3.9.5}%
-\contentsline {section}{\numberline {3.10}Longest Palindromic Subsequence - LPS}{43}{section.3.10}%
+\contentsline {section}{\numberline {3.10}Longest Palindromic Subsequence - LPS}{44}{section.3.10}%
 \contentsline {subsection}{\numberline {3.10.1}Tabulation Approach to LPS}{44}{subsection.3.10.1}%
 \contentsline {subsection}{\numberline {3.10.2}Complexity Analysis of LPS}{44}{subsection.3.10.2}%
-\contentsline {section}{\numberline {3.11}Longest Contiguous Palindromic Substring - LPCS}{44}{section.3.11}%
+\contentsline {section}{\numberline {3.11}Longest Contiguous Palindromic Substring - LPCS}{45}{section.3.11}%
 \contentsline {subsection}{\numberline {3.11.1}Brute Force Approach to LCPS}{45}{subsection.3.11.1}%
 \contentsline {subsection}{\numberline {3.11.2}Complexity Analysis of the Brute Force Approach to LCPS}{45}{subsection.3.11.2}%
-\contentsline {subsection}{\numberline {3.11.3}Tabulation Approach to LCPS}{45}{subsection.3.11.3}%
+\contentsline {subsection}{\numberline {3.11.3}Tabulation Approach to LCPS}{46}{subsection.3.11.3}%
 \contentsline {subsection}{\numberline {3.11.4}Complexity Analysis of the Tabulation Approach to LCPS}{49}{subsection.3.11.4}%
 \contentsline {section}{\numberline {3.12}The Needleman-Wunsch Algorithm}{49}{section.3.12}%
 \contentsline {subsection}{\numberline {3.12.1}Initialization of the Needleman-Wunsch Table}{50}{subsection.3.12.1}%
@@ -99,6 +99,7 @@
 \contentsline {section}{\numberline {5.4}The Interstellar Problem Implementation Details}{77}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Python Implementation of The Interstellar Problem 1}{78}{section.5.5}%
 \contentsline {subsection}{\numberline {5.5.1}Complexity Analysis of The Interstellar Problem I}{80}{subsection.5.5.1}%
+\contentsline {section}{\numberline {5.6}Space Optimization of the Interstellar Problem}{80}{section.5.6}%
 \contentsline {chapter}{\numberline {6}Conclusions}{81}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Reflection}{81}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Summary of how the Project was Conducted}{82}{section.6.2}%

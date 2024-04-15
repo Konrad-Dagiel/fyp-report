@@ -108,4 +108,19 @@ Let $n$ be the length of the tuple $dimensions$.
 
 \end{description}
 
+\section{Space Optimization of the Interstellar Problem}
+Recall the two-row space optimization which was used for Longest Common Subsequence in Section \ref{subsec:lcs-optimized}.
+Theoretically, this optimization can be applied to the Interstellar Problem, but instead of storing two rows of a 2D array,
+we could store two ``slices'' of our input shape.
+This is difficult to visualize in $>3$ dimensions, but it is possible for the following reason. As a ``slice'' of our input shape is being filled, it relies only on the previous ``slice'' of the shape.
+If we set up the solution in such a way that we store only two ``slices'', we could eliminate the maximum value of $dimensions$ from the space complexity calculation.
 
+A three dimensional visualization of the space optimized solution is shown in Figure \ref{fig:interstellar-optimization}.
+For each iteration, the ``slice'' shown in blue is calculated from the ``slice'' shown in red. Notice that we only need to store the two colored slices at any point in time.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{visualization.jpg}
+    \caption{Space Optimized Interstellar Problem Solution Visualized}
+    \label{fig:interstellar-optimization}
+\end{figure}
