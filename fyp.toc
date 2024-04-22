@@ -27,7 +27,7 @@
 \contentsline {subsection}{\numberline {3.5.3}Brute Force Approach to LIS}{20}{subsection.3.5.3}%
 \contentsline {subsection}{\numberline {3.5.4}Complexity Analysis of the Brute Force Approach to LIS}{21}{subsection.3.5.4}%
 \contentsline {subsection}{\numberline {3.5.5}Memoization Approach to LIS}{21}{subsection.3.5.5}%
-\contentsline {subsection}{\numberline {3.5.6}Complexity Analysis of the Memoization Approach to LIS}{22}{subsection.3.5.6}%
+\contentsline {subsection}{\numberline {3.5.6}Complexity Analysis of the Memoization Approach to LIS}{23}{subsection.3.5.6}%
 \contentsline {subsection}{\numberline {3.5.7}Tabulation Approach to LIS}{23}{subsection.3.5.7}%
 \contentsline {subsection}{\numberline {3.5.8}Complexity Analysis of the Tabulation Approach to LIS}{24}{subsection.3.5.8}%
 \contentsline {section}{\numberline {3.6}Max Subarray Sum - MSS}{25}{section.3.6}%

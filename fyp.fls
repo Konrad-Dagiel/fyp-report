@@ -355,7 +355,6 @@ INPUT chapters\algorithms\al-binomial_coefficients.tex
 INPUT .\chapters\algorithms\al-lcs.tex
 INPUT .\chapters\algorithms\al-lcs.tex
 INPUT chapters\algorithms\al-lcs.tex
-INPUT C:\Users\kdawg\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT .\chapters\algorithms\al-lps.tex
 INPUT .\chapters\algorithms\al-lps.tex
 INPUT chapters\algorithms\al-lps.tex
@@ -393,6 +392,7 @@ INPUT chapters\algorithms\al-min-path-sum.tex
 INPUT .\chapters\algorithms\al-3d-unique-paths.tex
 INPUT .\chapters\algorithms\al-3d-unique-paths.tex
 INPUT chapters\algorithms\al-3d-unique-paths.tex
+INPUT C:\Users\kdawg\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT .\chapters\algorithms\al-nd-unique-paths.tex
 INPUT .\chapters\algorithms\al-nd-unique-paths.tex
 INPUT chapters\algorithms\al-nd-unique-paths.tex

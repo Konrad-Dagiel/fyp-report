@@ -18,11 +18,10 @@
 \end{description}
 
 \subsection{Brute Force Approach to LCS}
-The brute force way to find the longest common subsequence of two strings is to generate all possible subsequences of both strings.
+The brute force way to find the longest common subsequence of two strings is to generate all possible subsequences of both strings (See Section \ref{subsec:las-bf}).
 We initialize a $lcs$ variable to store the length of the longest common subsequence.
 We then iterate over each list of subsequences and report any common subsequences we find, updating $lcs$ accordingly.
-Finally we return $lcs$. An implementation of this would be so inefficient it would overload any CPU running the code on subsequences of more than a few characters in length.
-
+Finally we return $lcs$. 
 \subsection{Complexity Analysis of the Brute Force Approach to LCS}
 For the calculation of worst case time and space complexity, we assume that both strings are equal in length, and that length is denoted by $n$.
 
@@ -97,11 +96,11 @@ We fill the table starting from the bottom right as follows:
 
     As per \textbf{observation 1}, we fill the space with $1 + dp[i+1][j+1]$.
     
-    \item If the row and col do not have the same label, we must use \textbf{observation 2}:
+    \item If the row and col do not have the same label, we have not found a common character and must use \textbf{observation 2}:
 
     Fill the space with $max(dp[i][j+1], dp[i+1][j])$.
     
-    \item If we go out of bounds, we simply take zero\footnote{For ease of code, we can make $dp$ of size ($i+1$) x ($j+1$) instead, and initialize it to contain all zeros. This way we don't have to check for going out of bounds.}.
+    \item If we go out of bounds, we simply take zero.
 \end{enumerate}
 
 Our solution will be located at $dp[0][0]$, which represents $lcs(text1,text2)$. Below we can see the $dp$ table filled according to the above rules.
@@ -127,6 +126,17 @@ Our solution will be located at $dp[0][0]$, which represents $lcs(text1,text2)$.
     \caption{Filled $dp$ table for $text1="abcde"$ and $text2="ace"$}
 \end{table}
 
+This can be expressed mathematically as:
+
+\[
+\text{dp}[i][j] = 
+\begin{cases} 
+0 & \text{if out of bounds} \\
+\text{dp}[i+1][j+1] + 1 & \text{if } \text{row label} = \text{col label} \\
+\max(\text{dp}[i+1][j], \text{dp}[i][j+1]) & \text{if } \text{row label} \neq \text{col label}
+\end{cases}
+\]
+
 
 A sample Python implementation is shown in Figure \ref{fig:lcs-dp}.
 
@@ -148,7 +158,9 @@ A sample Python implementation is shown in Figure \ref{fig:lcs-dp}.
     \caption{Longest Common Subsequence Tabulation Python Implementation}
     \label{fig:lcs-dp}
 \end{figure}
-\newpage
+
+NOTE: For ease of code, we can make $dp$ of size ($i+1$) x ($j+1$) instead, and initialize it to contain all zeros. This way we don't have to check for going out of bounds.
+
 \subsection{Complexity Analysis of the Tabulation Approach to LCS}\label{subsec:ca-lcs-dp}
 
 Let $i$ be the length of $text1$, and $j$ be the length of $text2$.

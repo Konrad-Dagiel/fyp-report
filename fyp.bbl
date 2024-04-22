@@ -31,6 +31,11 @@ GFG.
 \newblock Geeksforgeeks, 2024.
 \newblock Accessed: April 12 , 2024.
 
+\bibitem{kadane2023two}
+Joseph~B Kadane.
+\newblock Two kadane algorithms for the maximum sum subarray problem.
+\newblock {\em Algorithms}, 16(11):519, 2023.
+
 \bibitem{leetcode}
 LeetCode.
 \newblock Leetcode, 2024.

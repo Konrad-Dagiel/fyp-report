@@ -160,10 +160,10 @@ A sample Python implementation is shown in Figure \ref{fig:lis-memo}.
     \caption{Longest Increasing Subsequence Memoization Python Implementation}
     \label{fig:lis-memo}
 \end{figure}
-
-\subsection{Complexity Analysis of the Memoization Approach to LIS}
-Let n be the length of nums.
 \newpage
+\subsection{Complexity Analysis of the Memoization Approach to LIS}
+Let $n$ be the length of $nums$.
+
 \begin{description}
     \item[Time Complexity:]
         For each unique combination of $(prev\_index, current\_index)$, the algorithm either calculates the result or looks it up in the $memo$ table.
@@ -240,12 +240,10 @@ A sample Python implementation is shown in Figure \ref{fig:lis-dp}.
     \begin{lstlisting}
     def lis_dp(nums):
         dp = [1] * len(nums)
-    
         for i in range(len(nums)-1,-1,-1):
             for j in range(i+1,len(nums)):
                 if nums[i] < nums[j]:
                     dp[i] = max(dp[i], 1+dp[j])
-    
         return max(dp)
     \end{lstlisting}
     \caption{Longest Increasing Subsequence Tabulation Python Implementation}
@@ -253,7 +251,7 @@ A sample Python implementation is shown in Figure \ref{fig:lis-dp}.
 \end{figure}
 
 \subsection{Complexity Analysis of the Tabulation Approach to LIS}
-Let n be the length of nums.
+Let $n$ be the length of $nums$.
 \begin{description}
     \item[Time Complexity:]
         For the worst case scenario, we need to perform a double nested iteration over nums.
